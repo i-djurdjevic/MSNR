@@ -7,13 +7,14 @@
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
 
+\usepackage{amsmath}
+\usepackage{tcolorbox}
 %Milica: meni ne radi ovde serbian, samo croatian :(
 \usepackage[english,croatian]{babel}
 
 
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
-
 %\newtheorem{primer}{Пример}[section] %ćirilični primer
 \newtheorem{primer}{Primer}[section]
 \newtheorem{definicija}{Definicija}[section]
@@ -36,10 +37,6 @@ U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite paž
 \section{Uvod}
 \label{sec:uvod}
 Ovde pišem uvod
-\begin{primer}
-Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingproblem}.
-\end{primer}
-
 
 \section{Operaciona semantika}
 \label{sec:opsem}
@@ -47,12 +44,115 @@ Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingpr
 
 \section{Denotaciona semantika}
 \label{sec:densem}
-Nastala 1960. godina od strane Christopher Strachey-a i njegove istraživačke grupe na Oxford-u \cite{slonneger1995book}, \textit{denotaciona semantika} predstavlja jednu vrstu reakcije na operacionu semantiku za koju se smatra da sadrži puno informacija. Naziv je dobila po engleskoj reči označiti (eng.~{\em denote}) jer pridružuje značenja sintaksnim definicijama jezika. Alternativno, može se nazivati i \textit{matematička semantika} zbog njene okrenutosti matematičkim formalizmima pri definisanju ove formalne semantike. Jedan način definisanja denotacione semantike je dat u sledećoj definiciji.
+
+\qquad Nastala 1960. godina od strane Christopher Strachey-a i njegove istraživačke grupe na Oxford-u \cite{slonneger1995book}, \textit{denotaciona semantika} predstavlja jednu vrstu reakcije na operacionu semantiku za koju se smatra da sadrži puno informacija. Naziv je dobila po engleskoj reči označiti (eng.~{\em denote}) jer pridružuje značenja sintaksnim definicijama jezika. Alternativno, može se nazivati i \textit{matematička semantika} zbog njene okrenutosti matematičkim formalizmima pri definisanju ove formalne semantike. Jedan način definisanja denotacione semantike je dat u sledećoj definiciji.
 \begin{definicija}
 Pristup formalizaciji semantike konstruisanjem matematičkih objekata koji
 opisuju značenje jezika naziva se \textbf{denotaciona semantika} \cite{milena}.
 \end{definicija}
 
+Dok se u operacionoj semantici vodilo računa o koracima izvršavanja, u denotacionoj to postaje nebitno. Na primer, značenje izraza $ (15+3)*(2+2) $ jeste 72 i ne treba obraćati pažnju na unutrašnja izračunavanja. Bitan je samo efekat koji izvršavanje programa proizvodi, odnosno odnos između početnog i završnog stanja programa. Za posmatranje ovog efekta potrebno je uočiti odnos između sintakse i semantike programskog jezika.
+
+Ideja ove semantike je da poveže svaki deo programskog jezika sa nekim matematičkim objektom kao što je broj ili funkcija. Odavde se jasno vidi da je potrebno raščlaniti programski jezik na sintaksne delove (to nam pruža apstraktna sintaksa) i svakom delu dodeliti značenje. Svaka sintaksna definicija se tretira kao objekat na koji se može primeniti funkcija koja taj objekat preslikava u matematički objekat koji definiše značenje \cite{parezanovic}. Dodeljivanjem značenja delovima programa dodeljuje se značenje celokupnom programu što nam govori o najvažnijem aspektu denotacione semantike.
+\begin{definicija}
+Semantika jedne programske celine definisana je preko semantike njenih poddelova. Ova osobina denotacione semantike naziva se \textbf{kompozitivnost}.
+\end{definicija}
+
+Ovo znači da ukoliko se zameni jedan deo programske celine sa delom koji ima isto značenje, neće se promeniti značenje cele programske celine. Gore pomenuti izraz je imao semantičku vrednost 72, a to isto značenje ima i izraz $ (16+2)*(2+2) $. To znači da se semantika izraza nije promenila iako su zamenjeni delovi izraza. Nije došlo do promene jer $ 15+3 $ ima isto značenje kao i $ 16+2 $. Treba se još pozabaviti dodeljivanjem semantičke vrednosti delovima programske celine.
+
+Nekim sintaksnim delovima programa je lako dodeliti semantičku vrednost. Takvi su brojevi ili aritmetički operatori jer oni već imaju svoje matematičko značenje. Ali neke sintaksne definicije poput rekurzije ili goto naredbe je teško videti kroz matematičko značenje. Daćemo primer definisanja denotacione semantike aritmetičkih izraza, dok se o rekurziji ili nekim naprednijim primerima može pročitati više u \cite{nielson}.\\
+
+
+Potrebno je prvo definisati apstraktnu sintaksu aritmetičkih izraza. Neka su podržani samo prirodni brojevi i od aritmetičkih operatora +. Ovo znači da će semantička vrednost nekog izraza biti prirodan broj. Primer definicije apstraktne sintakse ovakvih aritmetičkih izraza dat je u nastavku.
+
+
+\begin{tcolorbox}
+\textbf{Sintaksni domeni i pravila:}
+\\
+
+$B: Broj $  \qquad\qquad Nenegativan broj
+
+$C: Cifra $ \qquad\qquad Cifra 0,1...,9
+
+$I: Izraz $
+
+$ Broj ::== Cifra | Broj Cifra $
+
+$ Cifra ::== 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 $
+
+$ Izraz ::== Broj | Izraz+Izraz $
+\end{tcolorbox}
+
+Sledeći korak jeste definisanje matematičkih objekata koji će predstavljati semantičke vrednosti.  Ti matematički objekti nazivaju se \textbf{semantički domeni}. Njihova kompleksnost zavisi od toga koliko je kompleksan programski jezik kojem dajemo značenje. U našem jednostavnom primeru, kao što je već rečeno, semantička vrednost može biti samo prirodan broj. 
+\begin{tcolorbox}
+\textbf{Semantički domeni}
+\\
+
+$N={0,1,2,3,....} $  \qquad\qquad Skup prirodnih brojeva
+
+\end{tcolorbox}
+Posle uvedenih objekata, treba uvesti neke matematičke funkcije koje će davati značenje prethodno uvedenim sintaksnim definicijama. Takve funkcije se nazivaju \textbf{funkcije značenja }(eng.~{\em meaning functions}). Definicije funkcija koje su potreban za naš jednostavan primer su date u nastavku.
+\begin{tcolorbox}
+\textbf{Funkcije značenja}
+\\
+
+$povezibn: B \rightarrow N $  \qquad Unarna funkcija - povezuje broj sa N
+
+$povezicn: C \rightarrow N $  \qquad Unarna funkcija - povezuje cifru sa N
+
+$semantika: I \rightarrow N $   \qquad Unarna funkcija - povezuje izraz sa N
+
+$plus: N \times N \rightarrow N $  \qquad Binarna funkcija plus - isto što i + 
+
+$pom: N \times N \rightarrow N $ \qquad Binarna funkcija pom - isto što i *
+
+$ povezicn[[0]] = 0,... ,povezicn[[9]] = 9 $
+
+$ povezibn[[D]] = povezicn[[D]] $
+
+$ povezibn[[B D]] = plus(pom(10, povezibn[[B]]),povezibn[[D]]) $
+
+$ semantika[[B]] = povezibn[[B]] $
+
+$ semantika[[I1 + I2]] = plus(semantika[[I1]],semantika[[I2]]) $
+
+\end{tcolorbox}
+Primetimo da su korišćene zagrade $ [[,]]$ koje imaju ulogu da razdvoje semantički deo od sintaksnog dela. U okviru zagrada nalazi se sintaksni deo definicija. Primer koji oslikava korišćenje denotacione semantike je dat u nastavku.
+\begin{primer}
+Pronaći značenje izraza 2+32+61.
+
+Rešenje:
+\begin{center}
+\textbf{semantika[[2+32+61]]} = plus(semantika[[2+32]],semantika[[61]])\\
+= plus(plus(semantika[[2]],semantika[[32]]),povezibn[[61]])\\
+= plus(plus(2,32),61)\\
+= plus(2+32,61)\\
+= plus(34+61) = 34+61 = 95
+\end{center}
+
+jer je:
+
+\begin{center}
+\textbf{semantika[[2]]} = povezibn[[2]] = povezicn[[2]] = 2
+\end{center}
+\begin{center}
+\textbf{semantika[[32]]} = povezibn[[32]]\\
+= plus(pom(10,povezibn[[3]]),povezibn[[2]])\\
+=plus(pom(10,povezicn[[3]]),povezicn[[2]]) \\
+=plus(pom(10,3),2) = plus(10*3,2)\\
+= plus(30,2) = 30+2 = 32\end{center}
+
+\begin{center}
+\textbf{semantika[[61]]} = povezibn[[61]] \\
+=plus(pom(10,povezibn[[6]]),povezibn[[1]])\\
+=plus(pom(10,povezicn[[6]]),povezicn[[1]]) \\
+=plus(pom(10,6),1) = plus(10*6,1)\\
+= plus(60,1) = 60+1 = 61
+
+\end{center}
+\end{primer}
+
+ Prednost denotacione semantike je u tome što apstrahuje kako se programi izvršavaju. Analiziranje programa se svodi na analiziranje matematičkih objekata, što olakšava stvar. Denotaciona semantika ima veliku primenu u konstrukciji programa za prevođenje \cite{parezanovic}.
 \section{Aksiomatska semantika}
 \label{sec:akssem}
 Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Floyd, Hoar i Dijkstra \cite{kuncak}.
