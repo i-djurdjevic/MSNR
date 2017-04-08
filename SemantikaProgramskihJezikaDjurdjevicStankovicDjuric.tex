@@ -55,6 +55,37 @@ opisuju značenje jezika naziva se \textbf{denotaciona semantika} \cite{milena}.
 
 \section{Aksiomatska semantika}
 \label{sec:akssem}
+Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Floyd, Hoar i Dijkstra \cite{kuncak}.
+Aksiomatska semantika razvija metode za proveru korektnosti programa. Zasniva se na matematickoj logici. Za svaku kontrolnu strukturu i komandu se definišu logicki izrazi. Ovi izrazi se nazivaju tvrđenja (eng.~{\em  assertions}) i u njima se zadaju ogranicenja za promenljive koja se javljaju u tim kontrolnim strukturama i komandama.\\
+Tvrđenja su data u obliku  Horovih trojki:
+\{P\}c\{Q\} \\
+\begin{definicija}
+\textbf{Horova trojka \{P\}C\{Q\}} opisuje kako izvršavanje dela koda menja stanje izracunavanja ako je ispunjen preduslov (eng.~{\em  precondition}) \{P\}, izvršavanje komande C vodi do postuslova (eng.~{\em  postcondition}) \{Q\} \cite{milena} .  \\
+
+\end{definicija}
+
+Preduslov je logički izraz u kome se definišu ograničenja promenljivih pre izvršavanja komande, a postuslov definiše ograničenja promenljivih posle izvršavanja komande.\\
+Horove trojke se drugačije nazivaju i \textit{delimična ispravnost specifikacije } (eng.~{\em  partial correctness specification}) . \\
+Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i nazivaju “delimičnim”. \\
+Pored delimične ispravnosti specifikacije, imamo i \textit {potpunu ispravnost naredbe } (eng.~{\em  total correctness statements}) koja osigurava da će se program završiti dok god preduslov važi. \\
+Preduslovi i postuslovi mogu se smatrati interfejsom ili ugovorom između programa i njegovih klijenata. Oni pomažu korisnicima da razumeju šta program treba da proizvede bez potrebe da shvati kako se program izvršava. Tipično, programeri ih pišu kao komentari za funkcije i
+funkcionišu kao dokumentacija i olakšavaju održavanje programa. Takve specifikacije su posebno
+korisne za bibliotečke funkcije za koje izvorni kod često nije dostupan korisnicima \cite{adrian}. 
+
+Način funkcionisanja ove semantike možemo prikazati u primeru koji sledi (primer je preuzet iz knjige \cite{nielson} ). \\
+\begin{primer}
+\{ x=n \} \\
+ y := 1; 
+ while neq{(x=1)} do (y := x*y; x := x-1)\\
+ \{ y=n! and n veće od 0 \} \\
+ 
+n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja, za razliku od programskih promenljivih, ne sme se pojaviti ni u jednoj naredbi koja se izvršava u programu i njena vrednost će uvek biti ista. Njena uloga je da pamte inicijalne vrednosti programskih promenljivih . \\
+ Zapisali smo  preduslov da promenljive n ima jednaku vrednost kao i x u početnom stanju (tj. nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da konačna vrednost y  će biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
+  
+\end{primer}
+
+
+
 
 \section{Zaključak}
 \label{sec:zakljucak}
