@@ -41,6 +41,42 @@ Ovde pišem uvod
 \section{Operaciona semantika}
 \label{sec:opsem}
 
+\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja  naredbe programa. Da bi bolje razumeli operacionu semantiku posmatraćemo je iz dva ugla: 
+\begin{itemize}
+	\item \textit{Prirodna semantika} (ili veliki koraci): svrha joj je da opiše kako su \textit{sveukupna rešenja} izvršavanja dobijena.
+	\item \textit{Strukturna operacijska semantika} (ili mali koraci): svrha joj je da opiše kako se \textit{svaki korak zasebno} izvršava. 
+\end{itemize} \cite{wiley}.
+
+Za definiciju operacione semantike se uglavnom koristi strukturna operaciona semantika, dok neki koriste \textit{apstraktne mašine}, koje više koriste ad hok matematičke konstrukcije.
+
+Za obe vrste operacione semantike, prirodne i strukturno operacione, značenje naredbe će biti određeno \textit{tranzicionim sistemom}, i ona će imati dve vrste konfiguracija\cite{wiley}:
+\begin{itemize}
+	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
+	\item s predstavlja završno stanje.
+\end{itemize} \cite{wiley}.
+\textit{Tranziciona relacija} će onda opisivati kako izgleda tok izvršavanja.\\
+\qquad U prirodnoj semantici je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao
+
+$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}\\
+Intuitivno ovo znači da izvršavanje \textit{S} iz \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. 
+
+Definiciju za  $\rightarrow$ možemo videti u tabeli <broj>. \textit{Pravilo} generalno ima formu
+% treba dodati tabelu
+
+$\langle$ \textit{$S_{1}$, $s_{1}$} $\rangle$ $\rightarrow$ \textit{$s'_{1}$}, ..., $\langle$ \textit{$S_{n}$, $s_{n}$} $\rangle$ $\rightarrow$ \textit{$s'_{n}$}\\
+% fali deo formule
+gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisi} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije). 
+% trebalo bi bolje napisati ovu rečenicu :S
+Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravila sa praznim skupom premisa se naziva \textit{aksiom}. \cite{wiley}
+% ... objasnjenje pravila
+
+Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksioma, inače se naziva \textit{kompozitnim stablom}.//
+\qquad Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksioma ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
+\begin{itemize}
+	\item Ako je u pitanju aksiom i ako su uslovi aksioma ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
+	\item Ako je u pitanju pravilo, sledeći korak je pokušati konstruisati stablo izvođenja za premise datog pravila. Kad se ovaj deo odradi, neophodno je proveriti da li su uslovi pravila ispunjeni i tek onda možemo zaključiti završno stanje  $\langle$ \textit{S, s} $\rangle$.
+\end{itemize} 
+%primer stabla
 
 \section{Denotaciona semantika}
 \label{sec:densem}
