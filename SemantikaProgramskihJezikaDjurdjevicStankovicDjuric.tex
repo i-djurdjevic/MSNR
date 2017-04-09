@@ -155,29 +155,68 @@ jer je:
  Prednost denotacione semantike je u tome što apstrahuje kako se programi izvršavaju. Analiziranje programa se svodi na analiziranje matematičkih objekata, što olakšava stvar. Denotaciona semantika ima veliku primenu u konstrukciji programa za prevođenje \cite{parezanovic}.
 \section{Aksiomatska semantika}
 \label{sec:akssem}
-Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Floyd, Hoar i Dijkstra \cite{kuncak}.
-Aksiomatska semantika razvija metode za proveru korektnosti programa. Zasniva se na matematickoj logici. Za svaku kontrolnu strukturu i komandu se definišu logicki izrazi. Ovi izrazi se nazivaju tvrđenja (eng.~{\em  assertions}) i u njima se zadaju ogranicenja za promenljive koja se javljaju u tim kontrolnim strukturama i komandama.\\
+\qquad Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Floyd, Hoar i Dijkstra.
+ Zasniva na matematickoj logici pa je kao takva apstraktnija od denotacione i operacione sematike. Ova semantika
+ značenje programa zasniva na tvrdnjama o vezama koje ostaju iste svaki put kad se program izvrši \cite{slonneger1995book}.
+ Aksiomatska semantika razvija metode za proveru korektnosti programa. Za svaku kontrolnu strukturu i komandu se definišu logicki izrazi. Ovi izrazi se nazivaju \textbf{tvrđenja} (eng.~{\em  assertions}) i u njima se zadaju ogranicenja za promenljive koja se javljaju u tim kontrolnim strukturama i komandama.
+
+\begin{tcolorbox}
 Tvrđenja su data u obliku  Horovih trojki:
-\{P\}c\{Q\} \\
+
+  \center \textbf{\{P\}c\{Q\}}
+
+\end{tcolorbox}
+
+
+
+ 
 \begin{definicija}
-\textbf{Horova trojka \{P\}C\{Q\}} opisuje kako izvršavanje dela koda menja stanje izracunavanja ako je ispunjen preduslov (eng.~{\em  precondition}) \{P\}, izvršavanje komande C vodi do postuslova (eng.~{\em  postcondition}) \{Q\} \cite{milena} .  \\
+\textbf{Horova trojka \{P\}C\{Q\}} opisuje kako izvršavanje dela koda menja stanje izracunavanja ako je ispunjen preduslov (eng.~{\em  precondition}) \{P\}, izvršavanje komande C vodi do postuslova (eng.~{\em  postcondition}) \{Q\} \cite{milena} .  
 
 \end{definicija}
 
-Preduslov je logički izraz u kome se definišu ograničenja promenljivih pre izvršavanja komande, a postuslov definiše ograničenja promenljivih posle izvršavanja komande.\\
-Horove trojke se drugačije nazivaju i \textit{delimična ispravnost specifikacije } (eng.~{\em  partial correctness specification}) . \\
-Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i nazivaju “delimičnim”. \\
-Pored delimične ispravnosti specifikacije, imamo i \textit {potpunu ispravnost naredbe } (eng.~{\em  total correctness statements}) koja osigurava da će se program završiti dok god preduslov važi. \\
+Preduslov je logički izraz u kome se definišu ograničenja promenljivih pre izvršavanja komande, a postuslov definiše ograničenja promenljivih posle izvršavanja komande.
+Horove trojke se drugačije nazivaju i \textit{delimična ispravnost specifikacije } (eng.~{\em  partial correctness specification}) . 
+Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i nazivaju “delimičnim”. 
+
+Delimične ispravnosti tvrdnje će biti određen sistemom zaključivanja koji se sastoji iz skupa aksioma i pravila. Za sve konstruktore jednostavnog imperativnog programskog jezika, Horova logika obezbeđuje aksiome i pravila izvođenja \cite{milena}. Aksiomatski sistem za delimičnu ispravnost je dat u Tabeli ~\ref{tab:a} ispod.
+
+\begin{table}
+    \begin{center}
+        \begin{tabular}{lrc}\hline
+        \hline
+        \hline
+        $[ass_{p}] $ & $ \{ P[x \rightarrow [\![A]\!]\} x:= a \{P\}$    \\  [6pt]
+        $[skip_{p}] $ & $ \{P\}$ skip  $ \{P\}$   \\ [6pt]
+         $[comp_{p}] $ & $  \frac{\{P\}S_1\{Q\},\{Q\}S_2\{R\}}{\{P\}S_1;S_2\{R\}} $ \\[6pt]
+            $[if_{p}] $ & $  \frac{\{B[\![b]\!]\land P\}S_1\{Q\},\{\neg B[\![b]\!]\land P\}S_1\{Q\}}{\{P\} if b then S_1 else S_2\{Q\}} $ \\ [6pt]
+        $[while_{p}] $ & $  \frac{\{B[\![b]\!]\land P\}S\{P\}}{\{P\} while b do S \{\neg B[\![b]\!]\land P\}} $ \\ [6pt]
+          $[cons_p{p}] $ & $  \frac{\{P^{'}\}S\{Q^{'}\}}{\{P\}S\{Q\}} $ if $ P \Rightarrow	 P^{'} $ and $ Q \Rightarrow	 Q^{'} $  \\ [6pt]
+          \hline \hline
+        \end{tabular}
+        \caption{Aksiomatski sistem za delimičnu ispravnost}\label{tab:a}
+    \end{center}
+\end{table}
+
+
+
+
+
+
+Pored delimične ispravnosti specifikacije, imamo i \textit {potpunu ispravnost naredbe } (eng.~{\em  total correctness statements}) koja osigurava da će se program završiti dok god preduslov važi. 
+
+Pored dokazivanja korektnosti programa i algoritama, uloga aksiomatske sematike je i dokazivanje ispravnosti harverdskih opisa (ili nalaženje bagova), proširena statička provera (npr. provera granice niza), dokumentacija programa i interfejsa.
+
 Preduslovi i postuslovi mogu se smatrati interfejsom ili ugovorom između programa i njegovih klijenata. Oni pomažu korisnicima da razumeju šta program treba da proizvede bez potrebe da shvati kako se program izvršava. Tipično, programeri ih pišu kao komentari za funkcije i
 funkcionišu kao dokumentacija i olakšavaju održavanje programa. Takve specifikacije su posebno
 korisne za bibliotečke funkcije za koje izvorni kod često nije dostupan korisnicima \cite{adrian}. 
 
-Način funkcionisanja ove semantike možemo prikazati u primeru koji sledi (primer je preuzet iz knjige \cite{nielson} ). \\
+Način funkcionisanja ove semantike možemo prikazati u primeru sa faktorijalom koji sledi (primer je preuzet iz knjige \cite{nielson} ). \\
 \begin{primer}
-\{ x=n \} \\
- y := 1; 
- while neq{(x=1)} do (y := x*y; x := x-1)\\
- \{ y=n! and n veće od 0 \} \\
+$\{ x=n \} $ \\
+$  y := 1; $
+ while $ \neg(x=1) $  do $ (y := x*y; x := x-1) $\\
+$ \{ y=n!$ and $ n > 0 \} $ \\
  
 n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja, za razliku od programskih promenljivih, ne sme se pojaviti ni u jednoj naredbi koja se izvršava u programu i njena vrednost će uvek biti ista. Njena uloga je da pamte inicijalne vrednosti programskih promenljivih . \\
  Zapisali smo  preduslov da promenljive n ima jednaku vrednost kao i x u početnom stanju (tj. nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da konačna vrednost y  će biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
