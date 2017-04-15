@@ -23,7 +23,7 @@
 
 \title{Naslov seminarskog rada\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
-\author{Isidora Đurđević, Ana Stanković, Milica Đurić\\ kontakt email prvog, drugog (trećeg) autora}
+\author{Isidora Đurđević, Ana Stanković, Milica Đurić\\ isidoradjurdjevic.100@gmail.com, anastankovic167@gmail.com, mdjuric55@gmail.com}
 \date{5.~april 2017.}
 \maketitle
 
@@ -87,8 +87,6 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng. small-step semantics)): svrha joj je da opiše kako se \textit{svaki korak} izvršava. 
 \end{itemize} \cite{wiley}.
 
-%Za definiciju operacione semantike se uglavnom koristi strukturna operaciona semantika, dok neki koriste \textit{apstraktne mašine}, koje više %koriste ad hok matematičke konstrukcije.
-
 Ponašanje se formalno može definisati korišćenjem apstraknih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
 Za svaki programski jezik ćemo definisati realnu ili apstraktnu masinu, na kojoj cemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojacki programski ciklus u Pascal jeziku:\\
 
@@ -102,7 +100,7 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \\Zamislimo sada da naša apstraktna mašina raspolaže sa instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
 
 \hspace{4cm} \textit{i:=početak}\\
-\textit{ciklus:} \hspace{3cm} \textit{if i>kraj then goto izlaz}
+\textit{ciklus:} \hspace{3cm} \textit{if i > kraj then goto izlaz}
 \begin{center}
 .
 \\.
@@ -114,7 +112,7 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
 \\Ovo objašnjenje nam daje apstraknu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
 
-Opišimo sada značenje za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom}. Ona će imati dve vrste konfiguracija \cite{wiley}:
+Opišimo sada značenje za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s predstavlja završno stanje.
@@ -126,18 +124,43 @@ U prirodnoj semantici je bitna veza između početnog i završnog stanja izvrša
 \begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
 Intuitivno ovo znači da izvršavanje \textit{S} iz \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. 
 
-Definiciju za  $\rightarrow$ možemo videti u tabeli <broj>. \textit{Pravilo} generalno ima formu
-% treba dodati tabelu
+Definiciju za  $\rightarrow$ možemo videti u tabeli ~\ref{tab:b}. \textit{Pravilo} generalno ima formu
 
-\begin{center}$\langle$ \textit{$S_{1}$, $s_{1}$} $\rangle$ $\rightarrow$ \textit{$s'_{1}$}, ..., $\langle$ \textit{$S_{n}$, $s_{n}$} $\rangle$ $\rightarrow$ \textit{$s'_{n}$} \end{center}
-% fali deo formule
+\begin{center}$\frac{\langle S_1, s_1 \rangle \rightarrow S'_1, s'_1, ... , \langle S_n, s_n \rangle \rightarrow s'_n}{\langle S, s \rangle \rightarrow s'}$ \end{center}
+
 gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisi} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije). 
-% trebalo bi bolje napisati ovu rečenicu :S
-Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravila sa praznim skupom premisa se naziva \textit{aksiom}. \cite{wiley}
-% ... objasnjenje pravila
 
-Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksioma, inače se naziva \textit{kompozitnim stablom}.//
-\qquad Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksioma ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
+Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravila sa praznim skupom premisa se naziva \textit{aksiom}. \cite{wiley}
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{lrc}\hline
+        \hline
+        \hline
+        $[ass_{ns}] $ & $ \langle x := a, s \rangle \rightarrow s[x \mapsto A[[a]]s]$    \\  [6pt]
+        $[skip_{ns}] $ & $ \langle skip, s \rangle \rightarrow s$   \\ [6pt]
+         $[comp_{ns}] $ & $ \frac{\langle S_1, s \rangle \rightarrow s', \langle S_2, s' \rangle \rightarrow s''}{\langle S_1;S_2, s \rangle \rightarrow s''}$ \\[6pt]
+            $[if^{tt}_{ns}] $ & $ \frac{\langle S_1, s \rangle \rightarrow s'}{\langle if\ b\ then\ S_1\ else\ S_2,\ s \rangle \rightarrow s'}\  if\ B[[b]]s\ =\ tt $ \\ [6pt]
+            $[if^{ff}_{ns}] $ & $ \frac{\langle S_2, s \rangle \rightarrow s'}{\langle if\ b\ then\ S_1\ else\ S_2,\ s \rangle \rightarrow\ s'}\  if\ B[[b]]s\ =\ ff $ \\ [6pt]
+            $[while^{tt}_{ns}] $ & $ \frac{\langle S, s \rangle \rightarrow s', \langle\ while\ b\ do\ S,\ s' \rangle \rightarrow\ s''}{\langle\ while\ b\ do\ S,\ s \rangle \rightarrow\ s''}\ if\ B[[b]]s\ =\ ff $ \\ [6pt]
+             $[while^{ff}_{ns}] $ & $ \langle\ while\ b\ do\ S,\ s \rangle \rightarrow\ s\ if\ B[b]s\ =\ ff$ \\ [6pt]
+          \hline \hline
+        \end{tabular}
+        \caption{Prirodna semantika za While petlju}\label{tab:b}
+    \end{center}
+\end{table}
+
+Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksioma, inače se naziva \textit{kompozitnim stablom}.\\
+
+\begin{primer}
+(z := x, x := y); y := z \\
+Neka $s_0$ bude stanje koje mapira sve promenljive osim x i y u 0 i ima $s_0$ x = 5 i $s_0$ y = 7. Tada dobijamo sledeće stablo izvođenja:
+
+\begin{center}$\frac{\frac{\langle z := x, s_0 \rangle \rightarrow s_1\ \ \langle x := y, s_1 \rangle \rightarrow s_2}{\langle z := x, x := y, s_0\rangle \rightarrow s_2\ \ \langle y := z, s_2 \rangle \rightarrow s_3}}{\langle (z := x; x := y); y := z, s_0 \rangle \rightarrow s_3}$ \end{center}
+
+\end{primer}
+
+Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksioma ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
 \begin{itemize}
 	\item Ako je u pitanju aksiom i ako su uslovi aksioma ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
 	\item Ako je u pitanju pravilo, sledeći korak je pokušati konstruisati stablo izvođenja za premise datog pravila. Kad se ovaj deo odradi, neophodno je proveriti da li su uslovi pravila ispunjeni i tek onda možemo zaključiti završno stanje  $\langle$ \textit{S, s} $\rangle$.
