@@ -36,8 +36,48 @@ U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite paž
 
 \section{Uvod}
 \label{sec:uvod}
-Ovde pišem uvod
 
+\qquad Vođenje konverzacije ne bi bilo moguće bez znanja o tome šta koja reč koju koristimo predstavlja. U našoj glavi stoje jasne neformalne definicije svake reči koje znamo i pomoću kojih povezujemo objekte sa njihovim značenjem. U lingvistici, nauci o jeziku, svaka reč dobija svoju formalnu definiciju, a pravila formiranja rečenica su jako rigorozna, odnosno, postoje jasne odredbe šta je ispravno, a šta neispravno. Ove formalne definicije i pravila omogućavaju onima koji se susreću sa jezikom po prvi put da ga lakše nauče i razumeju kako bi mogli da ga koriste. Slično, ovo može biti primenjeno i na programske jezike.
+
+ Kao što je izučavanje prirodnog jezika podeljeno  na izučavanje strukture onoga čime se nešto izražava, tj. \textit{sintakse} i izučavanje značenja onoga što je izraženo, tj. \textit{semantike}, tako se i proučavanje programskog jezika može podeliti na proučavanje njegovog formiranja i njegovog značenja. Osnovni zadatak sintakse programskih jezika je da omogući formiranje korektnih programa iz ugla strukture izraza. Izrazi poput $ x++; function(x,y); $ su sintaksno ispravni, ali šta oni predstavljaju, koje je njihovo značenje? Sintaksa nema odgovor na ovo pitanje jer ona nema ništa sa značenjem ili ponašanjem programa u toku izvođenja, to je zadatak \textit{\textbf{semantike programskih jezika}}. Međutim, sintaksa mora biti definisana pre semantike jer se značenje može pridružiti samo ispravnim izrazima jezika. Definisanje sintakse je obično lakši posao od definisanja semantike.
+ 
+	Semantika može da se opiše formalno i neformalno, gde je češće neformalno opisivanje, odnosno opisivanje prirodnim jezikom što može biti neprecizno. Zato se u narednim glavama bavimo formalnim opisom semantike koja bi trebalo da otkloni sve nepreciznosti i da da potpunu definiciju programskog jezika. Biće opisani neki od formalnih pristupa kao što su \textit{operaciona, denotaciona i aksiomatska} semantika. Svakom od pristupa će se prići površinski zbog same složenosti formalnog definisanja, a čitaocu se ostavlja da proširi svoje znanje u naznačenim literaturama.
+
+	
+
+\section{Formalna semantika}
+\label{sec:forsem}
+
+\qquad Kao što je već napomenuto u \ref{sec:uvod}, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz $ while(x > 0)$  $\lbrace x--;\rbrace$ može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Ovaj zadatak postaje teži sa pojavom veće kompleksnosti programskog koda.
+
+Teško je pisati vrlo precizne definicije neformalnim jezikom, obično postane komplikovano za razumeti i predugačko za neke kompleksne programske jezike što dovodi do loše napisanih programa jer se stvaralac programskog jezika i onaj ko ga koristi ne razumeju. To je jedan od razloga zašto se uvodi \textit{formalna semantika}, što znači precizna semantika.
+
+Pri učenju novog programskog jezika, programer bi trebalo da uči i samu logiku jezika. Neki vid opisa logike programskog jezika olakšava programerima pisanje jakih i stabilnih programa.  Ovaj opis nam može pružiti, takođe, formalna semantika.
+
+Još jedan od razloga zašto se uvodi formalna semantika jeste to što ona čini osnovu formalne verifikacije programa, tj. deo je interpretera i kompajlera. Na slici \ref{fig:kompajler} dat je prikaz kompajlera. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{kompajler.jpg}
+\end{center}
+\caption{Struktura kompajlera \cite{slika}}
+\label{fig:kompajler}
+\end{figure}
+
+Kompleksnost uvođenja formalne semantike daje više načina pristupa njenom definisanju. Mi ćemo se fokusirati na tri pristupa:
+\begin{enumerate}
+  \item \textbf{Operaciona semantika}
+  
+  Značenje programa predstavljaja tok koraka izvršavanja programa sa datim ulazom. 
+  \item \textbf{Denotaciona semantika}
+  
+  Značenje programa je matematička funkcija koja prevodi ulaz u izlaz programa.
+  \item \textbf{Aksiomatska semantika}
+  
+  Značenje programa je ono što može biti dokazano o njemu koristeći aksiome.
+\end{enumerate}
+
+U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šire.
 \section{Operaciona semantika}
 \label{sec:opsem}
 
@@ -189,6 +229,7 @@ jer je:
 \end{primer}
 
  Prednost denotacione semantike je u tome što apstrahuje kako se programi izvršavaju. Analiziranje programa se svodi na analiziranje matematičkih objekata, što olakšava stvar. Denotaciona semantika ima veliku primenu u konstrukciji programa za prevođenje \cite{parezanovic}.
+ 
 \section{Aksiomatska semantika}
 \label{sec:akssem}
 \qquad Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Floyd, Hoar i Dijkstra.
@@ -217,7 +258,7 @@ Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i naziv
 
 Delimične ispravnosti tvrdnje će biti određen sistemom zaključivanja koji se sastoji iz skupa aksioma i pravila. Za sve konstruktore jednostavnog imperativnog programskog jezika, Horova logika obezbeđuje aksiome i pravila izvođenja \cite{milena}. Aksiomatski sistem za delimičnu ispravnost je dat u Tabeli ~\ref{tab:a} ispod.
 
-\begin{table}
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{lrc}\hline
         \hline
