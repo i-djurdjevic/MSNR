@@ -81,29 +81,55 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 \section{Operaciona semantika}
 \label{sec:opsem}
 
-\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja  naredbe programa. Da bi bolje razumeli operacionu semantiku posmatraćemo je iz dva ugla: 
+\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja  naredbe programa. U okviru ove semantike postoje:
 \begin{itemize}
-	\item \textit{Prirodna semantika} (ili veliki koraci): svrha joj je da opiše kako su \textit{sveukupna rešenja} izvršavanja dobijena.
-	\item \textit{Strukturna operacijska semantika} (ili mali koraci): svrha joj je da opiše kako se \textit{svaki korak zasebno} izvršava. 
+	\item \textit{Prirodna semantika} (ili veliki koraci (eng. big-step semantics)): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijena.
+	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng. small-step semantics)): svrha joj je da opiše kako se \textit{svaki korak} izvršava. 
 \end{itemize} \cite{wiley}.
 
-Za definiciju operacione semantike se uglavnom koristi strukturna operaciona semantika, dok neki koriste \textit{apstraktne mašine}, koje više koriste ad hok matematičke konstrukcije.
+%Za definiciju operacione semantike se uglavnom koristi strukturna operaciona semantika, dok neki koriste \textit{apstraktne mašine}, koje više %koriste ad hok matematičke konstrukcije.
 
-Za obe vrste operacione semantike, prirodne i strukturno operacione, značenje naredbe će biti određeno \textit{tranzicionim sistemom}, i ona će imati dve vrste konfiguracija\cite{wiley}:
+Ponašanje se formalno može definisati korišćenjem apstraknih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
+Za svaki programski jezik ćemo definisati realnu ili apstraktnu masinu, na kojoj cemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojacki programski ciklus u Pascal jeziku:\\
+
+\begin{center}\textit{for i:= početak to kraj do}
+\\.
+\\.
+\\.
+\end{center}
+\hfill \break
+Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvršavanja ciklusa je skriven za korisnika. Naravno, oni koji poznaju razne zapise programskih ciklusa mogu lako pretpostaviti značenje gore navedenog zapisa. Međutim, i za njih će biti teško da odgovore, šta će se dogoditi ako je vrednost promenljive \textit{početak} veća od vrednosti promeljive \textit{kraj}?\\
+\\Zamislimo sada da naša apstraktna mašina raspolaže sa instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
+
+\hspace{4cm} \textit{i:=početak}\\
+\textit{ciklus:} \hspace{3cm} \textit{if i>kraj then goto izlaz}
+\begin{center}
+.
+\\.
+\\.
+\\ \textit{i:=i+1}
+\\ \textit{goto ciklus}
+\end{center}
+\textit{izlaz:} \hspace{4cm} ...\\
+\\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
+\\Ovo objašnjenje nam daje apstraknu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
+
+Opišimo sada značenje za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom}. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s predstavlja završno stanje.
-\end{itemize} \cite{wiley}.
-\textit{Tranziciona relacija} će onda opisivati kako izgleda tok izvršavanja.\\
-\qquad U prirodnoj semantici je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao
+\end{itemize} 
+\textit{Tranziciona relacija} će onda opisivati kako izgleda tok izvršavanja. \\
 
-$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}\\
+U prirodnoj semantici je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao
+
+\begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
 Intuitivno ovo znači da izvršavanje \textit{S} iz \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. 
 
 Definiciju za  $\rightarrow$ možemo videti u tabeli <broj>. \textit{Pravilo} generalno ima formu
 % treba dodati tabelu
 
-$\langle$ \textit{$S_{1}$, $s_{1}$} $\rangle$ $\rightarrow$ \textit{$s'_{1}$}, ..., $\langle$ \textit{$S_{n}$, $s_{n}$} $\rangle$ $\rightarrow$ \textit{$s'_{n}$}\\
+\begin{center}$\langle$ \textit{$S_{1}$, $s_{1}$} $\rangle$ $\rightarrow$ \textit{$s'_{1}$}, ..., $\langle$ \textit{$S_{n}$, $s_{n}$} $\rangle$ $\rightarrow$ \textit{$s'_{n}$} \end{center}
 % fali deo formule
 gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisi} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije). 
 % trebalo bi bolje napisati ovu rečenicu :S
