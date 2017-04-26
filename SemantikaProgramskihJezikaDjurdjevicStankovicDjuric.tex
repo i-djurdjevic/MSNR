@@ -94,6 +94,7 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 \end{itemize} \cite{wiley}.
 
 Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
+
 Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu, na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojački programski ciklus u jeziku Pascal:\\
 
 \begin{center}\textit{for i:= početak to kraj do}
@@ -118,25 +119,28 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
 \\Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
 
-Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{willey}:
+Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{willey}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s predstavlja završno stanje.
 \end{itemize}
-\textit{Tranziciona relacija} će onda opisivati kako izgleda tok izvršavanja. \\
+\textit{Tranziciona relacija} (eng.~{\em transition relation}) će onda opisivati kako izgleda tok izvršavanja. \\
 
-U prirodnoj semantici je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao
+\subsection{Prirodna semantika}
+
+\qquad U prirodnoj semantici je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao:
 
 \begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
-Intuitivno ovo znači da izvršavanje \textit{S} iz \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}.
+Intuitivno ovo znači da izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da se program \textit{S} izvrši i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da se program \textit{S} uopšte ne izvrši. Pravo značenje programa \textit{S} bi tada bilo:
+\begin{center}\{(\textit{s, s'}) : $\langle$\textit{S, s}$\rangle$ $\rightarrow$ \textit{s'}\} \end{center} 
+pa nam semantička pravila omogućavaju da generišemo skup tačnih to jest istinitih iskaza, gde su svi ostali iskazi netačni po definiciji.\cite{opersem}
+Definicija za $\rightarrow$ je prikazana preko pravila datih u tabeli ~\ref{tab:b}. \textit{Pravilo} generalno ima formu
 
-Definiciju za  $\rightarrow$ možemo videti u tabeli ~\ref{tab:b}. \textit{Pravilo} generalno ima formu
+{\large \begin{center}$\frac{\langle S_1, s_1 \rangle \rightarrow s'_1, ... , \langle S_n, s_n \rangle \rightarrow s'_n}{\langle S, s \rangle \rightarrow s'}$ \end{center}}
 
-\begin{center}$\frac{\langle S_1, s_1 \rangle \rightarrow S'_1, s'_1, ... , \langle S_n, s_n \rangle \rightarrow s'_n}{\langle S, s \rangle \rightarrow s'}$ \end{center}
+gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima (eng.~{\em immediate constituents}) od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisa} (nalaze se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
 
-gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisa} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
-
-Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{willey}
+Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{willey}
 
 \begin{table}[h]
        \caption{Prirodna semantika za While petlju}
@@ -157,22 +161,21 @@ Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne s
     \end{center}
 \end{table}
 
-Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksioma, inače se naziva \textit{kompozitnim stablom}.\\
+Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, to jest da se dokaže iskaz, dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksioma, inače se naziva \textit{kompozitnim stablom}.\\
 
 \begin{primer}
 (z := x, x := y); y := z \\
 Neka $s_0$ bude stanje koje mapira sve promenljive osim x i y u 0 i ima $s_0$ x = 5 i $s_0$ y = 7. Tada dobijamo sledeće stablo izvođenja:
-
-\begin{center}$\frac{\frac{\langle z := x, s_0 \rangle \rightarrow s_1\ \ \langle x := y, s_1 \rangle \rightarrow s_2}{\langle z := x, x := y, s_0\rangle \rightarrow s_2\ \ \langle y := z, s_2 \rangle \rightarrow s_3}}{\langle (z := x; x := y); y := z, s_0 \rangle \rightarrow s_3}$ \end{center}
-
 \end{primer}
+{\Large\begin{center}$\frac{\frac{\langle z := x, s_0 \rangle \rightarrow s_1\ \ \langle x := y, s_1 \rangle \rightarrow s_2}{\langle z := x, x := y, s_0\rangle \rightarrow s_2\ \ \langle y := z, s_2 \rangle \rightarrow s_3}}{\langle (z := x; x := y); y := z, s_0 \rangle \rightarrow s_3}$ \end{center}}}
 
 Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksioma ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
 \begin{itemize}
 	\item Ako je u pitanju aksiom i ako su uslovi aksioma ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
 	\item Ako je u pitanju pravilo, sledeći korak je pokušati konstruisati stablo izvođenja za premise datog pravila. Kad se ovaj deo odradi, neophodno je proveriti da li su uslovi pravila ispunjeni i tek onda možemo zaključiti završno stanje  $\langle$ \textit{S, s} $\rangle$.
 \end{itemize}
-%primer stabla
+Više o ovoj temi se može pronaći u \cite{willey, opersem}.
+
 
 \section{Denotaciona semantika}
 \label{sec:densem}
