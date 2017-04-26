@@ -1,0 +1,8 @@
+\select@language {croatian}
+\contentsline {section}{\numberline {1}Uvod}{2}{section.1}
+\contentsline {section}{\numberline {2}Formalna semantika}{2}{section.2}
+\contentsline {section}{\numberline {3}Operaciona semantika}{3}{section.3}
+\contentsline {section}{\numberline {4}Denotaciona semantika}{6}{section.4}
+\contentsline {section}{\numberline {5}Aksiomatska semantika}{8}{section.5}
+\contentsline {section}{\numberline {6}Zaklju\IeC {\v c}ak}{9}{section.6}
+\contentsline {section}{Literatura}{10}{section.6}

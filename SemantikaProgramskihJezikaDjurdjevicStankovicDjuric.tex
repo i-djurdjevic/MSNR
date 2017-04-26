@@ -47,14 +47,14 @@ Semantika ima posebnu ulogu u teoriji i proučavanju značenja programskih jezik
 
  Kao što je izučavanje prirodnog jezika podeljeno  na izučavanje strukture onoga čime se nešto izražava, tj. \textit{sintakse} i izučavanje značenja onoga što je izraženo, tj. \textit{semantike}, tako se i proučavanje programskog jezika može podeliti na proučavanje njegovog formiranja i njegovog značenja. Osnovni zadatak sintakse programskih jezika je da omogući formiranje korektnih programa iz ugla strukture izraza. Izrazi poput $ x++; function(x,y); $ su sintaksno ispravni, ali šta oni predstavljaju, koje je njihovo značenje? Sintaksa nema odgovor na ovo pitanje jer ona nema ništa sa značenjem ili ponašanjem programa u toku izvođenja, to je zadatak \textit{\textbf{semantike programskih jezika}}. Međutim, sintaksa mora biti definisana pre semantike jer se značenje može pridružiti samo ispravnim izrazima jezika. Definisanje sintakse je obično lakši posao od definisanja semantike.
 
-	Semantika može da se opiše formalno i neformalno, gde je češće neformalno opisivanje, odnosno opisivanje prirodnim jezikom što može biti neprecizno. Zato se u narednim glavama bavimo formalnim opisom semantike koja bi trebalo da otkloni sve nepreciznosti i da da potpunu definiciju programskog jezika. Biće opisani neki od formalnih pristupa kao što su \textit{operaciona, denotaciona i aksiomatska} semantika. Svakom od pristupa će se prići površinski zbog same složenosti formalnog definisanja, a čitaocu se ostavlja da proširi svoje znanje u naznačenim literaturama.
+	Semantika može da se opiše formalno i neformalno, gde je češće neformalno opisivanje, odnosno opisivanje prirodnim jezikom što može biti neprecizno. Zato se u narednim glavama bavimo formalnim opisom semantike koja bi trebalo da otkloni sve nepreciznosti i da d\^a potpunu definiciju programskog jezika. Biće opisani neki od formalnih pristupa kao što su \textit{operaciona, denotaciona i aksiomatska} semantika. Svakom od pristupa će se prići površinski zbog same složenosti formalnog definisanja, a čitaocu se ostavlja da proširi svoje znanje u naznačenoj literaturi.
 
 
 
 \section{Formalna semantika}
 \label{sec:forsem}
 
-\qquad Kao što je već napomenuto u \ref{sec:uvod}, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz $ while(x > 0)$  $\lbrace x--;\rbrace$ može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Ovaj zadatak postaje teži sa pojavom veće kompleksnosti programskog koda.
+\qquad Kao što je već napomenuto, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz $ while(x > 0)$  $\lbrace x--;\rbrace$ može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Ovaj zadatak postaje teži sa pojavom veće kompleksnosti programskog koda.
 
 Teško je pisati vrlo precizne definicije neformalnim jezikom, obično postane komplikovano za razumeti i predugačko za neke kompleksne programske jezike što dovodi do loše napisanih programa jer se stvaralac programskog jezika i onaj ko ga koristi ne razumeju. To je jedan od razloga zašto se uvodi \textit{formalna semantika}, što znači precizna semantika.
 
@@ -74,7 +74,7 @@ Kompleksnost uvođenja formalne semantike daje više načina pristupa njenom def
 \begin{enumerate}
   \item \textbf{Operaciona semantika}
 
-  Značenje programa predstavljaja tok koraka izvršavanja programa sa datim ulazom.
+  Značenje programa predstavlja tok koraka izvršavanja programa sa datim ulazom.
   \item \textbf{Denotaciona semantika}
 
   Značenje programa je matematička funkcija koja prevodi ulaz u izlaz programa.
@@ -87,14 +87,14 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 \section{Operaciona semantika}
 \label{sec:opsem}
 
-\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja  naredbe programa. U okviru ove semantike postoje:
+\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja naredbe programa. U okviru ove semantike postoje:
 \begin{itemize}
-	\item \textit{Prirodna semantika} (ili veliki koraci (eng. big-step semantics)): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijena.
+	\item \textit{Prirodna semantika} (ili veliki koraci (eng. big-step semantics)): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijeni.
 	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng. small-step semantics)): svrha joj je da opiše kako se \textit{svaki korak} izvršava.
 \end{itemize} \cite{wiley}.
 
 Ponašanje se formalno može definisati korišćenjem apstraknih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
-Za svaki programski jezik ćemo definisati realnu ili apstraktnu masinu, na kojoj cemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojacki programski ciklus u Pascal jeziku:\\
+Za svaki programski jezik ćemo definisati realnu ili apstraktnu mašinu, na kojoj cemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojacki programski ciklus u jeziku Pascal:\\
 
 \begin{center}\textit{for i:= početak to kraj do}
 \\.
@@ -103,10 +103,10 @@ Za svaki programski jezik ćemo definisati realnu ili apstraktnu masinu, na kojo
 \end{center}
 \hfill \break
 Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvršavanja ciklusa je skriven za korisnika. Naravno, oni koji poznaju razne zapise programskih ciklusa mogu lako pretpostaviti značenje gore navedenog zapisa. Međutim, i za njih će biti teško da odgovore, šta će se dogoditi ako je vrednost promenljive \textit{početak} veća od vrednosti promeljive \textit{kraj}?\\
-\\Zamislimo sada da naša apstraktna mašina raspolaže sa instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
+\\Zamislimo sada da naša apstraktna mašina raspolaže instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
 
 \hspace{4cm} \textit{i:=početak}\\
-\textit{ciklus:} \hspace{3cm} \textit{if i > kraj then goto izlaz}
+\textit{ciklus:} \hspace{3cm} \textit{if i \textgreater kraj then goto izlaz}
 \begin{center}
 .
 \\.
@@ -118,7 +118,7 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
 \\Ovo objašnjenje nam daje apstraknu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
 
-Opišimo sada značenje za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
+Opišimo sada značenje za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{willey}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s predstavlja završno stanje.
@@ -136,10 +136,11 @@ Definiciju za  $\rightarrow$ možemo videti u tabeli ~\ref{tab:b}. \textit{Pravi
 
 gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisi} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
 
-Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravila sa praznim skupom premisa se naziva \textit{aksiom}. \cite{wiley}
+Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{willey}
 
 \begin{table}[h]
-    \begin{center}
+       \caption{Prirodna semantika za While petlju}
+    	\begin{center}
         \begin{tabular}{lrc}\hline
         \hline
         \hline
@@ -152,7 +153,7 @@ Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne s
              $[while^{ff}_{ns}] $ & $ \langle\ while\ b\ do\ S,\ s \rangle \rightarrow\ s\ if\ B[b]s\ =\ ff$ \\ [6pt]
           \hline \hline
         \end{tabular}
-        \caption{Prirodna semantika za While petlju}\label{tab:b}
+     \label{tab:b}
     \end{center}
 \end{table}
 
@@ -222,7 +223,7 @@ Sledeći korak jeste definisanje matematičkih objekata koji će predstavljati s
 $N={0,1,2,3,....} $  \qquad\qquad Skup prirodnih brojeva
 
 \end{tcolorbox}
-Posle uvedenih objekata, treba uvesti neke matematičke funkcije koje će davati značenje prethodno uvedenim sintaksnim definicijama. Takve funkcije se nazivaju \textbf{funkcije značenja }(eng.~{\em meaning functions}). Definicije funkcija koje su potreban za naš jednostavan primer su date u nastavku.
+Posle uvedenih objekata, treba uvesti neke matematičke funkcije koje će davati značenje prethodno uvedenim sintaksnim definicijama. Takve funkcije se nazivaju \textbf{funkcije značenja }(eng.~{\em meaning functions}). Definicije funkcija koje su potrebne za naš jednostavan primer su date u nastavku.
 \begin{tcolorbox}
 \textbf{Funkcije značenja}
 \\
@@ -287,13 +288,13 @@ jer je:
 
 \section{Aksiomatska semantika}
 \label{sec:akssem}
-\qquad Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Floyd, Hoar i Dijkstra.
- Zasniva na matematickoj logici pa je kao takva apstraktnija od denotacione i operacione sematike. Ova semantika
+\qquad Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Robert Flojd (eng.~{\em  Robert Floyd}), Toni Hor (eng.~{\em  Antony Hoare}) i Edsger Dijkstra (hol.~{\em Edsger Dijkstra}).
+ Zasniva se na matematičkoj logici pa je kao takva apstraktnija od denotacione i operacione sematike. Ova semantika
  značenje programa zasniva na tvrdnjama o vezama koje ostaju iste svaki put kad se program izvrši \cite{slonneger1995book}.
- Aksiomatska semantika razvija metode za proveru korektnosti programa. Za svaku kontrolnu strukturu i komandu se definišu logicki izrazi. Ovi izrazi se nazivaju \textbf{tvrđenja} (eng.~{\em  assertions}) i u njima se zadaju ogranicenja za promenljive koja se javljaju u tim kontrolnim strukturama i komandama.
+ Aksiomatska semantika razvija metode za proveru korektnosti programa. Za svaku kontrolnu strukturu i komandu se definišu logički izrazi. Ovi izrazi se nazivaju \textbf{tvrđenja} (eng.~{\em  assertions}) i u njima se zadaju ograničenja za promenljive koja se javljaju u tim kontrolnim strukturama i komandama.
 
 \begin{tcolorbox}
-Tvrđenja su data u obliku  Horovih trojki:
+Tvrđenja su data u obliku Horovih trojki:
 
   \center \textbf{\{P\}c\{Q\}}
 
@@ -303,7 +304,7 @@ Tvrđenja su data u obliku  Horovih trojki:
 
 
 \begin{definicija}
-\textbf{Horova trojka \{P\}C\{Q\}} opisuje kako izvršavanje dela koda menja stanje izracunavanja ako je ispunjen preduslov (eng.~{\em  precondition}) \{P\}, izvršavanje komande C vodi do postuslova (eng.~{\em  postcondition}) \{Q\} \cite{milena} .
+\textbf{Horova trojka \{P\}C\{Q\}} opisuje kako izvršavanje dela koda menja stanje izračunavanja ako je ispunjen preduslov (eng.~{\em  precondition}) \{P\}, izvršavanje komande C vodi do postuslova (eng.~{\em  postcondition}) \{Q\} \cite{milena} .
 
 \end{definicija}
 
@@ -311,9 +312,10 @@ Preduslov je logički izraz u kome se definišu ograničenja promenljivih pre iz
 Horove trojke se drugačije nazivaju i \textit{delimična ispravnost specifikacije } (eng.~{\em  partial correctness specification}) .
 Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i nazivaju “delimičnim”.
 
-Delimične ispravnosti tvrdnje će biti određen sistemom zaključivanja koji se sastoji iz skupa aksioma i pravila. Za sve konstruktore jednostavnog imperativnog programskog jezika, Horova logika obezbeđuje aksiome i pravila izvođenja \cite{milena}. Aksiomatski sistem za delimičnu ispravnost je dat u Tabeli ~\ref{tab:a} ispod.
+Delimične ispravnosti tvrdnje će biti određene sistemom zaključivanja koji se sastoji iz skupa aksioma i pravila. Za sve konstruktore jednostavnog imperativnog programskog jezika, Horova logika obezbeđuje aksiome i pravila izvođenja \cite{milena}. Aksiomatski sistem za delimičnu ispravnost je dat u Tabeli ~\ref{tab:a} ispod.
 
 \begin{table}[h]
+  \caption{Aksiomatski sistem za delimičnu ispravnost}\label{tab:a}
     \begin{center}
         \begin{tabular}{lrc}\hline
         \hline
@@ -326,7 +328,6 @@ Delimične ispravnosti tvrdnje će biti određen sistemom zaključivanja koji se
           $[cons_p{p}] $ & $  \frac{\{P^{'}\}S\{Q^{'}\}}{\{P\}S\{Q\}} $ if $ P \Rightarrow	 P^{'} $ and $ Q \Rightarrow	 Q^{'} $  \\ [6pt]
           \hline \hline
         \end{tabular}
-        \caption{Aksiomatski sistem za delimičnu ispravnost}\label{tab:a}
     \end{center}
 \end{table}
 
@@ -350,12 +351,10 @@ $  y := 1; $
  while $ \neg(x=1) $  do $ (y := x*y; x := x-1) $\\
 $ \{ y=n!$ and $ n > 0 \} $ \\
 
-n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja, za razliku od programskih promenljivih, ne sme se pojaviti ni u jednoj naredbi koja se izvršava u programu i njena vrednost će uvek biti ista. Njena uloga je da pamte inicijalne vrednosti programskih promenljivih . \\
- Zapisali smo  preduslov da promenljive n ima jednaku vrednost kao i x u početnom stanju (tj. nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da konačna vrednost y  će biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
+n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja, za razliku od programskih promenljivih, ne sme se pojaviti ni u jednoj naredbi koja se izvršava u programu i njena vrednost će uvek biti ista. Njena uloga je da pamte inicijalne vrednosti programskih promenljivih. \\
+ Zapisali smo  preduslov da promenljiva n ima jednaku vrednost kao i x u početnom stanju (tj. nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da konačna vrednost y  će biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
 
 \end{primer}
-Prilikom izučavanja programskih jezika treba obratiti pažnju kako na sintaksu, tako i na semantiku. Sintaksa nam daje skup pravila zapisivanja jezika, dok semantika daje značenje tim konstrukcijama, odnoso programa u celini. Cilj \textit{formalnog} opisa semantike bio bi da se isključe sve nepreciznosti koje može da proizvede primena prirodnog jezika u opisu semantike programskog jezika. Na tri načina je moguće opisati formalnu semantiku programskih jezika: \textit{operacionom, aksiomatskom  i  denotacionom semantikom}. Operacijska semantika opisuje \textit{kako} se izračunavanje izvršava i u okviru ove semantike postoje strukturna operaciona semantika i prirodna operaciona semantika. Aksiomatska semantika je zasnovana na matematičkoj logici i osnovni motiv za opis semantike jezika na ovaj način jeste razvoj metoda za proveru korektnosti programa. Denotaciona semantika sastoji se u pridruživanju značenja sintaksnim definicijama jezika. Primena formalnih opisa semantike zahteva matematičko znanje i apstraktno razmišljanje.
-
 
 \section{Zaključak}
 \label{sec:zakljucak}
