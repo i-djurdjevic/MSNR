@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 APR 2017 00:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 APR 2017 00:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,7 +924,7 @@ LaTeX Info: Redefining \nameref on input line 22.
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<kompajler.jpg, id=65, 586.19pt x 315.1775pt>
+<kompajler.jpg, id=60, 586.19pt x 315.1775pt>
 File: kompajler.jpg Graphic file (type jpg)
  <use kompajler.jpg>
 Package pdftex.def Info: kompajler.jpg used on input line 67.
@@ -1035,95 +1035,95 @@ LaTeX Warning: Citation `opersem' on page 6 undefined on input line 177.
 
 
 LaTeX Warning: Citation `slonneger1995book' on page 6 undefined on input line 1
-83.
+85.
 
 
-LaTeX Warning: Citation `milena' on page 6 undefined on input line 186.
+LaTeX Warning: Citation `milena' on page 6 undefined on input line 188.
 
 
-Overfull \hbox (15.03458pt too wide) in paragraph at lines 185--187
+Overfull \hbox (15.03458pt too wide) in paragraph at lines 187--189
 []\OT1/cmr/m/it/9 Pristup for-ma-li-za-ciji se-man-tike kons-tru-isa-njem ma-te
 -mati^^Tckih
  []
 
 
-LaTeX Warning: Citation `parezanovic' on page 6 undefined on input line 191.
+LaTeX Warning: Citation `parezanovic' on page 6 undefined on input line 193.
 
 [6]
 
-LaTeX Warning: Citation `nielson' on page 7 undefined on input line 198.
+LaTeX Warning: Citation `nielson' on page 7 undefined on input line 200.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--233
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
 [7]
 
-LaTeX Warning: Citation `parezanovic' on page 8 undefined on input line 290.
+LaTeX Warning: Citation `parezanovic' on page 8 undefined on input line 292.
 
 
 LaTeX Warning: Citation `slonneger1995book' on page 8 undefined on input line 2
-96.
+98.
 
 [8]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 302.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 304.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/it' in size <9> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 310.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 312.
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 310.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 312.
 
 
-LaTeX Warning: Citation `milena' on page 9 undefined on input line 310.
+LaTeX Warning: Citation `milena' on page 9 undefined on input line 312.
 
 
-LaTeX Warning: Citation `milena' on page 9 undefined on input line 318.
+LaTeX Warning: Citation `milena' on page 9 undefined on input line 320.
 
 
-LaTeX Warning: Citation `adrian' on page 9 undefined on input line 348.
+LaTeX Warning: Citation `adrian' on page 9 undefined on input line 350.
 
 
-Overfull \hbox (6.93065pt too wide) in paragraph at lines 346--349
+Overfull \hbox (6.93065pt too wide) in paragraph at lines 348--351
 []\OT1/cmr/m/n/9 Preduslovi i pos-tus-lovi mogu se sma-trati in-ter-fej-som ili
  ugo-vo-rom izme[]du
  []
 
 
-LaTeX Warning: Citation `nielson' on page 9 undefined on input line 350.
+LaTeX Warning: Citation `nielson' on page 9 undefined on input line 352.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 352--356
+Underfull \hbox (badness 10000) in paragraph at lines 354--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--359
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 
  []
 
 No file SemantikaProgramskihJezikaDjurdjevicStankovicDjuric.bbl.
 [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 377.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 377.
  (./SemantikaProgramskihJezikaDjurdjevicStankovicDjuric.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 377.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 377.
 
 
 Package rerunfilecheck Warning: File `SemantikaProgramskihJezikaDjurdjevicStank
@@ -1133,52 +1133,49 @@ ovicDjuric.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `SemantikaProgramskihJezikaDjurdjevi
 cStankovicDjuric.out':
-(rerunfilecheck)             Before: 67741D0F3357A037717D1E50239651DD;1199
-(rerunfilecheck)             After:  AA95B19D491E364B852336D35039F871;981.
+(rerunfilecheck)             Before: AA95B19D491E364B852336D35039F871;981
+(rerunfilecheck)             After:  67741D0F3357A037717D1E50239651DD;1199.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19131 strings out of 493014
- 332896 string characters out of 6133351
- 393864 words of memory out of 5000000
- 22361 multiletter control sequences out of 15000+600000
+ 19130 strings out of 493014
+ 332880 string characters out of 6133351
+ 394865 words of memory out of 5000000
+ 22360 multiletter control sequences out of 15000+600000
  12265 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,12n,73p,1124b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy9.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti9.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
+9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti9.pfb>
 Output written on SemantikaProgramskihJezikaDjurdjevicStankovicDjuric.pdf (10 p
-ages, 337657 bytes).
+ages, 338379 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
+ 215 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  32 named destinations out of 1000 (max. 500000)
- 90 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 
