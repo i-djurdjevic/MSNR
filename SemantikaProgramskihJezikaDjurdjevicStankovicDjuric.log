@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 20:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 21:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -944,8 +944,19 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
 
+Overfull \hbox (0.41304pt too wide) in paragraph at lines 92--93
+[]\OT1/cmr/m/it/9 Prirodna se-man-tika \OT1/cmr/m/n/9 (ili ve-liki ko-raci (eng
+. \OT1/cmr/m/it/9 big-step se-man-tics\OT1/cmr/m/n/9 )): svrha
+ []
+
 
 LaTeX Warning: Citation `wiley' on page 3 undefined on input line 94.
+
+
+Overfull \hbox (0.70197pt too wide) in paragraph at lines 96--98
+\OT1/cmr/m/n/9 pro-gram-skog je-zika. Ovako de-fi-ni-sana ma^^Tsina bi^^Sce in-
+ter-pre-ta-tor odre[]denog
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 96--98
@@ -1114,7 +1125,7 @@ Here is how much of TeX's memory you used:
  22354 multiletter control sequences out of 15000+600000
  11119 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,12n,73p,1125b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,12n,73p,1124b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /cmextra/cmbsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
@@ -1139,7 +1150,7 @@ live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
 Output written on SemantikaProgramskihJezikaDjurdjevicStankovicDjuric.pdf (10 p
-ages, 330702 bytes).
+ages, 330735 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams

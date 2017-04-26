@@ -45,7 +45,7 @@ Semantika ima posebnu ulogu u teoriji i proučavanju značenja programskih jezik
 
 \qquad Vođenje konverzacije ne bi bilo moguće bez znanja o tome šta koja reč koju koristimo predstavlja. U našoj glavi stoje jasne neformalne definicije svake reči koje znamo i pomoću kojih povezujemo objekte sa njihovim značenjem. U lingvistici, nauci o jeziku, svaka reč dobija svoju formalnu definiciju, a pravila formiranja rečenica su jako rigorozna, odnosno, postoje jasne odredbe šta je ispravno, a šta neispravno. Ove formalne definicije i pravila omogućavaju onima koji se susreću sa jezikom po prvi put da ga lakše nauče i razumeju kako bi mogli da ga koriste. Slično, ovo može biti primenjeno i na programske jezike.
 
- Kao što je izučavanje prirodnog jezika podeljeno  na izučavanje strukture onoga čime se nešto izražava, tj. \textit{sintakse} i izučavanje značenja onoga što je izraženo, tj. \textit{semantike}, tako se i proučavanje programskog jezika može podeliti na proučavanje njegovog formiranja i njegovog značenja. Osnovni zadatak sintakse programskih jezika je da omogući formiranje korektnih programa iz ugla strukture izraza. Izrazi poput $ x++; function(x,y); $ su sintaksno ispravni, ali šta oni predstavljaju, koje je njihovo značenje? Sintaksa nema odgovor na ovo pitanje jer ona nema ništa sa značenjem ili ponašanjem programa u toku izvođenja, to je zadatak \textit{\textbf{semantike programskih jezika}}. Međutim, sintaksa mora biti definisana pre semantike jer se značenje može pridružiti samo ispravnim izrazima jezika. Definisanje sintakse je obično lakši posao od definisanja semantike.
+ Kao što je izučavanje prirodnog jezika podeljeno  na izučavanje strukture onoga čime se nešto izražava, tj. \textit{sintakse} i izučavanje značenja onoga što je izraženo, tj. \textit{semantike}, tako se i proučavanje programskog jezika može podeliti na proučavanje njegovog formiranja i njegovog značenja. Osnovni zadatak sintakse programskih jezika je da omogući formiranje korektnih programa iz ugla strukture izraza. Izrazi poput $ x++; function(x,y); $ su sintaksno ispravni, ali šta oni predstavljaju, koje je njihovo značenje? Sintaksa nema odgovor na ovo pitanje jer ona nije povezana sa značenjem ili ponašanjem programa u toku izvođenja, to je zadatak \textit{\textbf{semantike programskih jezika}}. Međutim, sintaksa mora biti definisana pre semantike jer se značenje može pridružiti samo ispravnim izrazima jezika. Definisanje sintakse je obično lakši posao od definisanja semantike.
 
 	Semantika može da se opiše formalno i neformalno, gde je češće neformalno opisivanje, odnosno opisivanje prirodnim jezikom što može biti neprecizno. Zato se u narednim glavama bavimo formalnim opisom semantike koja bi trebalo da otkloni sve nepreciznosti i da d\^a potpunu definiciju programskog jezika. Biće opisani neki od formalnih pristupa kao što su \textit{operaciona, denotaciona i aksiomatska} semantika. Svakom od pristupa će se prići površinski zbog same složenosti formalnog definisanja, a čitaocu se ostavlja da proširi svoje znanje u naznačenoj literaturi.
 
@@ -89,12 +89,12 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 
 \qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja naredbe programa. U okviru ove semantike postoje:
 \begin{itemize}
-	\item \textit{Prirodna semantika} (ili veliki koraci (eng. big-step semantics)): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijeni.
-	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng. small-step semantics)): svrha joj je da opiše kako se \textit{svaki korak} izvršava.
+	\item \textit{Prirodna semantika} (ili veliki koraci (eng.~{\em big-step semantics})): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijeni.
+	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng.~{\em small-step semantics})): svrha joj je da opiše kako se \textit{svaki korak} izvršava.
 \end{itemize} \cite{wiley}.
 
-Ponašanje se formalno može definisati korišćenjem apstraknih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
-Za svaki programski jezik ćemo definisati realnu ili apstraktnu mašinu, na kojoj cemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojacki programski ciklus u jeziku Pascal:\\
+Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
+Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu, na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojački programski ciklus u jeziku Pascal:\\
 
 \begin{center}\textit{for i:= početak to kraj do}
 \\.
@@ -116,9 +116,9 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \end{center}
 \textit{izlaz:} \hspace{4cm} ...\\
 \\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
-\\Ovo objašnjenje nam daje apstraknu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
+\\Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
 
-Opišimo sada značenje za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{willey}:
+Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{willey}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s predstavlja završno stanje.
@@ -134,7 +134,7 @@ Definiciju za  $\rightarrow$ možemo videti u tabeli ~\ref{tab:b}. \textit{Pravi
 
 \begin{center}$\frac{\langle S_1, s_1 \rangle \rightarrow S'_1, s'_1, ... , \langle S_n, s_n \rangle \rightarrow s'_n}{\langle S, s \rangle \rightarrow s'}$ \end{center}
 
-gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisi} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
+gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisa} (nalazi se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
 
 Pravilo takođe može imati određeni broj \textit{uslova} (nalazi se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{willey}
 
@@ -340,7 +340,7 @@ Pored delimične ispravnosti specifikacije, imamo i \textit {potpunu ispravnost 
 
 Pored dokazivanja korektnosti programa i algoritama, uloga aksiomatske sematike je i dokazivanje ispravnosti harverdskih opisa (ili nalaženje bagova), proširena statička provera (npr. provera granice niza), dokumentacija programa i interfejsa.
 
-Preduslovi i postuslovi mogu se smatrati interfejsom ili ugovorom između programa i njegovih klijenata. Oni pomažu korisnicima da razumeju šta program treba da proizvede bez potrebe da shvati kako se program izvršava. Tipično, programeri ih pišu kao komentari za funkcije i
+Preduslovi i postuslovi mogu se smatrati interfejsom ili ugovorom između programa i njegovih klijenata. Oni pomažu korisnicima da razumeju šta program treba da proizvede bez potrebe da shvati kako se program izvršava. Tipično, programeri ih pišu kao komentare za funkcije i
 funkcionišu kao dokumentacija i olakšavaju održavanje programa. Takve specifikacije su posebno
 korisne za bibliotečke funkcije za koje izvorni kod često nije dostupan korisnicima \cite{adrian}.
 
@@ -359,7 +359,7 @@ n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja
 \section{Zaključak}
 \label{sec:zakljucak}
 
-Prilikom izučavanja programskih jezika treba obratiti pažnju kako na sintaksu, tako i na semantiku. Sintaksa nam daje skup pravila zapisivanja jezika, dok semantika daje značenje tim konstrukcijama, odnoso programa u celini. Cilj \textit{formalnog} opisa semantike bio bi da se isključe sve nepreciznosti koje može da proizvede primena prirodnog jezika u opisu semantike programskog jezika. Na tri načina je moguće opisati formalnu semantiku programskih jezika: \textit{operacionom, aksiomatskom  i  denotacionom semantikom}. Operacijska semantika opisuje \textit{kako} se izračunavanje izvršava i u okviru ove semantike postoje strukturna operaciona semantika i prirodna operaciona semantika. Aksiomatska semantika je zasnovana na matematičkoj logici i osnovni motiv za opis semantike jezika na ovaj način jeste razvoj metoda za proveru korektnosti programa. Denotaciona semantika sastoji se u pridruživanju značenja sintaksnim definicijama jezika. Primena formalnih opisa semantike zahteva matematičko znanje i apstraktno razmišljanje.
+Prilikom izučavanja programskih jezika treba obratiti pažnju kako na sintaksu, tako i na semantiku. Sintaksa nam daje skup pravila zapisivanja jezika, dok semantika daje značenje tim konstrukcijama, odnoso programa u celini. Cilj \textit{formalnog} opisa semantike bio bi da se isključe sve nepreciznosti koje može da proizvede primena prirodnog jezika u opisu semantike programskog jezika. Na tri načina je moguće opisati formalnu semantiku programskih jezika: \textit{operacionom, aksiomatskom  i  denotacionom semantikom}. Operaciona semantika opisuje \textit{kako} se izračunavanje izvršava i u okviru ove semantike postoje strukturna operaciona semantika i prirodna operaciona semantika. Aksiomatska semantika je zasnovana na matematičkoj logici i osnovni motiv za opis semantike jezika na ovaj način jeste razvoj metoda za proveru korektnosti programa. Denotaciona semantika sastoji se u pridruživanju značenja sintaksnim definicijama jezika. Primena formalnih opisa semantike zahteva matematičko znanje i apstraktno razmišljanje.
 
 
 \addcontentsline{toc}{section}{Literatura}
