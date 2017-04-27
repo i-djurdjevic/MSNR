@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {3}Operaciona semantika}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}Prirodna semantika}{5}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Strukturna operaciona semantika}{6}{subsection.3.2}
-\contentsline {section}{\numberline {4}Denotaciona semantika}{6}{section.4}
-\contentsline {section}{\numberline {5}Aksiomatska semantika}{8}{section.5}
-\contentsline {section}{\numberline {6}Zaklju\IeC {\v c}ak}{10}{section.6}
-\contentsline {section}{Literatura}{10}{section.6}
+\contentsline {section}{\numberline {4}Denotaciona semantika}{7}{section.4}
+\contentsline {section}{\numberline {5}Aksiomatska semantika}{9}{section.5}
+\contentsline {section}{\numberline {6}Zaklju\IeC {\v c}ak}{11}{section.6}
+\contentsline {section}{Literatura}{11}{section.6}
