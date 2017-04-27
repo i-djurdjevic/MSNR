@@ -128,7 +128,7 @@ Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacio
 
 \subsection{Prirodna semantika}
 
-\qquad U prirodnoj semantici je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao:
+\qquad Prirodna semantika je apstrakcija. U njoj je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao:
 
 \begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
 Intuitivno ovo znači da izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da se program \textit{S} izvrši i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da se program \textit{S} uopšte ne izvrši. Pravo značenje programa \textit{S} bi tada bilo:
@@ -177,7 +177,7 @@ Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i
 Više o ovoj temi se može pronaći u \cite{willey, opersem}.
 
 \subsection{Strukturna operaciona semantika}
-Prirodna semantika nekada nije pogodna za obimnu analizu, tada se uglavnom koristi strukturna operaciona semantika (skraćeno SOS) kojom mogu da se opišu složeni slučajevi, kao na primer, semantika pokazivača i semantika višenitne obrade. U SOS-u ćemo tranzicionu relaciju zapisivati kao:
+Prirodna semantika nekada nije pogodna za obimnu analizu, tada se uglavnom koristi \textit{strukturna operaciona semantika} (skraćeno SOS), kojom je moguće opisati imperativne programe kao i neke složene slučajeve, kao što su na primer, semantika pokazivača i semantika višenitne obrade ili čak baratati sa ,,goto" naredbama. U SOS-u ćemo tranzicionu relaciju zapisivati kao:
 \begin{center} $\langle$ \textit{S, s} $\rangle$ $\Longrightarrow$ \textit{$\gamma$} \end{center}
 ovo treba razmatrati kao {\em prvi korak} izvršavanja programa \textit{S} u stanju \textit{s} koji vodi do stanja \textit{$\gamma$} \cite{opersem}.\\
 Možemo razlikovati dva slučaja za $\gamma$:
