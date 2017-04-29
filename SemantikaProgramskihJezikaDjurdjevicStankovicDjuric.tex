@@ -93,6 +93,7 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng.~{\em small-step semantics})): svrha joj je da opiše kako se \textit{svaki korak} izvršava.
 \end{itemize} \cite{wiley}.
 
+
 Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
 
 Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu, na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojački programski ciklus u jeziku Pascal:\\
@@ -167,7 +168,7 @@ Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s
 (z := x, x := y); y := z \\
 Neka $s_0$ bude stanje koje mapira sve promenljive osim x i y u 0 i ima $s_0$ x = 5 i $s_0$ y = 7. Tada dobijamo sledeće stablo izvođenja:
 \end{primer}
-{\Large\begin{center}$\frac{\frac{\langle z := x, s_0 \rangle \rightarrow s_1\ \ \langle x := y, s_1 \rangle \rightarrow s_2}{\langle z := x, x := y, s_0\rangle \rightarrow s_2\ \ \langle y := z, s_2 \rangle \rightarrow s_3}}{\langle (z := x; x := y); y := z, s_0 \rangle \rightarrow s_3}$ \end{center}}}
+{\Large\begin{center}$\frac{\frac{\langle z := x, s_0 \rangle \rightarrow s_1\ \ \langle x := y, s_1 \rangle \rightarrow s_2}{\langle z := x, x := y, s_0\rangle \rightarrow s_2\ \ \langle y := z, s_2 \rangle \rightarrow s_3}}{\langle (z := x; x := y); y := z, s_0 \rangle \rightarrow s_3}$ \end{center}}
 
 Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksioma ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
 \begin{itemize}
@@ -395,7 +396,9 @@ n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja
 \section{Zaključak}
 \label{sec:zakljucak}
 
+
 Prilikom izučavanja programskih jezika treba obratiti pažnju kako na sintaksu, tako i na semantiku. Sintaksa nam daje skup pravila zapisivanja jezika, dok semantika daje značenje tim konstrukcijama, odnoso programa u celini. Cilj \textit{formalnog} opisa semantike bio bi da se isključe sve nepreciznosti koje može da proizvede primena prirodnog jezika u opisu semantike programskog jezika. Na tri načina je moguće opisati formalnu semantiku programskih jezika: \textit{operacionom, aksiomatskom  i  denotacionom semantikom}. Operaciona semantika opisuje \textit{kako} se izračunavanje izvršava i u okviru ove semantike postoje strukturna operaciona semantika i prirodna operaciona semantika. Aksiomatska semantika je zasnovana na matematičkoj logici i osnovni motiv za opis semantike jezika na ovaj način jeste razvoj metoda za proveru korektnosti programa. Denotaciona semantika sastoji se u pridruživanju značenja sintaksnim definicijama jezika. Primena formalnih opisa semantike zahteva matematičko znanje i apstraktno razmišljanje.
+
 
 
 \addcontentsline{toc}{section}{Literatura}

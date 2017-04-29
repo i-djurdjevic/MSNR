@@ -1,0 +1,397 @@
+
+
+ % !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{report}
+
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+%\usepackage[english,serbianc]{babel}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+
+\title{Dopunite naslov svoga rada\\ \small{Dopunite autore rada}}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Uputstva}
+\emph{Prilikom predavanja odgovora na recenziju, obrišite ovo poglavlje.}
+
+Neophodno je odgovoriti na sve zamerke koje su navedene u okviru recenzija. Svaki odgovor pišete u okviru okruženja \verb"\odgovor", \odgovor{kako bi vaši odgovori bili lakše uočljivi.} 
+\begin{enumerate}
+
+\item Odgovor treba da sadrži na koji način ste izmenili rad da bi adresirali problem koji je recenzent naveo. Na primer, to može biti neka dodata rečenica ili dodat pasus. Ukoliko je u pitanju kraći tekst onda ga možete navesti direktno u ovom dokumentu, ukoliko je u pitanju duži tekst, onda navedete samo na kojoj strani i gde tačno se taj novi tekst nalazi. Ukoliko je izmenjeno ime nekog poglavlja, navedite na koji način je izmenjeno, i slično, u zavisnosti od izmena koje ste napravili. 
+
+\item Ukoliko ništa niste izmenili povodom neke zamerke, detaljno obrazložite zašto zahtev recenzenta nije uvažen.
+
+\item Ukoliko ste napravili i neke izmene koje recenzenti nisu tražili, njih navedite u poslednjem poglavlju tj u poglavlju Dodatne izmene.
+\end{enumerate}
+
+Za svakog recenzenta dodajte ocenu od 1 do 5 koja označava koliko vam je recenzija bila korisna, odnosno koliko vam je pomogla da unapredite rad. Ocena 1 označava da vam recenzija nije bila korisna, ocena 5 označava da vam je recenzija bila veoma korisna. 
+
+NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenzije ja znam da li je ona korisna ili ne, pa na taj način vama idu negativni poeni ukoliko kažete da je korisno nešto što nije korisno. Vašim kolegama šteti da kažete da im je recenzija korisna jer će misliti da su je dobro uradili, iako to zapravo nisu. Isto važi i na drugu stranu, tj nemojte reći da nije korisno ono što jeste korisno. Prema tome, trudite se da budete objektivni. 
+
+\chapter{Recenzent \odgovor{--- ocena:}}
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+
+{Rad upućuje čitaoca u različite načine formalizacije semantike programskih jezika, i to u: operacionu, denotacionu i aksiomatsku semantiku. Pre same razrade, rad govori o potrebi za formalizacijom semantike. Dodatno, za svaki formalizam, dat je po jedan primer funkcionisanja te semantike.}
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+{U delu teksta o tranzicionim sistemima smatram da treba dodatno pojasniti vrste konfiguracija. Neki predlozi: šta znači pojam konfiguracije? U kom smislu će naredba $S$ biti izvršena ‚‚od stanja $s$''? Šta se tačno smatra konfiguracijom u datim dvama nabrajanjima? (Možda bi trebalo konfiguracije nekako posebno naznačiti, bilo podebljavanjem, iskošavanjem, promenom fonta ili nekako drugačije.)}
+	
+{Rečeno je da definiciju za tranzicionu relaciju možemo videti u Tabeli 1, ali meni nije bilo jasno šta je tačno definicija toga u toj tabeli.}
+	
+{Predlog je da se nakon paragrafa ‚‚Pored dokazivanja korektnosti programa i algoritama, uloga aksiomatske sematike je i dokazivanje ispravnosti...'' dodaju reference ka knjigama ili radovima koji pokazuju navedene uloge.}
+	
+{Paragraf nakon Primera 5.1 je isti kao i zaključak koji sledi, pa je višak.}
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+
+{Ima dosta sitnijih grešaka, pogotovo u početnim sekcijama rada. Takođe, imam i nekoliko stilskih primedbi i nekih nedoumica, koje ću izložiti tim redom u nastavku.}
+
+\odgovor{Greške:}
+\begin{itemize}
+	\item \odgovor{višak zapete iza ‚‚u toku izvođenja''}
+	\item \odgovor{‚‚da d\^{a} potpunu'' umesto ‚‚da da potpunu''}
+	\item \odgovor{‚‚naznačenoj literaturi'' umesto ‚‚naznačenim literaturama''}
+	\item \odgovor{izbaciti ‚‚u 1'' jer je jasno da je u uvodu već napomenuto (nema gde drugde)}
+	\item \odgovor{‚‚predstavlja'' umesto ‚‚predstavljaja''}
+	\item \odgovor{‚‚rezultati izvršavanja dobijeni'' umesto ‚‚rezultati izvršavanja dobijena''}
+	\item \odgovor{‚‚u jeziku Pascal'' umesto ‚‚u Pascal jeziku''}
+	\item \odgovor{‚‚raspolaže instrukcijama'' umesto ‚‚raspolaže sa instrukcijama''}
+	\item \odgovor{znak \textit{<} umesto obrnutog znaka upitnika u instrukciji apstraktne mašine}
+	\item \odgovor{loša referenca nakon ‚‚Ona će imati dve vrste konfiguracija''}
+	\item \odgovor{‚‚Pravilo sa praznim skupom'' umesto ‚‚Pravila sa praznim skupom''}
+	\item \odgovor{loša referenca nakon ‚‚Pravila sa praznim skupom premisa se naziva aksiom''}
+	\item \odgovor{naziv tabele se stavlja iznad tabele (Tabela 1)}
+	\item \odgovor{‚‚koje su potrebne'' umesto ‚‚koje su potreban''}
+	\item \odgovor{u sekciji 5 ima dosta ogoljenih latiničnih slova}
+	\item \odgovor{‚‚Zasniva se na'' umesto ‚‚Zasniva na''}
+	\item \odgovor{‚‚će biti određene'' umesto ‚‚će biti određen''}
+	\item \odgovor{‚‚promenljiva n'' umesto ‚‚promenljive n''}
+	\item \odgovor{‚‚odnosno'' umesto ‚‚odnoso''}
+\end{itemize}
+
+{Stilske primedbe:}
+\begin{itemize}
+	\item \odgovor{stavio bih sve izraze u {\tt $\backslash$verb|...| ili $\backslash$texttt\{...\}} okruženje umesto u {\tt \$...\$} okruženje radi čitljivosti i stavljanja do znanja da su u pitanju programski fragmenti}
+	\item \odgovor{‚‚nije povezana'' umesto ‚‚nema ništa''}
+	\item \odgovor{u sekciji 2, na kraju prvog i na početku narednog paragrafa ponavlja se opažanje da sa porastom kompleksnosti koda raste nerazumevanje neformalnih definicija}
+	\item \odgovor{predlog: zameniti ‚‚kompilator'' umesto ‚‚kompajler'' i ‚‚kompilacija'' ili ‚‚kompiliranje'' umesto ,,kompajliranje''}
+	\item \odgovor{u delu o tranzicionim sistemima nedostaju termini na engleskom jeziku}
+\end{itemize}
+
+{Nedoumice:}
+\begin{itemize}
+	\item \odgovor{čini mi se da je prestrogo reći da ‚‚\textit{ćemo} definisati realnu ili apstraktnu mašinu'' s obzirom da se odmah zatim govori kako nije pogodno uzeti realnu mašinu. Ako su autori želeli eksplicitno da kažu zašto nije podesno uzeti realnu mašinu, možda bi bilo lepše reći ‚‚Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu''}
+	\item \odgovor{u opštoj formi pravila pominje se $S_1'$, ali ne i kako ono učestvuje dalje u gornjem skupu pravila. Ovako izgleda kao da je višak. Možda treba dodati još jedan korak pre stavljanja tri tačke.}
+	\item \odgovor{šta predstavlja $D$ u funkcijama značenja?}
+\end{itemize}
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+{Da, jer su pokrivene suštinski važne oblasti obuhvaćene temom.}
+\item Da li je nešto važno propušteno?\\
+{Nije. Eventualno je moglo da se nešto detaljnije napiše o tome koja semantika odgovara funkcionalnim/imperativnim jezicima.}
+\item Da li ima suštinskih grešaka i propusta?\\
+{Nema, suštinski važne oblasti su dobro objašnjenje.}
+\item Da li je naslov rada dobro izabran?\\
+{Jeste. Odmah se može pretpostaviti o čemu će biti reč.}
+\item Da li sažetak sadrži prave podatke o radu?\\
+{Da.}
+\item Da li je rad lak-težak za čitanje?\\
+{Generalno je lak, ali na momente ima nejasnih stvari o kojima je bilo reči u prethodnom tekstu recenzije.}
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+{Zbog dobro napisanih uvodnih delova rada nije potrebno predznanje.}
+\item Da li je u radu navedena odgovarajuća literatura?\\
+{Da.}
+\item Da li su u radu reference korektno navedene?\\
+{Da.}
+\item Da li je struktura rada adekvatna?\\
+{Da.}
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+{Nedovoljan je broj referenci (treba 8, a ima 6). Ostalo je korektno.}
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+{Da.}
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+{Upućenost u oblast: malo upućeni (d). Na nekoliko kurseva je bilo reči o ovoj temi, odnosno, o nekim njenim delovima.}
+
+\chapter{Recenzent \odgovor{--- ocena:}}
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Rad se bavi opisivanjem formalne semantike programskih jezika opisivanjem tri glavne vrste semantike. Pokazuju se nedostaci prirodnog jezika u opisivanju značenja programa, i sa druge strane, precizno definišu matematički modeli formalnih semantika.
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Neka objašnjenja su mogla biti malo opširnija u cilju  boljeg shvatanja materijala.
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+"...svrha joj je da opiše kako su ukupni rezultati izvršavanja dobijena." - dobijeni umesto dobijena. Svakako, promenio bih redosled reči u ovoj rečenici. Poslednja rečenica na strani 3 ima s umesto š u reči mašina. "Pravilo se sastoji od određenog broja premisi" - mislim da ovde treba da stoji premisa umesti premisi. Greška u kucanju u reči "matematičkoj" (napisano "matematickoj") u odeljku 5. Ograničenja umesto ogranicenja u istom odeljku. Rečenica "Tipično, programeri ih pišu kao komentari za funkcije..." trebalo bi da stoji komentare umesto komentari. Poslednji pasus pre zaključka bi trebalo da pripada zaključku.
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Rad odgovara na zadatu temu kroz opisivanje tri vrste formalne semantike.
+\item Da li je nešto važno propušteno?\\
+S obzirom na moje (ne)znanje o ovoj oblasti, mislim da nije.
+\item Da li ima suštinskih grešaka i propusta?\\
+Nema.
+\item Da li je naslov rada dobro izabran?\\
+Naslov odgovara materijalu obrađenom u radu.
+\item Da li sažetak sadrži prave podatke o radu?\\
+Sažetak sadrži sve bitne stavke koje u daljem tekstu opisuje.
+\item Da li je rad lak-težak za čitanje?\\
+Rad je težak za čitanje zbog količine predznanja koje je potrebno da bi se tekst ispratio.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Potrebna je pozamašna količina znanja iz oblasti matematike i informatike.
+\item Da li je u radu navedena odgovarajuća literatura?\\
+Jeste.
+\item Da li su u radu reference korektno navedene?\\
+Jesu, sem u par slučajeva gde su ostale, valjda slučajno upitnici umesto referenci ([?]).
+\item Da li je struktura rada adekvatna?\\
+Ispoštovani su uslovi za izradu seminarskog rada.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Da.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Jesu.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+Potpuno sam neupućen u temu opisanu ovim radom.
+
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O cemu rad govori?}
+% ???????? ????? ?????? ????? ? ????? ???? ?????? ?????? ?????????? ??????? ???? (? ???? ???????? ?? ??? ??? ??????? ????????? ? ????????). ???? ?? 200 ?? 400 ?????????.
+Centralna tema ovog rada je  opisivanje formalne sematnike.Ukratko je opisano šta je sintaksa, a šta semantika programskih jezika, kao i njihivo znacenje.Navedeno je koji nacini zadavanja semantike postoje.Opisana je ukratko i formalna i neformalna semantika, kao i prednosti formalne u odnosu na neformalnu. Opisano je koje formalne semantike postoje i ukratko je objašnjena svaka od njih. 
+
+
+\section{Krupne primedbe i sugestije}
+% ???????? ????? ???????? ? ????????????? ????? ??? ? ???? ????????? ? ??? ?? ??????? ?? ?? ???????-??????-????-?????? ?? ?? ??? ??? ????????????.
+U samom uvodu je, na nacn razumljiv i nekome kome ova tema nije familijarna, opisano šta je sintaksa, a šta semantika programskih jezika. Lepo je opisana i razlika izmedju formalnog i neformalnog zadavanja semantike. Možda bi bilo dobro pronaci dobar primer i na njemu prikazati uporedo formalnu i neformalnu semantiku. Na više mesta u radu se pominje koje je znacenje sintakse a koje semantike u programskim jezicima, što mislim da treba ostaviti samo na jednom mestu, na pocetku rada. Dupliran je tekst na kraju rada, pasus pre zakljucka i zakljucak. Prilikom opisivianja operacione semantike pri dnu strane cetiri, pominje se da ce biti opisane obe vrste operacione semantike, a opisana je samo prirodna  semantika. Prikazana je tablica prirodne semantike za while petlju, možda je potrebno više taj primer približiti citaocu(npr. opis recima samog primera, kao što je uradjeno u delu vezanom za aksiomatsku semantiku primer Primer 4.1).    
+
+\section{Sitne primedbe}
+% ???????? ????? ???????? ?? ???? ???????????-????????-???????? ??????
+strana 3....kako su ukupni rezultati izvrsavanja dobijena. Nije ispravno, treba dobijeni.
+strana 4....[?] sta znaci ovakva referenca citaocu, greska ili je nepoznata referenca
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% O????????? ?? ??????? ?????? --- ?? ????? ??????? ???? ? ???????????
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Da.Posle citanja rada, citalac je dobro upoznat sa temom.
+\item Da li je nešto važno propušteno?\\
+Da. Nije odgovoreno na pitanja koja semantika najvise odgovara funckionalnim, a koja imperativnim programskih jezicima.
+\item Da li ima suštinskih grešaka i propusta?\\
+Ne. U radu je tema dobro obradjena i na prilicno jednostavan nacin približena citaocu.
+\item Da li je naslov rada dobro izabran?\\
+Da. Naslov je suština celog teksta.
+\item Da li sažetak sadrži prave podatke o radu?\\
+Da. U sažetku je napisano šta ce biti tema i sve je dalje u tekstu pokriveno.
+\item Da li je rad lak-težak za citanje?\\
+Rad je prilicno lak za citanje i nekome ko nema mnogo strucnog znanja o samoj temi. Jedini deo koji je malo teži za razumevanje je deo vezan za operacionu semantiku.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Potrebno je osnovno poznavanje strukture programskih jezika.
+\item Da li je u radu navedena odgovarajuca literatura?\\
+Da.
+\item Da li su u radu reference korektno navedene?\\
+Da. Osim sto postoji [?] referenca. 
+\item Da li je struktura rada adekvatna?\\
+Da. Mada bi mozda trebalo struktuirati tako da se i po strukturi rada vidi da su operaciona, denotaciona i aksiomatska semantika podceline (vrste) formalne semantike.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Uglavnom da. Jedino je broj referenci manji od propisanog za broj clanova tima. Za tim od tri clana trazi se broj strana 10-12, sto je u redu i minimum 10 referenci, a ovde imamo svega 6.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Da.
+\end{enumerate}
+
+\section{Ocenite sebe}
+Srednje upucen. Samo na kursevima na osnovnim studijama na Matematickom fakultetu. Nikakvo dodatno samostalo izucavanje na temu.
+% Napišite koliko ste upuceni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upuceni u oblast
+% c) srednje upuceni
+% d) malo upuceni 
+% e) skoro neupuceni
+% f) potpuno neupuceni
+% Obrazložite svoju odluku
+
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+
+Rad ukratko govori o formalnoj semantici programskih jezika, navodeći definicije različitih grupa formalizama (naime, operacione, denotacione i aksiomatske semantike), i 
+primere upotrebe na jednostavnim programskim konstruktima.
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+Zaključak i poslednji pasus prethodnog odeljka su identični. Jasno je da je u pitanju lapsus.
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Denotaciono stablo u primeru 3.1 je previše sitno.
+Na strani 3 nakon navođenja strukturne semantike, postoji nekakva tačka.
+Neuspešno ubacivanje referenci na stranama 4 i 5.
+Na četvrtoj strani pri opisima konfiguracija pretpostavljam da su autori za završno stanje hteli da napišu s'.
+Koristi se izraz "operacijska semantika" u zaključku nasuprot izrazu "operaciona semantika"  koji se koristio tokom ostatka rada.
+Čini mi se da je češći prevod "parcijalna korektnost" u domaćoj literaturi za {\em partial corectness}.
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Da. Daje kratak opis semantika i mislim da je koristan za osobe koje se tek upoznaju sa materijom.
+\item Da li je nešto važno propušteno?\\
+Nije bilo elaboracije na temu koja semantika odgovara funkcionalnim a koja imperativnim jezicima. 
+\item Da li ima suštinskih grešaka i propusta?\\
+\item Da li je naslov rada dobro izabran?\\
+Možda bi bio adekvatniji neki naslov koji ističe da je u pitanju kratak pregled.
+\item Da li sažetak sadrži prave podatke o radu?\\
+Da.
+\item Da li je rad lak-težak za čitanje?\\
+Lak je. Ne zalazi previše duboko u tematiku i delovi rada su nezavisne celine koje se mogu pojedinačno tumačiti.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Neophodno je baratanje uobičajenom programerskom terminologijom.
+\item Da li je u radu navedena odgovarajuća literatura?\\
+Da.
+\item Da li su u radu reference korektno navedene?\\
+Da. Detaljnom inspekcijom utvrđeni su konkretni delovi teksta na koje rad referiše.
+\item Da li je struktura rada adekvatna?\\
+Da.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Minimalan broj referenci je 8, rad sadrži 6.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Da.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+Izjašnjavam se kao malo upućen u oblast. Jasno mi je šta je semantika i značaj formalne dodele semantike programima, upoznat sam sa pojedinim semantikama, i
+svi termini u seminarskom su mi bili makar poznati.  
+
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Seminarski rad opisuje semantiku programskih jezika, njeno značenje i ulogu. Jasno je opisana i naznačena važnost opisa semantike formalnim jezikom. Takođe je dat okviran opis operacione, denotacione i aksiomatske semantike. 
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+Rad je prilično dobro odrađen i kao takav je veoma lako čitljiv. Krupnijih zamerki zaista nemam.
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Kod navođenja C-ovskih izraza, u tekstu uvoda, preglednije bi bilo staviti ih u novi red i tako odvojiti od ostatka teksta. 
+
+U tekstu pod naslovom 2 \emph{Formalna semantika}, poslednja rečenica (\emph{'Na slici 1 dat je prikaz kompajlera'}), preciznije je reći da je dat \emph{'prikaz strukture kompajlera'}.
+
+U tekstu pod naslovom 3 \emph{Operaciona semantika}, prva rečenica nakon navođenja vrsti istih, napisano je \emph{'apstraknih'} umesto \emph{'apsrtaktnih'}. U poslednjoj rečenici na strani 3, umesto \emph{'masinu'} trebalo bi da piše \emph{'mašinu'}, takođe u istoj rečenici \emph{'c'} treba zameniti sa \emph{'ć'}. U istom pasusu takođe ima greški sa nekorišćenjem slova srpske abecede. U istom pasusu, kod navođenja algoritma zapisom instrukcija apstraktne mašine nije jasan simbol koji je naveden u \emph{if} naredbi. Takođe u narednom pasusu napisano je \emph{'apstraknu'} umesto \emph{'apstraktnu'}. Referenca na u narednom pasusu nije lepo navedena, a takođe i na narednoj strani. Kod navođenja značenja engleskih reči poželjno bi bilo koristiti '\emph{emph}' obeleživač.
+
+U prvom pasusu u tekstu pod naslovom 5 \emph{Aksiomatska semantika}, u petoj rečenici, napisano je \emph{'logicki'} umesto \emph{'logički'}. U narednoj rečenici i definiciji 5.1 greška sa istim slovom. Drugi pasus na strani 9 u reči \emph{'sematike'} je izostavljeno slovo \emph{'n'}. 
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Moje zapažanje je da rad prilično dobro opisuje zadatu temu, jer je kroz primere slikovito opisana problematika. 
+\item Da li je nešto važno propušteno?\\
+Moj utisak je da nije, jer su autori i na samom početku rekli da je ovo samo površan opis podoblasti zadate teme.
+\item Da li ima suštinskih grešaka i propusta?\\
+Nije bilo takvih.
+\item Da li je naslov rada dobro izabran?\\
+Jeste, u potpunosti.
+\item Da li sažetak sadrži prave podatke o radu?\\
+Apstrakt(sažetak) je jasno predstavio ciljeve i svrhe rada, takođe i sadrži ključne reči.
+\item Da li je rad lak-težak za čitanje?\\
+Rad je prilično lak i razumljiv za čitaoce.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Predznanje iz računarskih tehnologija je poželjno, ali ne i neophodno. 
+\item Da li je u radu navedena odgovarajuća literatura?\\
+U potpunosti.
+\item Da li su u radu reference korektno navedene?\\
+U potpunosti.
+\item Da li je struktura rada adekvatna?\\
+Sadrži sve neophodne strukturne elemente, koji su jasno koncipirani.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+U potpunosti.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Slike i tabele su na pravom mestu i ogovaraju sadržaju.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+Veoma upućen. Bavim se programiranjem na fakultetu i van njega, i semantika kao oblast istraživanja mi je prilično poznata.
+
+
+\chapter{Dodatne izmene}
+%Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
+
+\end{document}
