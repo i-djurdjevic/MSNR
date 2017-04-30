@@ -346,23 +346,24 @@ Tvrđenja su data u obliku Horovih trojki:
 \end{definicija}
 
 Preduslov je logički izraz u kome se definišu ograničenja promenljivih pre izvršavanja komande, a postuslov definiše ograničenja promenljivih posle izvršavanja komande.
-Horove trojke se drugačije nazivaju i \textit{delimična ispravnost specifikacije } (eng.~{\em  partial correctness specification}) .
-Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i nazivaju “delimičnim”.
+Horove trojke se drugačije nazivaju i \textit{parcijalna ispravnost specifikacije } (eng.~{\em  partial correctness specification}) .
+Ali one ne mogu da osiguraju da će se program završiti pa se zbog toga i nazivaju “parcijalnim”.
 
-Delimične ispravnosti tvrdnje će biti određene sistemom zaključivanja koji se sastoji iz skupa aksioma i pravila. Za sve konstruktore jednostavnog imperativnog programskog jezika, Horova logika obezbeđuje aksiome i pravila izvođenja \cite{milena}. Aksiomatski sistem za delimičnu ispravnost je dat u Tabeli ~\ref{tab:a} ispod.
+Parcijalne ispravnosti specifikacija biće određene sistemom zaključivanja koji se sastoji iz skupa aksioma i pravila. Za sve konstruktore jednostavnog imperativnog programskog jezika, Horova logika obezbeđuje aksiome i pravila izvođenja \cite{milena}. Aksiomatski sistem za parcijalnu ispravnost je dat u Tabeli ~\ref{tab:a} ispod.
+
 
 \begin{table}[h]
-  \caption{Aksiomatski sistem za delimičnu ispravnost}\label{tab:a}
+  \caption{Aksiomatski sistem za parcijalnu ispravnost}\label{tab:a}
     \begin{center}
         \begin{tabular}{lrc}\hline
         \hline
         \hline
-        $[ass_{p}] $ & $ \{ P[x \rightarrow [\![A]\!]\} x:= a \{P\}$    \\  [6pt]
+        $[ass_{p}] $ & $ \{ P[x \rightarrow [\![A]\!]\} \ x:= a \ \{P\}$    \\  [6pt]
         $[skip_{p}] $ & $ \{P\}$ skip  $ \{P\}$   \\ [6pt]
-         $[comp_{p}] $ & $  \frac{\{P\}S_1\{Q\},\{Q\}S_2\{R\}}{\{P\}S_1;S_2\{R\}} $ \\[6pt]
-            $[if_{p}] $ & $  \frac{\{B[\![b]\!]\land P\}S_1\{Q\},\{\neg B[\![b]\!]\land P\}S_1\{Q\}}{\{P\} if b then S_1 else S_2\{Q\}} $ \\ [6pt]
-        $[while_{p}] $ & $  \frac{\{B[\![b]\!]\land P\}S\{P\}}{\{P\} while b do S \{\neg B[\![b]\!]\land P\}} $ \\ [6pt]
-          $[cons_p{p}] $ & $  \frac{\{P^{'}\}S\{Q^{'}\}}{\{P\}S\{Q\}} $ if $ P \Rightarrow	 P^{'} $ and $ Q \Rightarrow	 Q^{'} $  \\ [6pt]
+         $[comp_{p}] $ & $  \frac{\{P\} \ S_1 \ \{Q\}, \ \{Q\} \ S_2 \ \{R\}}{\{P\} \ S_1; \ S_2\{R\}} $ \\[6pt]
+            $[if_{p}] $ & $  \frac{\{B[\![b]\!] \ \land \ P\} \ S_1 \ \{Q\}, \ \{\neg B[\![b]\!] \ \land \ P\} \ S_1 \ \{Q\}}{\{P\} \  if \ b \ then \ S_1 \  else \ S_2 \ \{Q\}} $ \\ [6pt]
+        $[while_{p}] $ & $  \frac{\{B[\![b]\!] \ \land \ P\} \ S \ \{P\}}{\{P\} \  while \ b \ do \ S \ \{\neg B[\![b]\!] \ \land \ P\}} $ \\ [6pt]
+          $[cons_p{p}] $ & $  \frac{\{P^{'}\} \ S \ \{Q^{'}\}}{\{P\} \ S \ \{Q\}} $ if $ P \Rightarrow	 P^{'} $ and $ Q \Rightarrow	 Q^{'} $  \\ [6pt]
           \hline \hline
         \end{tabular}
     \end{center}
@@ -373,9 +374,9 @@ Delimične ispravnosti tvrdnje će biti određene sistemom zaključivanja koji s
 
 
 
-Pored delimične ispravnosti specifikacije, imamo i \textit {potpunu ispravnost naredbe } (eng.~{\em  total correctness statements}) koja osigurava da će se program završiti dok god preduslov važi.
+Pored parcijalne ispravnosti specifikacija, imamo i \textit {potpunu ispravnost naredbe } (eng.~{\em  total correctness statements}) koja osigurava da će se program završiti dok god preduslov važi.
 
-Pored dokazivanja korektnosti programa i algoritama, uloga aksiomatske sematike je i dokazivanje ispravnosti harverdskih opisa (ili nalaženje bagova), proširena statička provera (npr. provera granice niza), dokumentacija programa i interfejsa.
+Osim dokazivanja korektnosti programa i algoritama, uloga aksiomatske sematike je i dokazivanje ispravnosti harverdskih opisa (ili nalaženje bagova), proširena statička provera (npr. provera granice niza), dokumentacija programa i interfejsa  \cite{bec} . 
 
 Preduslovi i postuslovi mogu se smatrati interfejsom ili ugovorom između programa i njegovih klijenata. Oni pomažu korisnicima da razumeju šta program treba da proizvede bez potrebe da shvati kako se program izvršava. Tipično, programeri ih pišu kao komentare za funkcije i
 funkcionišu kao dokumentacija i olakšavaju održavanje programa. Takve specifikacije su posebno
