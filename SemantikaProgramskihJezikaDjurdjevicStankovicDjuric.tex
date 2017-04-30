@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\title{Formalna semantika programskih jezika\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+\title{Osnove formalne semantike programskih jezika\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
 \author{Isidora Đurđević, Ana Stanković,\\
  Milica Đurić
@@ -383,12 +383,15 @@ funkcionišu kao dokumentacija i olakšavaju održavanje programa. Takve specifi
 korisne za bibliotečke funkcije za koje izvorni kod često nije dostupan korisnicima \cite{adrian}.
 
 Način funkcionisanja ove semantike možemo prikazati u primeru sa faktorijalom koji sledi (primer je preuzet iz knjige \cite{nielson} ). \\
-\begin{primer}
-$\{ x=n \} $ \\
-$  y := 1; $
- while $ \neg(x=1) $  do $ (y := x*y; x := x-1) $\\
-$ \{ y=n!$ and $ n > 0 \} $ \\
+\begin{primer} Izračunati faktorijal
+\begin{center}
 
+
+\texttt{\{x = n \}}   \\
+\texttt{ y := 1;} 
+ \texttt{while $ \neg(x=1) $   do  (y := x*y; x := x-1) }\\
+\texttt{ \{ y=n! and  n > 0 \}  } \\
+\end{center}
 n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja, za razliku od programskih promenljivih, ne sme se pojaviti ni u jednoj naredbi koja se izvršava u programu i njena vrednost će uvek biti ista. Njena uloga je da pamte inicijalne vrednosti programskih promenljivih. \\
  Zapisali smo  preduslov da promenljiva n ima jednaku vrednost kao i x u početnom stanju (tj. nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da konačna vrednost y  će biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
 
