@@ -4,9 +4,8 @@
 
 \documentclass[a4paper]{report}
 
-\usepackage[T2A]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8x,utf8]{inputenc} % make weird characters work
-\usepackage[serbian]{babel}
+\usepackage[croatian]{babel}
 %\usepackage[english,serbianc]{babel}
 \usepackage{amssymb}
 
@@ -19,28 +18,11 @@
 
 \begin{document}
 
-\title{Dopunite naslov svoga rada\\ \small{Dopunite autore rada}}
+\title{Osnove formalne semantike programskih jezika\\ \small{Isidora Đurđević, Ana Stanković, Milica Đurić}}
 
 \maketitle
 
 \tableofcontents
-
-\chapter{Uputstva}
-\emph{Prilikom predavanja odgovora na recenziju, obrišite ovo poglavlje.}
-
-Neophodno je odgovoriti na sve zamerke koje su navedene u okviru recenzija. Svaki odgovor pišete u okviru okruženja \verb"\odgovor", \odgovor{kako bi vaši odgovori bili lakše uočljivi.} 
-\begin{enumerate}
-
-\item Odgovor treba da sadrži na koji način ste izmenili rad da bi adresirali problem koji je recenzent naveo. Na primer, to može biti neka dodata rečenica ili dodat pasus. Ukoliko je u pitanju kraći tekst onda ga možete navesti direktno u ovom dokumentu, ukoliko je u pitanju duži tekst, onda navedete samo na kojoj strani i gde tačno se taj novi tekst nalazi. Ukoliko je izmenjeno ime nekog poglavlja, navedite na koji način je izmenjeno, i slično, u zavisnosti od izmena koje ste napravili. 
-
-\item Ukoliko ništa niste izmenili povodom neke zamerke, detaljno obrazložite zašto zahtev recenzenta nije uvažen.
-
-\item Ukoliko ste napravili i neke izmene koje recenzenti nisu tražili, njih navedite u poslednjem poglavlju tj u poglavlju Dodatne izmene.
-\end{enumerate}
-
-Za svakog recenzenta dodajte ocenu od 1 do 5 koja označava koliko vam je recenzija bila korisna, odnosno koliko vam je pomogla da unapredite rad. Ocena 1 označava da vam recenzija nije bila korisna, ocena 5 označava da vam je recenzija bila veoma korisna. 
-
-NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenzije ja znam da li je ona korisna ili ne, pa na taj način vama idu negativni poeni ukoliko kažete da je korisno nešto što nije korisno. Vašim kolegama šteti da kažete da im je recenzija korisna jer će misliti da su je dobro uradili, iako to zapravo nisu. Isto važi i na drugu stranu, tj nemojte reći da nije korisno ono što jeste korisno. Prema tome, trudite se da budete objektivni. 
 
 \chapter{Recenzent \odgovor{--- ocena:}}
 
@@ -52,64 +34,87 @@ NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenz
 \section{Krupne primedbe i sugestije}
 % Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
 
-{U delu teksta o tranzicionim sistemima smatram da treba dodatno pojasniti vrste konfiguracija. Neki predlozi: šta znači pojam konfiguracije? U kom smislu će naredba $S$ biti izvršena ‚‚od stanja $s$''? Šta se tačno smatra konfiguracijom u datim dvama nabrajanjima? (Možda bi trebalo konfiguracije nekako posebno naznačiti, bilo podebljavanjem, iskošavanjem, promenom fonta ili nekako drugačije.)}
-	
-{Rečeno je da definiciju za tranzicionu relaciju možemo videti u Tabeli 1, ali meni nije bilo jasno šta je tačno definicija toga u toj tabeli.}
-	
+{U delu teksta o tranzicionim sistemima smatram da treba dodatno pojasniti vrste konfiguracija. Neki predlozi: šta znači pojam konfiguracije? U kom smislu će naredba $S$ biti izvršena ‚‚od stanja $s$''? Šta se tačno smatra konfiguracijom u datim dvama nabrajanjima? (Možda bi trebalo konfiguracije nekako posebno naznačiti, bilo podebljavanjem, iskošavanjem, promenom fonta ili nekako drugačije.)}\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}
+
+{Rečeno je da definiciju za tranzicionu relaciju možemo videti u Tabeli 1, ali meni nije bilo jasno šta je tačno definicija toga u toj tabeli.}\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}
+
 {Predlog je da se nakon paragrafa ‚‚Pored dokazivanja korektnosti programa i algoritama, uloga aksiomatske sematike je i dokazivanje ispravnosti...'' dodaju reference ka knjigama ili radovima koji pokazuju navedene uloge.}  \\
-\odgovor {Dodata je referenca ka knjizi}
+\odgovor {Dodata je referenca ka knjizi.}
 	
 {Paragraf nakon Primera 5.1 je isti kao i zaključak koji sledi, pa je višak.} \\
-\odgovor {Obrisan je paragraf koji je dupliran}
+\odgovor {Obrisan je paragraf koji je dupliran.}
 
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
 
 {Ima dosta sitnijih grešaka, pogotovo u početnim sekcijama rada. Takođe, imam i nekoliko stilskih primedbi i nekih nedoumica, koje ću izložiti tim redom u nastavku.}
 
-\odgovor{Greške:}
+Greške:
 \begin{itemize}
-	\item \odgovor{višak zapete iza ‚‚u toku izvođenja''}
-	\item \odgovor{‚‚da d\^{a} potpunu'' umesto ‚‚da da potpunu''}
-	\item \odgovor{‚‚naznačenoj literaturi'' umesto ‚‚naznačenim literaturama''}
-	\item \odgovor{izbaciti ‚‚u 1'' jer je jasno da je u uvodu već napomenuto (nema gde drugde)}
-	\item \odgovor{‚‚predstavlja'' umesto ‚‚predstavljaja''}
-	\item \odgovor{‚‚rezultati izvršavanja dobijeni'' umesto ‚‚rezultati izvršavanja dobijena''}
-	\item \odgovor{‚‚u jeziku Pascal'' umesto ‚‚u Pascal jeziku''}
-	\item \odgovor{‚‚raspolaže instrukcijama'' umesto ‚‚raspolaže sa instrukcijama''}
-	\item \odgovor{znak \textit{<} umesto obrnutog znaka upitnika u instrukciji apstraktne mašine}
-	\item \odgovor{loša referenca nakon ‚‚Ona će imati dve vrste konfiguracija''}
-	\item \odgovor{‚‚Pravilo sa praznim skupom'' umesto ‚‚Pravila sa praznim skupom''}
-	\item \odgovor{loša referenca nakon ‚‚Pravila sa praznim skupom premisa se naziva aksiom''}
-	\item \odgovor{naziv tabele se stavlja iznad tabele (Tabela 1)\\
-	Naziv je stavljen iznad tabele.}
-	\item \odgovor{‚‚koje su potrebne'' umesto ‚‚koje su potreban''}
-	\item \odgovor{u sekciji 5 ima dosta ogoljenih latiničnih slova \\
-	Prepravljeno je.}
-	\item \odgovor{‚‚Zasniva se na'' umesto ‚‚Zasniva na'' \\
-	Prepravljeno je. }
-	\item \odgovor{‚‚će biti određene'' umesto ‚‚će biti određen'' \\
-	Prepravljeno je. }
-	\item \odgovor{‚‚promenljiva n'' umesto ‚‚promenljive n'' \\
-	Prepravljeno je. }
-	\item \odgovor{‚‚odnosno'' umesto ‚‚odnoso'' \\
-	Prepravljeno je. }
+	\item višak zapete iza ‚‚u toku izvođenja'' \\
+	\odgovor{Na mestu gde je bila zapeta stavljena je tačka zbog lepše strukture rečenica.} 
+	\item ‚‚da d\^{a} potpunu'' umesto ‚‚da da potpunu''\\
+	\odgovor{Ispravljeno u ‚‚da d\^{a} potpunu'' .}
+	\item ‚‚naznačenoj literaturi'' umesto ‚‚naznačenim literaturama''\\
+	\odgovor{Ispravljeno u ‚‚naznačenoj literaturi''.}
+	\item izbaciti ‚‚u 1'' jer je jasno da je u uvodu već napomenuto (nema gde drugde)\\
+	\odgovor{Obrisana je referenca na uvod.}
+	\item ‚‚predstavlja'' umesto ‚‚predstavljaja''\\
+	\odgovor{Ipravljeno u predstavlja.}
+	\item ‚‚rezultati izvršavanja dobijeni'' umesto ‚‚rezultati izvršavanja dobijena''\\
+	 \odgovor{Ispravljeno u ‚‚rezultati izvršavanja dobijeni''. }
+	\item ‚‚u jeziku Pascal'' umesto ‚‚u Pascal jeziku''\\
+	\odgovor{Ispravljeno u ‚‚u jeziku Pascal''.}
+	\item ‚‚raspolaže instrukcijama'' umesto ‚‚raspolaže sa instrukcijama''\\
+	 \odgovor{Ispravljeno u ‚‚raspolaže instrukcijama''.}
+	\item znak \textit{$<$} umesto obrnutog znaka upitnika u instrukciji apstraktne mašine\\
+	\odgovor{Ipravljeno u \textit{$<$}.}
+	\item loša referenca nakon ‚‚Ona će imati dve vrste konfiguracija''\\
+	\odgovor{Ispravljena referenca. Nije se poklapalo ime reference u .bib fajlu sa imenom u .tex fajlu.}
+	\item ‚‚Pravilo sa praznim skupom'' umesto ‚‚Pravila sa praznim skupom''\\
+	\odgovor{Ispravljeno u ‚‚Pravilo sa praznim skupom''.}
+	\item loša referenca nakon ‚‚Pravila sa praznim skupom premisa se naziva aksiom''\\
+	\odgovor{Ispravljena referenca. Nije se poklapalo ime reference u .bib fajlu sa imenom u .tex fajlu.}
+	\item naziv tabele se stavlja iznad tabele (Tabela 1)\\
+	\odgovor{Naziv tabele se sada nalazi iznad tabele.}
+	\item ‚‚koje su potrebne'' umesto ‚‚koje su potreban''\\
+	\odgovor{Ispravljeno u ‚‚koje su potrebne''.}
+	\item u sekciji 5 ima dosta ogoljenih latiničnih slova \\
+	\odgovor{Ispravljena su sva ogoljena latinična slova.}
+	\item ‚‚Zasniva se na'' umesto ‚‚Zasniva na'' \\\\
+	\odgovor{Ispravljeno u ‚‚Zasniva se na''.}
+	\item ‚‚će biti određene'' umesto ‚‚će biti određen'' \\
+	\odgovor{Ispravljeno u ‚‚će biti određene''. }
+	\item ‚‚promenljiva n'' umesto ‚‚promenljive n'' \\
+	\odgovor{Ispravljeno u  ‚‚promenljiva n''.}
+	\item ‚‚odnosno'' umesto ‚‚odnoso'' \\
+	\odgovor{Ispravljeno u ‚‚odnosno''. }
 \end{itemize}
 
 {Stilske primedbe:}
 \begin{itemize}
-	\item \odgovor{stavio bih sve izraze u {\tt $\backslash$verb|...| ili $\backslash$texttt\{...\}} okruženje umesto u {\tt \$...\$} okruženje radi čitljivosti i stavljanja do znanja da su u pitanju programski fragmenti}
-	\item \odgovor{‚‚nije povezana'' umesto ‚‚nema ništa''}
-	\item \odgovor{u sekciji 2, na kraju prvog i na početku narednog paragrafa ponavlja se opažanje da sa porastom kompleksnosti koda raste nerazumevanje neformalnih definicija}
-	\item \odgovor{predlog: zameniti ‚‚kompilator'' umesto ‚‚kompajler'' i ‚‚kompilacija'' ili ‚‚kompiliranje'' umesto ,,kompajliranje''}
-	\item \odgovor{u delu o tranzicionim sistemima nedostaju termini na engleskom jeziku}
+	\item stavio bih sve izraze u {\tt $\backslash$verb|...| ili $\backslash$texttt\{...\}} okruženje umesto u {\tt \$...\$} okruženje radi čitljivosti i stavljanja do znanja da su u pitanju programski fragmenti\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+	\item ‚‚nije povezana'' umesto ‚‚nema ništa''\\
+	\odgovor{Ispravljeno u ‚‚nije povezana''.}
+	\item u sekciji 2, na kraju prvog i na početku narednog paragrafa ponavlja se opažanje da sa porastom kompleksnosti koda raste nerazumevanje neformalnih definicija\\
+	\odgovor{Obrisana je poslednja rečenica prvog pasusa, a dodata je nova u kojoj je se samo postavlja pitanje da li kompleksnost koda utiče na složenost neformalnih definicija.}
+	\item predlog: zameniti ‚‚kompilator'' umesto ‚‚kompajler'' i ‚‚kompilacija'' ili ‚‚kompiliranje'' umesto ,,kompajliranje''\\
+	 \odgovor{Svako pojavljivanje reči ‚‚kompajler'' je zamenjeno sa ‚kompilator''. Međutim, to nije bilo moguće uraditi na slici.}
+	\item u delu o tranzicionim sistemima nedostaju termini na engleskom jeziku\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
 \end{itemize}
 
 {Nedoumice:}
 \begin{itemize}
-	\item \odgovor{čini mi se da je prestrogo reći da ‚‚\textit{ćemo} definisati realnu ili apstraktnu mašinu'' s obzirom da se odmah zatim govori kako nije pogodno uzeti realnu mašinu. Ako su autori želeli eksplicitno da kažu zašto nije podesno uzeti realnu mašinu, možda bi bilo lepše reći ‚‚Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu''}
-	\item \odgovor{u opštoj formi pravila pominje se $S_1'$, ali ne i kako ono učestvuje dalje u gornjem skupu pravila. Ovako izgleda kao da je višak. Možda treba dodati još jedan korak pre stavljanja tri tačke.}
-	\item \odgovor{šta predstavlja $D$ u funkcijama značenja?}
+	\item čini mi se da je prestrogo reći da ‚‚\textit{ćemo} definisati realnu ili apstraktnu mašinu'' s obzirom da se odmah zatim govori kako nije pogodno uzeti realnu mašinu. Ako su autori želeli eksplicitno da kažu zašto nije podesno uzeti realnu mašinu, možda bi bilo lepše reći ‚‚Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu''\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+	\item u opštoj formi pravila pominje se $S_1'$, ali ne i kako ono učestvuje dalje u gornjem skupu pravila. Ovako izgleda kao da je višak. Možda treba dodati još jedan korak pre stavljanja tri tačke.\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+	\item šta predstavlja $D$ u funkcijama značenja?\\
+	\odgovor{Slučajno je zamenjeno $D$ sa $C$. Svako pojavljivanje $D$ je zamenjeno sa $C$.}
 \end{itemize}
 
 \section{Provera sadržajnosti i forme seminarskog rada}
@@ -163,10 +168,22 @@ Rad se bavi opisivanjem formalne semantike programskih jezika opisivanjem tri gl
 \section{Krupne primedbe i sugestije}
 % Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
 Neka objašnjenja su mogla biti malo opširnija u cilju  boljeg shvatanja materijala.
+\odgovor{Recezent je trebalo da naglasi koja objašnjenja treba proširiti. Proširen je deo u kome se govori o operacionoj semantici.}
 
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
-"...svrha joj je da opiše kako su ukupni rezultati izvršavanja dobijena." - dobijeni umesto dobijena. Svakako, promenio bih redosled reči u ovoj rečenici. Poslednja rečenica na strani 3 ima s umesto š u reči mašina. "Pravilo se sastoji od određenog broja premisi" - mislim da ovde treba da stoji premisa umesti premisi.\\ Greška u kucanju u reči "matematičkoj" (napisano "matematickoj") u odeljku 5. \odgovor{Prepravljeno}\\ Ograničenja umesto ogranicenja u istom odeljku.\odgovor{Prepravljeno}\\ Rečenica "Tipično, programeri ih pišu kao komentari za funkcije..." trebalo bi da stoji komentare umesto komentari.\odgovor{Prepravljeno}\\ Poslednji pasus pre zaključka bi trebalo da pripada zaključku. \odgovor{Prepravljeno}
+"...svrha joj je da opiše kako su ukupni rezultati izvršavanja dobijena." - dobijeni umesto dobijena. Svakako, promenio bih redosled reči u ovoj rečenici.\\
+ \odgovor{Ispravljena je reč ,,dobijena'' u ,,dobijeni''. Redosled reči u rečenici jasno govori šta je zadatak prirodne semantike.}\\
+Poslednja rečenica na strani 3 ima s umesto š u reči mašina.\\
+\odgovor{Sva ogoljena latinična slova su ispravljena.}\\
+ "Pravilo se sastoji od određenog broja premisi" - mislim da ovde treba da stoji premisa umesti premisi.\\
+ \odgovor{Ispravljena je reč ,,premisi'' u reč ,,premisa''.}\\
+  Greška u kucanju u reči "matematičkoj" (napisano "matematickoj") u odeljku 5. Ograničenja umesto ogranicenja u istom odeljku.\\
+  \odgovor{Sva ogoljena latinična slova su ispravljena.}\\
+   Rečenica "Tipično, programeri ih pišu kao komentari za funkcije..." trebalo bi da stoji komentare umesto komentari.\\
+   \odgovor{Ispravljena je reč ,,komentari'' u reč ,,komentare''.}\\
+   Poslednji pasus pre zaključka bi trebalo da pripada zaključku.\\
+    \odgovor{Obrisan je dupliran pasus.}
 
 \section{Provera sadržajnosti i forme seminarskog rada}
 % Oдговорите на следећа питања --- уз сваки одговор дати и образложење
@@ -214,22 +231,33 @@ Potpuno sam neupućen u temu opisanu ovim radom.
 
 
 \section{O cemu rad govori?}
-% ???????? ????? ?????? ????? ? ????? ???? ?????? ?????? ?????????? ??????? ???? (? ???? ???????? ?? ??? ??? ??????? ????????? ? ????????). ???? ?? 200 ?? 400 ?????????.
+
 Centralna tema ovog rada je  opisivanje formalne sematnike.Ukratko je opisano šta je sintaksa, a šta semantika programskih jezika, kao i njihivo znacenje.Navedeno je koji nacini zadavanja semantike postoje.Opisana je ukratko i formalna i neformalna semantika, kao i prednosti formalne u odnosu na neformalnu. Opisano je koje formalne semantike postoje i ukratko je objašnjena svaka od njih. 
 
 
 \section{Krupne primedbe i sugestije}
-% ???????? ????? ???????? ? ????????????? ????? ??? ? ???? ????????? ? ??? ?? ??????? ?? ?? ???????-??????-????-?????? ?? ?? ??? ??? ????????????.
-U samom uvodu je, na nacn razumljiv i nekome kome ova tema nije familijarna, opisano šta je sintaksa, a šta semantika programskih jezika. Lepo je opisana i razlika izmedju formalnog i neformalnog zadavanja semantike. Možda bi bilo dobro pronaci dobar primer i na njemu prikazati uporedo formalnu i neformalnu semantiku. Na više mesta u radu se pominje koje je znacenje sintakse a koje semantike u programskim jezicima, što mislim da treba ostaviti samo na jednom mestu, na pocetku rada. Dupliran je tekst na kraju rada, pasus pre zakljucka i zakljucak. Prilikom opisivianja operacione semantike pri dnu strane cetiri, pominje se da ce biti opisane obe vrste operacione semantike, a opisana je samo prirodna  semantika. Prikazana je tablica prirodne semantike za while petlju, možda je potrebno više taj primer približiti citaocu(npr. opis recima samog primera, kao što je uradjeno u delu vezanom za aksiomatsku semantiku primer Primer 4.1).    
 
+U samom uvodu je, na nacn razumljiv i nekome kome ova tema nije familijarna, opisano šta je sintaksa, a šta semantika programskih jezika. Lepo je opisana i razlika izmedju formalnog i neformalnog zadavanja semantike. Možda bi bilo dobro pronaci dobar primer i na njemu prikazati uporedo formalnu i neformalnu semantiku.\\
+\odgovor{U radu je na početku prikazan primer neformalne semantike uz upotrebu while naredbe, a kasnije se, u odeljku aksiomatske semantike, takođe prikazuje primer gde je upotrebljena while naredba. Ideja je bila da se kroz razčite primere prikažu tri vrste formalne semantike, dok je neformalna semantika poprilično intuitivna za jednostavne primere, pa bi bilo višak prikazivati je kod primera koji ilustruju formalne semantike.}\\
+ Na više mesta u radu se pominje koje je znacenje sintakse a koje semantike u programskim jezicima, što mislim da treba ostaviti samo na jednom mestu, na pocetku rada. \\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+Dupliran je tekst na kraju rada, pasus pre zakljucka i zakljucak. \\
+\odgovor{Obrisan je dupliran pasus.}\\
+Prilikom opisivianja operacione semantike pri dnu strane cetiri, pominje se da ce biti opisane obe vrste operacione semantike, a opisana je samo prirodna  semantika.\\
+\odgovor{Dodato je objašnjenje za strukturnu semantiku (odeljak 3.2).}\\
+ Prikazana je tablica prirodne semantike za while petlju, možda je potrebno više taj primer približiti citaocu(npr. opis recima samog primera, kao što je uradjeno u delu vezanom za aksiomatsku semantiku primer Primer 4.1).    
+\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
 \section{Sitne primedbe}
-% ???????? ????? ???????? ?? ???? ???????????-????????-???????? ??????
-strana 3....kako su ukupni rezultati izvrsavanja dobijena. Nije ispravno, treba dobijeni.
-strana 4....[?] sta znaci ovakva referenca citaocu, greska ili je nepoznata referenca
+
+strana 3....kako su ukupni rezultati izvrsavanja dobijena. Nije ispravno, treba dobijeni.\\
+\odgovor{Ispravljeno je u ,,dobijeni''.}\\
+strana 4....[?] sta znaci ovakva referenca citaocu, greska ili je nepoznata referenca\\
+\odgovor{Ispravljene su greške sa referencama u celom radu.}\\
 
 
 \section{Provera sadržajnosti i forme seminarskog rada}
-% O????????? ?? ??????? ?????? --- ?? ????? ??????? ???? ? ???????????
+
 
 \begin{enumerate}
 \item Da li rad dobro odgovara na zadatu temu?\\
@@ -282,16 +310,22 @@ primere upotrebe na jednostavnim programskim konstruktima.
 \section{Krupne primedbe i sugestije}
 % Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
 
-Zaključak i poslednji pasus prethodnog odeljka su identični. Jasno je da je u pitanju lapsus.
-
+Zaključak i poslednji pasus prethodnog odeljka su identični. Jasno je da je u pitanju lapsus.\\
+\odgovor{Izbrisan je dupliran pasus.}\\
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
-Denotaciono stablo u primeru 3.1 je previše sitno.
-Na strani 3 nakon navođenja strukturne semantike, postoji nekakva tačka.
-Neuspešno ubacivanje referenci na stranama 4 i 5.
-Na četvrtoj strani pri opisima konfiguracija pretpostavljam da su autori za završno stanje hteli da napišu s'.
+Denotaciono stablo u primeru 3.1 je previše sitno.\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+Na strani 3 nakon navođenja strukturne semantike, postoji nekakva tačka.\\
+\odgovor{Obrisana je tačka, a dodata referenca.}\\
+Neuspešno ubacivanje referenci na stranama 4 i 5.\\
+\odgovor{Sve greške sa referencama su ispravljene u celom radu.}\\
+Na četvrtoj strani pri opisima konfiguracija pretpostavljam da su autori za završno stanje hteli da napišu s'.\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
 Koristi se izraz "operacijska semantika" u zaključku nasuprot izrazu "operaciona semantika"  koji se koristio tokom ostatka rada. \\
-Čini mi se da je češći prevod "parcijalna korektnost" u domaćoj literaturi za {\em partial corectness}. \odgovor{Prepravljeno}
+\odgovor{Izraz "operacijska semantika" je ispravljen u "operaciona semantika" u zaključku.}\\
+Čini mi se da je češći prevod "parcijalna korektnost" u domaćoj literaturi za {\em partial corectness}. \\
+\odgovor{Ispravljeno.}\\
 \section{Provera sadržajnosti i forme seminarskog rada}
 % Oдговорите на следећа питања --- уз сваки одговор дати и образложење
 
@@ -349,13 +383,31 @@ Rad je prilično dobro odrađen i kao takav je veoma lako čitljiv. Krupnijih za
 
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
-Kod navođenja C-ovskih izraza, u tekstu uvoda, preglednije bi bilo staviti ih u novi red i tako odvojiti od ostatka teksta. 
+Kod navođenja C-ovskih izraza, u tekstu uvoda, preglednije bi bilo staviti ih u novi red i tako odvojiti od ostatka teksta. \\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
 
-U tekstu pod naslovom 2 \emph{Formalna semantika}, poslednja rečenica (\emph{'Na slici 1 dat je prikaz kompajlera'}), preciznije je reći da je dat \emph{'prikaz strukture kompajlera'}.
+U tekstu pod naslovom 2 \emph{Formalna semantika}, poslednja rečenica (\emph{'Na slici 1 dat je prikaz kompajlera'}), preciznije je reći da je dat \emph{'prikaz strukture kompajlera'}.\\
+\odgovor{Ispravljeno je u ,,Na slici 1 dat je prikaz strukture kompilatora.''}\\
 
-U tekstu pod naslovom 3 \emph{Operaciona semantika}, prva rečenica nakon navođenja vrsti istih, napisano je \emph{'apstraknih'} umesto \emph{'apsrtaktnih'}. U poslednjoj rečenici na strani 3, umesto \emph{'masinu'} trebalo bi da piše \emph{'mašinu'}, takođe u istoj rečenici \emph{'c'} treba zameniti sa \emph{'ć'}. U istom pasusu takođe ima greški sa nekorišćenjem slova srpske abecede. U istom pasusu, kod navođenja algoritma zapisom instrukcija apstraktne mašine nije jasan simbol koji je naveden u \emph{if} naredbi. Takođe u narednom pasusu napisano je \emph{'apstraknu'} umesto \emph{'apstraktnu'}. Referenca na u narednom pasusu nije lepo navedena, a takođe i na narednoj strani. Kod navođenja značenja engleskih reči poželjno bi bilo koristiti '\emph{emph}' obeleživač.
+U tekstu pod naslovom 3 \emph{Operaciona semantika}, prva rečenica nakon navođenja vrsti istih, napisano je \emph{'apstraknih'} umesto \emph{'apsrtaktnih'}.\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+U poslednjoj rečenici na strani 3, umesto \emph{'masinu'} trebalo bi da piše \emph{'mašinu'}, takođe u istoj rečenici \emph{'c'} treba zameniti sa \emph{'ć'}.
+ U istom pasusu takođe ima greški sa nekorišćenjem slova srpske abecede.\\
+\odgovor{Sva ogoljena latinična slova u tekstu su ispravljena.}\\
+ U istom pasusu, kod navođenja algoritma zapisom instrukcija apstraktne mašine nije jasan simbol koji je naveden u \emph{if} naredbi. \\
+\odgovor{Nejasan simbol je zamenjen simbolom $<$.}\\
+ Takođe u narednom pasusu napisano je \emph{'apstraknu'} umesto \emph{'apstraktnu'}. \\
+\odgovor{Prepravljeno.}\\
+Referenca na u narednom pasusu nije lepo navedena, a takođe i na narednoj strani.\\
+\odgovor{Sve greške se referencama su ispravljene.}\\ 
+Kod navođenja značenja engleskih reči poželjno bi bilo koristiti '\emph{emph}' obeleživač.\\
+\odgovor{DOPUNI!!!!!!!!!!!!!}\\
 
-U prvom pasusu u tekstu pod naslovom 5 \emph{Aksiomatska semantika}, u petoj rečenici, napisano je \emph{'logicki'} umesto \emph{'logički'}.\odgovor{Prepravljeno}\\ U narednoj rečenici i definiciji 5.1 greška sa istim slovom. \odgovor{Prepravljeno}\\Drugi pasus na strani 9 u reči \emph{'sematike'} je izostavljeno slovo \emph{'n'}. \odgovor{Prepravljeno}\\
+U prvom pasusu u tekstu pod naslovom 5 \emph{Aksiomatska semantika}, u petoj rečenici, napisano je \emph{'logicki'} umesto \emph{'logički'}.
+ U narednoj rečenici i definiciji 5.1 greška sa istim slovom.\\
+\odgovor{Sva ogoljena latinična slova u tekstu su ispravljena.}\\
+  Drugi pasus na strani 9 u reči \emph{'sematike'} je izostavljeno slovo \emph{'n'}.\\
+   \odgovor{Prepravljeno.}\\
 
 \section{Provera sadržajnosti i forme seminarskog rada}
 % Oдговорите на следећа питања --- уз сваки одговор дати и образложење

@@ -45,7 +45,7 @@ Semantika ima posebnu ulogu u teoriji i proučavanju značenja programskih jezik
 
 \qquad Vođenje konverzacije ne bi bilo moguće bez znanja o tome šta koja reč koju koristimo predstavlja. U našoj glavi stoje jasne neformalne definicije svake reči koje znamo i pomoću kojih povezujemo objekte sa njihovim značenjem. U lingvistici, nauci o jeziku, svaka reč dobija svoju formalnu definiciju, a pravila formiranja rečenica su jako rigorozna, odnosno, postoje jasne odredbe šta je ispravno, a šta neispravno. Ove formalne definicije i pravila omogućavaju onima koji se susreću sa jezikom po prvi put da ga lakše nauče i razumeju kako bi mogli da ga koriste. Slično, ovo može biti primenjeno i na programske jezike.
 
- Kao što je izučavanje prirodnog jezika podeljeno  na izučavanje strukture onoga čime se nešto izražava, tj. \textit{sintakse} i izučavanje značenja onoga što je izraženo, tj. \textit{semantike}, tako se i proučavanje programskog jezika može podeliti na proučavanje njegovog formiranja i njegovog značenja. Osnovni zadatak sintakse programskih jezika je da omogući formiranje korektnih programa iz ugla strukture izraza. Izrazi poput $ x++; function(x,y); $ su sintaksno ispravni, ali šta oni predstavljaju, koje je njihovo značenje? Sintaksa nema odgovor na ovo pitanje jer ona nije povezana sa značenjem ili ponašanjem programa u toku izvođenja, to je zadatak \textit{\textbf{semantike programskih jezika}}. Međutim, sintaksa mora biti definisana pre semantike jer se značenje može pridružiti samo ispravnim izrazima jezika. Definisanje sintakse je obično lakši posao od definisanja semantike.
+ Kao što je izučavanje prirodnog jezika podeljeno  na izučavanje strukture onoga čime se nešto izražava, tj. \textit{sintakse} i izučavanje značenja onoga što je izraženo, tj. \textit{semantike}, tako se i proučavanje programskog jezika može podeliti na proučavanje njegovog formiranja i njegovog značenja. Osnovni zadatak sintakse programskih jezika je da omogući formiranje korektnih programa iz ugla strukture izraza. Izrazi poput $ x++; function(x,y); $ su sintaksno ispravni, ali šta oni predstavljaju, koje je njihovo značenje? Sintaksa nema odgovor na ovo pitanje jer ona nije povezana sa značenjem ili ponašanjem programa u toku izvođenja. To je zadatak \textit{\textbf{semantike programskih jezika}}. Međutim, sintaksa mora biti definisana pre semantike jer se značenje može pridružiti samo ispravnim izrazima jezika. Definisanje sintakse je obično lakši posao od definisanja semantike.
 
 	Semantika može da se opiše formalno i neformalno, gde je češće neformalno opisivanje, odnosno opisivanje prirodnim jezikom što može biti neprecizno. Zato se u narednim glavama bavimo formalnim opisom semantike koja bi trebalo da otkloni sve nepreciznosti i da d\^a potpunu definiciju programskog jezika. Biće opisani neki od formalnih pristupa kao što su \textit{operaciona, denotaciona i aksiomatska} semantika. Svakom od pristupa će se prići površinski zbog same složenosti formalnog definisanja, a čitaocu se ostavlja da proširi svoje znanje u naznačenoj literaturi.
 
@@ -54,20 +54,20 @@ Semantika ima posebnu ulogu u teoriji i proučavanju značenja programskih jezik
 \section{Formalna semantika}
 \label{sec:forsem}
 
-\qquad Kao što je već napomenuto, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz $ while(x > 0)$  $\lbrace x--;\rbrace$ može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Ovaj zadatak postaje teži sa pojavom veće kompleksnosti programskog koda.
+\qquad Kao što je već napomenuto, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz $ while(x > 0)$  $\lbrace x--;\rbrace$ može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Međutim, da li je to jednostavno uraditi za svaki deo programskog koda ili za svaki programski jezik?
 
 Teško je pisati vrlo precizne definicije neformalnim jezikom, obično postane komplikovano za razumeti i predugačko za neke kompleksne programske jezike što dovodi do loše napisanih programa jer se stvaralac programskog jezika i onaj ko ga koristi ne razumeju. To je jedan od razloga zašto se uvodi \textit{formalna semantika}, što znači precizna semantika.
 
 Pri učenju novog programskog jezika, programer bi trebalo da uči i samu logiku jezika. Neki vid opisa logike programskog jezika olakšava programerima pisanje jakih i stabilnih programa.  Ovaj opis nam može pružiti, takođe, formalna semantika.
 
-Još jedan od razloga zašto se uvodi formalna semantika jeste to što ona čini osnovu formalne verifikacije programa, tj. deo je interpretera i kompajlera. Na slici \ref{fig:kompajler} dat je prikaz kompajlera.
+Još jedan od razloga zašto se uvodi formalna semantika jeste to što ona čini osnovu formalne verifikacije programa, tj. deo je interpretera i kompilatora. Na slici \ref{fig:kompilator} dat je prikaz strukture kompilatora.
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[scale=0.5]{kompajler.jpg}
 \end{center}
-\caption{Struktura kompajlera \cite{slika}}
-\label{fig:kompajler}
+\caption{Struktura kompilatora \cite{slika}}
+\label{fig:kompilator}
 \end{figure}
 
 Kompleksnost uvođenja formalne semantike daje više načina pristupa njenom definisanju. Mi ćemo se fokusirati na tri pristupa:
@@ -120,7 +120,7 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
 \\Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
 
-Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{willey}:
+Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s' predstavlja završno stanje.
@@ -143,7 +143,7 @@ Definicija za $\rightarrow$ je prikazana preko pravila datih u tabeli ~\ref{tab:
 
 gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima (eng.~{\em immediate constituents}) od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisa} (nalaze se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
 
-Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{willey}
+Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{wiley}
 
 \begin{table}[h]
        \caption{Prirodna semantika za While petlju}
@@ -177,7 +177,7 @@ Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i
 	\item Ako je u pitanju aksiom i ako su uslovi aksioma ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
 	\item Ako je u pitanju pravilo, sledeći korak je pokušati konstruisati stablo izvođenja za premise datog pravila. Kad se ovaj deo odradi, neophodno je proveriti da li su uslovi pravila ispunjeni i tek onda možemo zaključiti završno stanje  $\langle$ \textit{S, s} $\rangle$.
 \end{itemize}
-Više o ovoj temi se može pronaći u \cite{willey, opersem}.
+Više o ovoj temi se može pronaći u \cite{wiley, opersem}.
 
 \subsection{Strukturna operaciona semantika}
 Prirodna semantika nekada nije pogodna za obimnu analizu, tada se uglavnom koristi \textit{strukturna operaciona semantika} (skraćeno SOS), kojom je moguće opisati imperativne programe kao i neke složene slučajeve, kao što su na primer, semantika pokazivača i semantika višenitne obrade ili čak baratati sa ,,goto" naredbama. U SOS-u ćemo tranzicionu relaciju zapisivati kao:
@@ -211,7 +211,7 @@ Prvi korak uslovnog grananja počinje sa ispitivanjem istinitosne vrednosti izra
 Prvi korak kod ,,while" petlje jeste odrediti uslov kada se izlazi iz petlje, zatim u sledećem koraku izvršavanja treba proveriti da li je ispunjen taj uslov i da li je samim tim moguće nastaviti izvršavanje petlje.
 \begin{center} $[while_{sos}]$ $\langle$ while b do S,s $\rangle$ $\Longrightarrow$ $\langle$ if b then (S; while b do S) else skip,s $\rangle$ \end{center}
 \end{primer}
-Više o navedenom možete pronaći u \cite{willey} i podstičemo čitaoca da pogleda navedene izvore.
+Više o navedenom možete pronaći u \cite{wiley} i podstičemo čitaoca da pogleda navedene izvore.
 
 \section{Denotaciona semantika}
 \label{sec:densem}
@@ -279,9 +279,9 @@ $pom: N \times N \rightarrow N $ \qquad Binarna funkcija pom - isto što i *
 
 $ povezicn[[0]] = 0,... ,povezicn[[9]] = 9 $
 
-$ povezibn[[D]] = povezicn[[D]] $
+$ povezibn[[C]] = povezicn[[C]] $
 
-$ povezibn[[B D]] = plus(pom(10, povezibn[[B]]),povezibn[[D]]) $
+$ povezibn[[B C]] = plus(pom(10, povezibn[[B]]),povezibn[[C]]) $
 
 $ semantika[[B]] = povezibn[[B]] $
 
