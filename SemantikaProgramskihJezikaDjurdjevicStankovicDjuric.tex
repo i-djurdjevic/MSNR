@@ -34,7 +34,7 @@
 \abstract{
 Semantika ima posebnu ulogu u teoriji i proučavanju značenja programskih jezika. Cilj ovog rada je da pokaže koja je uloga formalnog zadavanja semantike programskih jezika i osnovne primene formalne semantike. Biće definisana tri osnovna pristupa semantike: operaciona, denotaciona i aksiomatska semantika i objašnjene njihove uloge. Svaki od pristupa je potkrepljen primerom koji prikazuje primenu te semantike u računarstvu.
 
-\textit{Ključne reči}: Semantika programskih jezika, formalna semantika, operaciona semantika, denotaciona semantika, značenje programa.
+\textit{Ključne reči}: semantika programskih jezika, formalna semantika, operaciona semantika, denotaciona semantika, značenje programa.
 
 \tableofcontents
 
@@ -54,7 +54,10 @@ Semantika ima posebnu ulogu u teoriji i proučavanju značenja programskih jezik
 \section{Formalna semantika}
 \label{sec:forsem}
 
-\qquad Kao što je već napomenuto, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz $ while(x > 0)$  $\lbrace x--;\rbrace$ može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Međutim, da li je to jednostavno uraditi za svaki deo programskog koda ili za svaki programski jezik?
+\qquad Kao što je već napomenuto, semantika se može definisati formalno i neformalno. Pri neformalnom definisanju koristimo prirodan jezik. Na primer, izraz
+\begin{center}
+\texttt{$ while(x > 0)$  $\lbrace x--;\rbrace$}
+\end{center} može se opisati rečima : "sve dok je vrednost promenljive x veća od nule umanjuj vrednost promenljive x za jedan". Međutim, da li je to jednostavno uraditi za svaki deo programskog koda ili za svaki programski jezik?
 
 Teško je pisati vrlo precizne definicije neformalnim jezikom, obično postane komplikovano za razumeti i predugačko za neke kompleksne programske jezike što dovodi do loše napisanih programa jer se stvaralac programskog jezika i onaj ko ga koristi ne razumeju. To je jedan od razloga zašto se uvodi \textit{formalna semantika}, što znači precizna semantika.
 
@@ -84,7 +87,7 @@ Kompleksnost uvođenja formalne semantike daje više načina pristupa njenom def
 \end{enumerate}
 
 U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šire.
-\section{Operaciona semantika}
+\subsection{Operaciona semantika}
 \label{sec:opsem}
 
 \qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja naredbe programa. U okviru ove semantike postoje:
@@ -92,6 +95,8 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 	\item \textit{Prirodna semantika} (ili veliki koraci (eng.~{\em big-step semantics})): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijeni.
 	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng.~{\em small-step semantics})): svrha joj je da opiše kako se \textit{svaki korak} izvršava.
 \end{itemize} \cite{wiley}.
+
+Jedna od osnovnih karakteristika imperativnih jezika je da ovi jezici imaju implicitno stanje i da se izvršavanje programa svodi na postepeno menjanje tog stanja izvođenjem pojedinačnih naredbi \cite{milena2}. Takođe, redosled naredbi je bitan \cite{milena2}. S obzirom da sve ove karakteristike zadovoljava operaciona semantika, možemo reći da će ova semantika najviše odgovarati imperativnim jezicima. 
 
 
 Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
@@ -104,8 +109,10 @@ Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu, na k
 \\.
 \end{center}
 \hfill \break
-Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvršavanja ciklusa je skriven za korisnika. Naravno, oni koji poznaju razne zapise programskih ciklusa mogu lako pretpostaviti značenje gore navedenog zapisa. Međutim, i za njih će biti teško da odgovore, šta će se dogoditi ako je vrednost promenljive \textit{početak} veća od vrednosti promeljive \textit{kraj}?\\
-\\Zamislimo sada da naša apstraktna mašina raspolaže instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
+Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvršavanja ciklusa je skriven za korisnika. Naravno, oni koji poznaju razne zapise programskih ciklusa mogu lako pretpostaviti značenje gore navedenog zapisa. Međutim, i za njih će biti teško da odgovore, šta će se dogoditi ako je vrednost promenljive \textit{početak} veća od vrednosti promeljive \textit{kraj}?
+
+
+Zamislimo sada da naša apstraktna mašina raspolaže instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
 
 \hspace{4cm} \textit{i:=početak}\\
 \textit{ciklus:} \hspace{3cm} \textit{if i \textgreater kraj then goto izlaz}
@@ -117,8 +124,10 @@ Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvrš
 \\ \textit{goto ciklus}
 \end{center}
 \textit{izlaz:} \hspace{4cm} ...\\
-\\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.\\
-\\Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
+\\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.
+
+
+Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
 
 Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
@@ -126,10 +135,8 @@ Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacio
 	\item s' predstavlja završno stanje.
 \end{itemize}
 \textit{Tranziciona relacija} (eng.~{\em transition relation}) će onda opisivati kako izgleda tok izvršavanja. \\
-
-Jedne od osnovnih karakteristika imperativnih jezika je da ovi jezici imaju implicitno stanje i da se izvršavanje programa svodi na postepeno menjanje tog stanja izvođenjem pojedinačnih naredbi \cite{milena2}. Takođe, redosled naredbi je bitan \cite{milena2}. S obzirom da sve ove karakteristike zadovoljava operaciona semantika, možemo reći da će ova semantika najviše odgovarati imperativnim jezicima i najčešće se koristi.  
-
-\subsection{Prirodna semantika}
+ 
+\subsubsection{Prirodna semantika}
 
 \qquad Prirodna semantika je apstrakcija. U njoj je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao:
 
@@ -179,7 +186,7 @@ Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i
 \end{itemize}
 Više o ovoj temi se može pronaći u \cite{wiley, opersem}.
 
-\subsection{Strukturna operaciona semantika}
+\subsubsection{Strukturna operaciona semantika}
 Prirodna semantika nekada nije pogodna za obimnu analizu, tada se uglavnom koristi \textit{strukturna operaciona semantika} (skraćeno SOS), kojom je moguće opisati imperativne programe kao i neke složene slučajeve, kao što su na primer, semantika pokazivača i semantika višenitne obrade ili čak baratati sa ,,goto" naredbama. U SOS-u ćemo tranzicionu relaciju zapisivati kao:
 \begin{center} $\langle$ \textit{S, s} $\rangle$ $\Longrightarrow$ \textit{$\gamma$} \end{center}
 ovo treba razmatrati kao {\em prvi korak} izvršavanja programa \textit{S} u stanju \textit{s} koji vodi do stanja \textit{$\gamma$} \cite{opersem}.\\
@@ -213,10 +220,10 @@ Prvi korak kod ,,while" petlje jeste odrediti uslov kada se izlazi iz petlje, za
 \end{primer}
 Više o navedenom možete pronaći u \cite{wiley} i podstičemo čitaoca da pogleda navedene izvore.
 
-\section{Denotaciona semantika}
+\subsection{Denotaciona semantika}
 \label{sec:densem}
 
-\qquad Nastala 1960. godina od strane Christopher Strachey-a i njegove istraživačke grupe na Oxford-u \cite{slonneger1995book}, \textit{denotaciona semantika} predstavlja jednu vrstu reakcije na operacionu semantiku za koju se smatra da sadrži puno informacija. Naziv je dobila po engleskoj reči označiti (eng.~{\em denote}) jer pridružuje značenja sintaksnim definicijama jezika. Alternativno, može se nazivati i \textit{matematička semantika} zbog njene okrenutosti matematičkim formalizmima pri definisanju ove formalne semantike. Jedan način definisanja denotacione semantike je dat u sledećoj definiciji.
+\qquad Nastala 1960. godina od strane Kristofera Strejčija (eng.~{\em Christopher Strachey}) i njegove istraživačke grupe na Oksfordu \cite{slonneger1995book}, \textit{denotaciona semantika} predstavlja jednu vrstu reakcije na operacionu semantiku za koju se smatra da sadrži puno informacija. Naziv je dobila po engleskoj reči označiti (eng.~{\em denote}) jer pridružuje značenja sintaksnim definicijama jezika. Alternativno, može se nazivati i \textit{matematička semantika} zbog njene okrenutosti matematičkim formalizmima pri definisanju ove formalne semantike. Jedan način definisanja denotacione semantike je dat u sledećoj definiciji.
 \begin{definicija}
 Pristup formalizaciji semantike konstruisanjem matematičkih objekata koji
 opisuju značenje jezika naziva se \textbf{denotaciona semantika} \cite{milena}.
@@ -241,9 +248,9 @@ Potrebno je prvo definisati apstraktnu sintaksu aritmetičkih izraza. Neka su po
 \textbf{Sintaksni domeni i pravila:}
 \\
 
-$B: Broj $  \qquad\qquad Nenegativan broj
+$B: Broj $  \qquad\quad B je nenegativan broj
 
-$C: Cifra $ \qquad\qquad Cifra 0,1...,9
+$C: Cifra $ \qquad\quad C je cifra 0,1...,9
 
 $I: Izraz $
 
@@ -259,7 +266,7 @@ Sledeći korak jeste definisanje matematičkih objekata koji će predstavljati s
 \textbf{Semantički domeni}
 \\
 
-$N={0,1,2,3,....} $  \qquad\qquad Skup prirodnih brojeva
+$N={0,1,2,3,....} $  \qquad\qquad skup prirodnih brojeva
 
 \end{tcolorbox}
 Posle uvedenih objekata, treba uvesti neke matematičke funkcije koje će davati značenje prethodno uvedenim sintaksnim definicijama. Takve funkcije se nazivaju \textbf{funkcije značenja }(eng.~{\em meaning functions}). Definicije funkcija koje su potrebne za naš jednostavan primer su date u nastavku.
@@ -267,15 +274,15 @@ Posle uvedenih objekata, treba uvesti neke matematičke funkcije koje će davati
 \textbf{Funkcije značenja}
 \\
 
-$povezibn: B \rightarrow N $  \qquad Unarna funkcija - povezuje broj sa N
+$povezibn: B \rightarrow N $  \qquad unarna funkcija - povezuje broj sa N
 
-$povezicn: C \rightarrow N $  \qquad Unarna funkcija - povezuje cifru sa N
+$povezicn: C \rightarrow N $  \qquad unarna funkcija - povezuje cifru sa N
 
-$semantika: I \rightarrow N $   \qquad Unarna funkcija - povezuje izraz sa N
+$semantika: I \rightarrow N $   \qquad unarna funkcija - povezuje izraz sa N
 
-$plus: N \times N \rightarrow N $  \qquad Binarna funkcija plus - isto što i +
+$plus: N \times N \rightarrow N $  \qquad binarna funkcija plus - isto što i +
 
-$pom: N \times N \rightarrow N $ \qquad Binarna funkcija pom - isto što i *
+$pom: N \times N \rightarrow N $ \qquad binarna funkcija pom - isto što i *
 
 $ povezicn[[0]] = 0,... ,povezicn[[9]] = 9 $
 
@@ -323,9 +330,12 @@ jer je:
 \end{center}
 \end{primer}
 
+S obzirom na to da se funkcionalno programiranje zasniva na pojmu matematičkih funkcija i da se izvršavanje programa svodi na evaluaciju funkcija \cite{milena2}, denotaciona semantika je najbolja za definisanje semantike funkcionalnih programskih jezika.
+
+
  Prednost denotacione semantike je u tome što apstrahuje kako se programi izvršavaju. Analiziranje programa se svodi na analiziranje matematičkih objekata, što olakšava stvar. Denotaciona semantika ima veliku primenu u konstrukciji programa za prevođenje \cite{parezanovic}.
 
-\section{Aksiomatska semantika}
+\subsection{Aksiomatska semantika}
 \label{sec:akssem}
 \qquad Za nastanak i razvoj \textit{aksiomatske semantike}  su zaslužni pre svega Robert Flojd (eng.~{\em  Robert Floyd}), Toni Hor (eng.~{\em  Antony Hoare}) i Edsger Dijkstra (hol.~{\em Edsger Dijkstra}).
  Zasniva se na matematičkoj logici pa je kao takva apstraktnija od denotacione i operacione sematike. Ova semantika

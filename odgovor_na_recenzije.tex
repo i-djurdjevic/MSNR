@@ -19,7 +19,7 @@
 \begin{document}
 
 \title{Osnove formalne semantike programskih jezika\\ \small{Isidora Đurđević, Ana Stanković, Milica Đurić}}
-
+\date{1.~maj 2017.}
 \maketitle
 
 \tableofcontents
@@ -70,7 +70,7 @@ Greške:
 	\item ‚‚raspolaže instrukcijama'' umesto ‚‚raspolaže sa instrukcijama''\\
 	 \odgovor{Ispravljeno u ‚‚raspolaže instrukcijama''.}
 	\item znak \textit{$<$} umesto obrnutog znaka upitnika u instrukciji apstraktne mašine\\
-	\odgovor{Ipravljeno u \textit{$<$}.}
+	\odgovor{Ipravljeno u \textit{$>$}.}
 	\item loša referenca nakon ‚‚Ona će imati dve vrste konfiguracija''\\
 	\odgovor{Ispravljena referenca. Nije se poklapalo ime reference u .bib fajlu sa imenom u .tex fajlu.}
 	\item ‚‚Pravilo sa praznim skupom'' umesto ‚‚Pravila sa praznim skupom''\\
@@ -96,7 +96,7 @@ Greške:
 {Stilske primedbe:}
 \begin{itemize}
 	\item stavio bih sve izraze u {\tt $\backslash$verb|...| ili $\backslash$texttt\{...\}} okruženje umesto u {\tt \$...\$} okruženje radi čitljivosti i stavljanja do znanja da su u pitanju programski fragmenti\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Primeri definisanja formalnih semantika su napisani u okviru {\tt $\backslash$texttt\{...\}} okruženja.}
 	\item ‚‚nije povezana'' umesto ‚‚nema ništa''\\
 	\odgovor{Ispravljeno u ‚‚nije povezana''.}
 	\item u sekciji 2, na kraju prvog i na početku narednog paragrafa ponavlja se opažanje da sa porastom kompleksnosti koda raste nerazumevanje neformalnih definicija\\
@@ -104,15 +104,17 @@ Greške:
 	\item predlog: zameniti ‚‚kompilator'' umesto ‚‚kompajler'' i ‚‚kompilacija'' ili ‚‚kompiliranje'' umesto ,,kompajliranje''\\
 	 \odgovor{Svako pojavljivanje reči ‚‚kompajler'' je zamenjeno sa ‚kompilator''. Međutim, to nije bilo moguće uraditi na slici.}
 	\item u delu o tranzicionim sistemima nedostaju termini na engleskom jeziku\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Dodati engleski termini: transition system, transition relation, immediate constituents u delu o tranzicionim sistemima, poglavlje 2.1 i 2.1.1.}\\
 \end{itemize}
 
 {Nedoumice:}
 \begin{itemize}
 	\item čini mi se da je prestrogo reći da ‚‚\textit{ćemo} definisati realnu ili apstraktnu mašinu'' s obzirom da se odmah zatim govori kako nije pogodno uzeti realnu mašinu. Ako su autori želeli eksplicitno da kažu zašto nije podesno uzeti realnu mašinu, možda bi bilo lepše reći ‚‚Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu''\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Rečenica \textit{‚‚Za svaki programski jezik ćemo definisati realnu ili apstraktnu mašinu, na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika''} zamenjena je rečenicom \textit{‚‚Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu,
+na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti
+programskog jezika.''} }\\
 	\item u opštoj formi pravila pominje se $S_1'$, ali ne i kako ono učestvuje dalje u gornjem skupu pravila. Ovako izgleda kao da je višak. Možda treba dodati još jedan korak pre stavljanja tri tačke.\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Tri tačke ovde ne predstavljaju preskočene korake, već preskočene premise. U paragrafu posle opšte forme pravile naznačeno je da se iznad linije nalazi skup premisa, a ispod linije se nalazi zaključak.}\\
 	\item šta predstavlja $D$ u funkcijama značenja?\\
 	\odgovor{Slučajno je zamenjeno $D$ sa $C$. Svako pojavljivanje $D$ je zamenjeno sa $C$.}
 \end{itemize}
@@ -125,6 +127,7 @@ Greške:
 {Da, jer su pokrivene suštinski važne oblasti obuhvaćene temom.}
 \item Da li je nešto važno propušteno?\\
 {Nije. Eventualno je moglo da se nešto detaljnije napiše o tome koja semantika odgovara funkcionalnim/imperativnim jezicima.}
+\odgovor{U poglavlju 2.1 i u poglavlju 2.2 su dodati pasusi koji govore da se za imperativne jezike koristi operaciona, a za funkcionalne jezike denotaciona semantika.}
 \item Da li ima suštinskih grešaka i propusta?\\
 {Nema, suštinski važne oblasti su dobro objašnjenje.}
 \item Da li je naslov rada dobro izabran?\\
@@ -238,13 +241,13 @@ Centralna tema ovog rada je  opisivanje formalne sematnike.Ukratko je opisano š
 \section{Krupne primedbe i sugestije}
 
 U samom uvodu je, na nacn razumljiv i nekome kome ova tema nije familijarna, opisano šta je sintaksa, a šta semantika programskih jezika. Lepo je opisana i razlika izmedju formalnog i neformalnog zadavanja semantike. Možda bi bilo dobro pronaci dobar primer i na njemu prikazati uporedo formalnu i neformalnu semantiku.\\
-\odgovor{U radu je na početku prikazan primer neformalne semantike uz upotrebu while naredbe, a kasnije se, u odeljku aksiomatske semantike, takođe prikazuje primer gde je upotrebljena while naredba. Ideja je bila da se kroz razčite primere prikažu tri vrste formalne semantike, dok je neformalna semantika poprilično intuitivna za jednostavne primere, pa bi bilo višak prikazivati je kod primera koji ilustruju formalne semantike.}\\
+\odgovor{U radu je na početku prikazan primer neformalne semantike uz upotrebu while naredbe, a uporedo prikazivanje formalne semantike na tom mestu nije moguće jer još uvek nisu definisani načini definisanja formalne semantike. Ideja je bila da se kroz različite primere prikažu tri vrste formalne semantike, dok je neformalna semantika poprilično intuitivna za jednostavne primere, pa bi bilo višak prikazivati je kod primera koji su dati za ilustraciju formalne semantike.}\\
  Na više mesta u radu se pominje koje je znacenje sintakse a koje semantike u programskim jezicima, što mislim da treba ostaviti samo na jednom mestu, na pocetku rada. \\
 \odgovor{DOPUNI!!!!!!!!!!!!!}\\
 Dupliran je tekst na kraju rada, pasus pre zakljucka i zakljucak. \\
 \odgovor{Obrisan je dupliran pasus.}\\
 Prilikom opisivianja operacione semantike pri dnu strane cetiri, pominje se da ce biti opisane obe vrste operacione semantike, a opisana je samo prirodna  semantika.\\
-\odgovor{Dodato je objašnjenje za strukturnu semantiku (odeljak 3.2).}\\
+\odgovor{Dodato je objašnjenje za strukturnu semantiku (odeljak 2.1.2).}\\
  Prikazana je tablica prirodne semantike za while petlju, možda je potrebno više taj primer približiti citaocu(npr. opis recima samog primera, kao što je uradjeno u delu vezanom za aksiomatsku semantiku primer Primer 4.1).    
 \\
 \odgovor{DOPUNI!!!!!!!!!!!!!}\\
@@ -279,7 +282,8 @@ Da.
 \item Da li su u radu reference korektno navedene?\\
 Da. Osim sto postoji [?] referenca. 
 \item Da li je struktura rada adekvatna?\\
-Da. Mada bi mozda trebalo struktuirati tako da se i po strukturi rada vidi da su operaciona, denotaciona i aksiomatska semantika podceline (vrste) formalne semantike.
+Da. Mada bi mozda trebalo struktuirati tako da se i po strukturi rada vidi da su operaciona, denotaciona i aksiomatska semantika podceline (vrste) formalne semantike.\\
+\odgovor{Preuređene su sekcije, sada operaciona, denotaciona i aksiomatska semantika predstavlaju podsekcije formalne semantike.}
 \item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
 Uglavnom da. Jedino je broj referenci manji od propisanog za broj clanova tima. Za tim od tri clana trazi se broj strana 10-12, sto je u redu i minimum 10 referenci, a ovde imamo svega 6.
 \item Da li su slike i tabele funkcionalne i adekvatne?\\
@@ -315,13 +319,13 @@ Zaključak i poslednji pasus prethodnog odeljka su identični. Jasno je da je u 
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
 Denotaciono stablo u primeru 3.1 je previše sitno.\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Povećan je font u denotacionom stablu.}\\
 Na strani 3 nakon navođenja strukturne semantike, postoji nekakva tačka.\\
 \odgovor{Obrisana je tačka, a dodata referenca.}\\
 Neuspešno ubacivanje referenci na stranama 4 i 5.\\
 \odgovor{Sve greške sa referencama su ispravljene u celom radu.}\\
 Na četvrtoj strani pri opisima konfiguracija pretpostavljam da su autori za završno stanje hteli da napišu s'.\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Na tom mestu je ispravljeno završno stanje iz \textit{s} u \textit{s'}.}\\
 Koristi se izraz "operacijska semantika" u zaključku nasuprot izrazu "operaciona semantika"  koji se koristio tokom ostatka rada. \\
 \odgovor{Izraz "operacijska semantika" je ispravljen u "operaciona semantika" u zaključku.}\\
 Čini mi se da je češći prevod "parcijalna korektnost" u domaćoj literaturi za {\em partial corectness}. \\
@@ -334,9 +338,11 @@ Koristi se izraz "operacijska semantika" u zaključku nasuprot izrazu "operacion
 Da. Daje kratak opis semantika i mislim da je koristan za osobe koje se tek upoznaju sa materijom.
 \item Da li je nešto važno propušteno?\\
 Nije bilo elaboracije na temu koja semantika odgovara funkcionalnim a koja imperativnim jezicima. 
+\odgovor{U poglavlju 2.1 i u poglavlju 2.2 su dodati pasusi koji govore da se za imperativne jezike koristi operaciona, a za funkcionalne jezike denotaciona semantika.}
 \item Da li ima suštinskih grešaka i propusta?\\
 \item Da li je naslov rada dobro izabran?\\
-Možda bi bio adekvatniji neki naslov koji ističe da je u pitanju kratak pregled.\odgovor{Naslov je prepravljen u Osnove formalne semantike programskih jezika}
+Možda bi bio adekvatniji neki naslov koji ističe da je u pitanju kratak pregled.\\
+\odgovor{Naslov je prepravljen u Osnove formalne semantike programskih jezika}
 \item Da li sažetak sadrži prave podatke o radu?\\
 Da.
 \item Da li je rad lak-težak za čitanje?\\
@@ -384,24 +390,24 @@ Rad je prilično dobro odrađen i kao takav je veoma lako čitljiv. Krupnijih za
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
 Kod navođenja C-ovskih izraza, u tekstu uvoda, preglednije bi bilo staviti ih u novi red i tako odvojiti od ostatka teksta. \\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Autori misle da je nepotrebno izdvajati ove izraze u poseban red jer su prikazani samo kao primeri nekih izraza, nigde se kasnije ne objašnjavaju. Njihovo izdvajanje u novi red bi dovelo do teže čitljivosti rečenice.}\\
 
 U tekstu pod naslovom 2 \emph{Formalna semantika}, poslednja rečenica (\emph{'Na slici 1 dat je prikaz kompajlera'}), preciznije je reći da je dat \emph{'prikaz strukture kompajlera'}.\\
 \odgovor{Ispravljeno je u ,,Na slici 1 dat je prikaz strukture kompilatora.''}\\
 
 U tekstu pod naslovom 3 \emph{Operaciona semantika}, prva rečenica nakon navođenja vrsti istih, napisano je \emph{'apstraknih'} umesto \emph{'apsrtaktnih'}.\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Reč ,,apstraknih'' je ispravljena u ,,apstraktnih''}.\\
 U poslednjoj rečenici na strani 3, umesto \emph{'masinu'} trebalo bi da piše \emph{'mašinu'}, takođe u istoj rečenici \emph{'c'} treba zameniti sa \emph{'ć'}.
  U istom pasusu takođe ima greški sa nekorišćenjem slova srpske abecede.\\
 \odgovor{Sva ogoljena latinična slova u tekstu su ispravljena.}\\
  U istom pasusu, kod navođenja algoritma zapisom instrukcija apstraktne mašine nije jasan simbol koji je naveden u \emph{if} naredbi. \\
-\odgovor{Nejasan simbol je zamenjen simbolom $<$.}\\
+\odgovor{Nejasan simbol je zamenjen simbolom $>$.}\\
  Takođe u narednom pasusu napisano je \emph{'apstraknu'} umesto \emph{'apstraktnu'}. \\
 \odgovor{Prepravljeno.}\\
 Referenca na u narednom pasusu nije lepo navedena, a takođe i na narednoj strani.\\
 \odgovor{Sve greške se referencama su ispravljene.}\\ 
 Kod navođenja značenja engleskih reči poželjno bi bilo koristiti '\emph{emph}' obeleživač.\\
-\odgovor{DOPUNI!!!!!!!!!!!!!}\\
+\odgovor{Da li je ovo zaista neko pravilo? Autori se do sada nisu susreli sa ovim.}\\
 
 U prvom pasusu u tekstu pod naslovom 5 \emph{Aksiomatska semantika}, u petoj rečenici, napisano je \emph{'logicki'} umesto \emph{'logički'}.
  U narednoj rečenici i definiciji 5.1 greška sa istim slovom.\\
@@ -453,5 +459,12 @@ Veoma upućen. Bavim se programiranjem na fakultetu i van njega, i semantika kao
 
 \chapter{Dodatne izmene}
 %Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
-
+Apstrakt: 
+\begin{enumerate}
+\item u ključnim rečima zamenjeno veliko \textit{S} u Semantika programskih jezika u malo \textit{s}.
+\end{enumerate}
+Formalna semantika:
+\begin{enumerate}
+\item izraz \texttt{$ while(x > 0)$  $\lbrace x--;\rbrace$} je izdvojen u novi red radi čitljivosti
+\end{enumerate}
 \end{document}
