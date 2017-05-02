@@ -131,7 +131,7 @@ Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvrša
 
 Uvedimo pojam konfiguracije.
 \begin{definicija}
-Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}. Intuitivno, konfiguracija $\langle$ \textit{c, $\omega$} $\rangle$ predstavlja neko trenutno stanje izvršavanja programa, gde \textit{$\omega$} predstavlja ulazne vrednosti za naredbu, a \text{c} predstavlja sledeću naredbu koja će se izvršiti sa datim ulaznim parametrima. \cite{micko} 
+Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}. Intuitivno, konfiguracija $\langle$ \textit{c, $\omega$} $\rangle$ predstavlja neko trenutno stanje izvršavanja programa, gde \textit{$\omega$} predstavlja ulazne vrednosti za naredbu, a \text{c} predstavlja sledeću naredbu koja će se izvršiti sa datim ulaznim parametrima. \cite{opersem2} 
 \end{definicija}
 Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
@@ -147,7 +147,7 @@ Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacio
 \begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
 Intuitivno ovo znači da izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da se program \textit{S} izvrši i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da se program \textit{S} uopšte ne izvrši. Pravo značenje programa \textit{S} bi tada bilo:
 \begin{center}\{(\textit{s, s'}) : $\langle$\textit{S, s}$\rangle$ $\rightarrow$ \textit{s'}\} \end{center} 
-pa nam semantička pravila omogućavaju da generišemo skup tačnih to jest istinitih iskaza, gde su svi ostali iskazi netačni po definiciji.\cite{opersem}
+pa nam semantička pravila omogućavaju da generišemo skup tačnih to jest istinitih iskaza, gde su svi ostali iskazi netačni po definiciji.\cite{wiley}
 Definicija za $\rightarrow$ je prikazana preko pravila datih u tabeli ~\ref{tab:b}. \textit{Pravilo} generalno ima formu
 
 {\large \begin{center}$\frac{\langle S_1, s_1 \rangle \rightarrow s'_1, ... , \langle S_n, s_n \rangle \rightarrow s'_n}{\langle S, s \rangle \rightarrow s'}$ \end{center}}
@@ -188,12 +188,12 @@ Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i
 	\item Ako je u pitanju aksiom i ako su uslovi aksioma ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
 	\item Ako je u pitanju pravilo, sledeći korak je pokušati konstruisati stablo izvođenja za premise datog pravila. Kad se ovaj deo odradi, neophodno je proveriti da li su uslovi pravila ispunjeni i tek onda možemo zaključiti završno stanje  $\langle$ \textit{S, s} $\rangle$.
 \end{itemize}
-Više o ovoj temi se može pronaći u \cite{wiley, opersem}.
+Više o ovoj temi se može pronaći u \cite{wiley}.
 
 \subsubsection{Strukturna operaciona semantika}
 Prirodna semantika nekada nije pogodna za obimnu analizu, tada se uglavnom koristi \textit{strukturna operaciona semantika} (skraćeno SOS), kojom je moguće opisati imperativne programe kao i neke složene slučajeve, kao što su na primer, semantika pokazivača i semantika višenitne obrade ili čak baratati sa ,,goto" naredbama. U SOS-u ćemo tranzicionu relaciju zapisivati kao:
 \begin{center} $\langle$ \textit{S, s} $\rangle$ $\Longrightarrow$ \textit{$\gamma$} \end{center}
-ovo treba razmatrati kao {\em prvi korak} izvršavanja programa \textit{S} u stanju \textit{s} koji vodi do stanja \textit{$\gamma$} \cite{opersem}.\\
+ovo treba razmatrati kao {\em prvi korak} izvršavanja programa \textit{S} u stanju \textit{s} koji vodi do stanja \textit{$\gamma$} \cite{wiley}.\\
 Možemo razlikovati dva slučaja za $\gamma$:
 \begin{enumerate}
 	\item $\gamma$ = $\langle$ \textit{S', s'} $\rangle$: izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} {\em nije završeno}, i ostatak izračunavanja će biti izraženo srednjom konfiguracijom $\langle$ \textit{S', s'} $\rangle$.
