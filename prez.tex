@@ -3,6 +3,7 @@
 \usecolortheme{dolphin}
 \usepackage[utf8x,utf8]{inputenc} % make weird characters work
 \usepackage[croatian]{babel}
+\usepackage{tcolorbox}
 \setbeamertemplate{footline}[frame number]
 \title{Osnove formalne semantike programskih jezika}
 \subtitle{Seminarski rad u okviru kursa \\ Metodologija stručnog i naučnog rada}
@@ -108,12 +109,23 @@
 \begin{frame}{Aksiomatska semantika}
  \begin{itemize}
   \item postoji parcijalna ispravnost specifikacije i potpuna ispravnost naredbe
-  \item Uloga aksiomatske semantike
+  \item uloga aksiomatske semantike
   \begin{itemize}
-  \item 
-   \item 
-   \item 
+  \item dokazivanje korektnosti programa i algoritama
+   \item proširena statička provera (npr. provera granice niza)
+   \item dokumentacija programa i interfejsa
     \end{itemize} 
+    \item primer sa faktorijalom
+  \begin{tcolorbox}
+  \begin{center}
+
+
+\texttt{\{ x = n \}}   \\
+\texttt{ y:=1;} 
+ \texttt{while $ \neg(x=1) $   do  (y:=x*y; x:=x-1) }\\
+\texttt{ \{ y=n! and  n>0 \}  } \\
+\end{center}
+\end{tcolorbox}
   \end{itemize} 
 \end{frame}
 \section{Dalje istraživanje}
@@ -126,6 +138,8 @@
   	 \item ulogu formalne semantike pri konstruisanju kompilatora
   	 \item pregled formalne semantike nekog programskog jezika, npr. Hasekell
   \end{itemize}
+  
+
   \end{itemize}
 \end{frame}
 \section{Literatura}
