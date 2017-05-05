@@ -4,6 +4,7 @@
 \usepackage[utf8x,utf8]{inputenc} % make weird characters work
 \usepackage[croatian]{babel}
 \usepackage{tcolorbox}
+\usepackage{color}
 \setbeamertemplate{footline}[frame number]
 \title{Osnove formalne semantike programskih jezika}
 \subtitle{Seminarski rad u okviru kursa \\ Metodologija stručnog i naučnog rada}
@@ -31,10 +32,11 @@
   \begin{itemize}
   \item Kao i prirodni jezici, programski jezici se bave izučavanjem sintakse i semantike.
   \item Sintaksa se bavi strukturom programskog jezika.
-  \item Semantika se bavi značenjem programskog jezika.
+  \item {\color{magenta} Semantika se bavi značenjem programskog jezika.}
+  \item Dve vrste semantike:
   \begin{itemize}
-  \item neformalna semantika
-  \item formalna semantika
+  \item {\color{blue} neformalna }
+  \item {\color{blue} formalna }
   \end{itemize}
   
   \end{itemize}
@@ -48,13 +50,13 @@
  \begin{itemize}
  \item Motivacija:
  \begin{itemize}
- \item umanjuje nepreciznosti koje se javljaju u neformalnom definisanju semantike
- \item daje neki vid opisa logike programskog jezika za koji je definisana
- \item čini osnovu formalne verifikacije programa (deo je kompilatora)
+ \item {\color{magenta} umanjuje nepreciznosti} koje se javljaju u neformalnom definisanju semantike
+ \item daje neki vid {\color{magenta} opisa logike programskog jezika } za koji je definisana
+ \item čini osnovu formalne verifikacije programa {\color{magenta} (deo je kompilatora)}
   \end{itemize}
  \item Pristupi definisanja:
  \begin{itemize}
- \item operaciona semantika
+ \item \color{blue}operaciona semantika
  \item denotaciona semantika
  \item aksiomatska semantika
  \end{itemize}
@@ -67,12 +69,12 @@
 \begin{frame}{Operaciona semantika}
  	\begin{itemize}
   		\item način davanja značenja programskim jezicima kroz matematičku reprezentaciju
-		\item opisuje kako se stanje programa menja tokom izvršavanja programa
+		\item {\color{magenta}opisuje kako se stanje programa menja tokom izvršavanja programa}
 		\item niz računarskih koraka predstavlja značenje programa
 		\item klasifikovana je u dve kategorije: 
 			\begin{itemize}
-				\item prirodna semantika
-				\item strukturna operaciona semantika
+				\item {\color{blue} prirodna semantika}
+				\item {\color{blue} strukturna operaciona semantika}
 			\end{itemize}
 		\item ponašanje programa se definiše tranzicionim sistemom
  	\end{itemize}
@@ -81,7 +83,7 @@
 \begin{frame}{Prirodna operaciona semantika}
 	\begin{itemize}
  	\item ,,veliki koraci"
- 	\item opisuje krajnje rezultate izvršavanja
+ 	\item {\color{magenta} opisuje krajnje rezultate izvršavanja}
  	\item predstavlja apstrakciju
  	\item opisuje vezu između početnog i završnog stanja izvršavanja programa
  	\item često jednostavnija za upotrebu
@@ -91,7 +93,7 @@
 \begin{frame}{Strukturna operaciona semantika}
 \begin{itemize}
 	\item ,,mali koraci"
-	\item  opisuje kako se svaki korak programa izvršava
+	\item  {\color{magenta} opisuje kako se svaki korak programa izvršava}
 	\item koristi se za obimne analize i složene slučajeve
 	\item semantika pokazivača, višenitne obrade, goto naredbe...
 	\item veća kontrola nad detaljima
@@ -102,28 +104,64 @@
   \begin{itemize}
   \item nastala 1960. godina
   \item drugi naziv je matematička semantika
-  \item predstavlja pristup formalizaciji semantike konstruisanjem matematičkih objekata 
+  \item {\color{magenta} predstavlja pristup formalizaciji semantike konstruisanjem matematičkih objekata }
   \item bitan samo odnos između početnog i završnog stanja, a ne koraci izvršavanja programa
-   \item bitna osobina - kompozitivnost
+   \item bitna osobina -{\color{magenta} kompozitivnost }
    \begin{itemize}
    \item semantika jedne programske celine definisana je preko semantike njenih poddelova
    \item izraz $15 + 3$ ima isto značenje kao $16 + 2$
    \end{itemize}
+   \item najbolja za definisanje semantike funkcionalnih jezika
    \end{itemize}
 \end{frame}
 
-\begin{frame}{lsldjskdjks}
-  
+\begin{frame}{Semantika aritmetičkih izraza}
+
+\begin{tcolorbox}
+   \textbf{Sintaksni domeni i pravila:}
+\begin{itemize}
+
+\item$B: Broj $ , $C: Cifra $ , $I: Izraz $\\
+\item$ Broj ::== Cifra | Broj Cifra $, $ Cifra ::== 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 $, $ Izraz ::== Broj | Izraz+Izraz $
+\end{itemize}
+   \textbf{Semantički domeni}
+\begin{itemize}
+\item $N={0,1,2,3,....} $\\
+\end{itemize}
+\end{tcolorbox}
+
+\end{frame}
+\begin{frame}
+\begin{tcolorbox}
+    \textbf{Funkcije značenja}
+\begin{itemize}
+\item $povbn: B \rightarrow N $ , $povcn: C \rightarrow N $ , $sem: I \rightarrow N $   \\
+
+\item $plus: N \times N \rightarrow N $ , $pom: N \times N \rightarrow N $ \\
+
+\item $ povcn[[0]] = 0,... ,povcn[[9]] = 9 $\\
+
+\item $ povbn[[C]] = povcn[[C]] $\\
+$ povbn[[B C]]\mbox{ = plus(pom(10,povezibn[[B]]),povbn[[C]])} $
+
+\item $ sem[[B]] = povbn[[B]] $, $ sem[[I1 + I2]] = plus(sem[[I1]],sem[[I2]]) $
+\end{itemize}
+ 
+\end{tcolorbox}
+
+\begin{itemize}
+\item Koja je semantička vrednost izraza $2 + 11$?
+\end{itemize}
 \end{frame}
 \subsection{Aksiomatska semantika}
 \begin{frame}{Aksiomatska semantika}
   \begin{itemize}
   \item za njen nastanak i razvoj zaslužni Flojd, Hor i Dijkstra
-  \item zasniva se na matematičkoj logici
+  \item {\color{magenta}zasniva se na matematičkoj logici}
   \item razvija metode za proveru korektnosti programa
    \item tvrđenja su data u obliku Horovih trojki \{P\}C\{Q\}
-   \item preduslov je logički izraz u kome se definišu ograničenja promenljivih pre izvršavanja komande
-   \item postuslov je logički izraz u kome se definišu ograničenja promenljivih posle izvršavanja komande
+   \item{\color{magenta} preduslov} je logički izraz u kome se definišu ograničenja promenljivih pre izvršavanja komande
+   \item {\color{magenta} postuslov} je logički izraz u kome se definišu ograničenja promenljivih posle izvršavanja komande
   \end{itemize}
 \end{frame}
 
@@ -165,6 +203,13 @@
 \end{frame}
 \section{Literatura}
 \begin{frame}{Literatura}
-  
+  \begin{itemize}
+  \item Flemming Neilson, {\color{blue} Hanne Riis Nielson, Semantics with applications},
+John Willey and Sons, 1999.
+  \item K. Slonneger and B. Kurtz, {\color{blue}Formal Syntax and Semantics of Programming Languages}, Addison-Wesley Publishing Company, United
+States of America, 1995.
+  \item M. Vujošević Janičić, {\color{blue}Dizajn programskih jezika, Osnovna svojstva programskih jezika}, Beograd, 2016.
+  \item B. Evan Chang, {\color{blue}Introduction to Axiomatic Semantics}, United States of America, 2009.
+  \end{itemize}
 \end{frame}
 \end{document}
