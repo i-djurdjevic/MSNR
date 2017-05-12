@@ -115,14 +115,14 @@ Apstraktne mašine se koriste za interpretaciju implementacije određenog progra
 \end{center}
 \hfill \break
 
-Iz ovakvog zapisa se vidi da će se ciklus izvršavati \textit{end} puta, sve dok je vrednost promenljive \textit{i} manja od vrednosti promenljive \textit{end} i da će u trenutku kada te dve promenljive dobiju iste vrednosti prestati izvršavanje petlje, gde u ovom konkretnom slučaju ignorišemo šta se dešava u telu ciklusa. Takođe treba primetiti da nam ovo objašnjenje daje \textit{apstraktnu} definiciju izvršavanja for petlje na mašini, jer ne posmatramo stvari kao što su vrednosti adresa i registara. Operaciona semantika je nezavisna od arhitekture mašine i načina implementacije \cite{parezanovic}.
+Iz ovakvog zapisa se vidi da će se ciklus izvršavati \textit{end} puta, sve dok je vrednost promenljive \textit{i} manja od vrednosti promenljive \textit{end} i da će u trenutku kada te dve promenljive dobiju iste vrednosti prestati izvršavanje petlje, gde u ovom konkretnom slučaju ignorišemo šta se dešava u telu ciklusa. Takođe, treba primetiti da nam ovo objašnjenje daje \textit{apstraktnu} definiciju izvršavanja for petlje na mašini, jer ne posmatramo stvari kao što su vrednosti adresa i registara. Operaciona semantika je nezavisna od arhitekture mašine i načina implementacije \cite{parezanovic}.
 
 
 Uvedimo pojam konfiguracije \cite{opersem2}.
 \begin{definicija}
 Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}.
 \end{definicija}
-Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
+Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} jezika. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
 	\item $\langle$ S, s $\rangle$ - Naredba \textit{S} će biti izvršena od stanja \textit{s}.
 	\item s' predstavlja završno stanje.
@@ -134,7 +134,7 @@ Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacio
 \qquad Prirodna semantika je apstrakcija. U njoj je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao:
 
 \begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
-Intuitivno ovo znači da izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da program \textit{S} završi sa radom i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da program \textit{S} uopšte ne završi sa radom. Pravo značenje programa \textit{S} bi tada bilo:
+Intuitivno ovo znači da rad programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da program \textit{S} završi sa radom i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da program \textit{S} uopšte ne završi sa radom. Pravo značenje programa \textit{S} bi tada bilo:
 \begin{center}\{(\textit{s, s'}) : $\langle$\textit{S, s}$\rangle$ $\rightarrow$ \textit{s'}\} \end{center} 
 pa nam semantička pravila omogućavaju da generišemo skup tačnih to jest istinitih iskaza, gde su svi ostali iskazi netačni po definiciji \cite{wiley}.
 Definicija za $\rightarrow$ je prikazana preko pravila datih u tabeli ~\ref{tab:b}. \textit{Pravilo} generalno ima formu
@@ -164,9 +164,9 @@ Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne s
     \end{center}
 \end{table}
 
-Posmatrajmo tabelu ~\ref{tab:b}. Aksioma [$ass_{ns}$] govori da u stanju \textit{s}, naredba \textit{x := a} će dovesti do završnog stanja $s[x \mapsto A[[a]]s]$ što predstavlja isto stanje kao \textit{s}, samo što \textit{x} ima vrednost \textit{A[[a]]s]}. Objasnimo ovo na primeru:  \begin{center} $\langle$ \textit{x := x + 1, $s_0$} $\rangle$ $\rightarrow$ \textit{$s_0$[x $\rightarrow$ 1]}
+Posmatrajmo tabelu ~\ref{tab:b}. Aksioma [$ass_{ns}$] govori da u stanju \textit{s}, naredba \textit{x := a} će dovesti do završnog stanja $s[x \mapsto A[[a]]s]$ što predstavlja isto stanje kao \textit{s}, samo što \textit{x} ima vrednost \textit{A[[a]]s]}. Objasnimo ovo na primeru, gde $s_0$ je stanje koje postavlja svim promenljivima vrednost na 0:  \begin{center} $\langle$ \textit{x := x + 1, $s_0$} $\rangle$ $\rightarrow$ \textit{$s_0$[x $\rightarrow$ 1]}
 \end{center}
-$s_0$ je stanje koje postavlja svim promenljivima vrednost na 0, tada gore navedeni izraz predstavlja instancu aksiome  $[ass_{ns}]$ jer \textit{x} instancira \textit{x}, \textit{a} instancira \textit{x + 1}, \textit{s} instancira \textit{$s_0$} i vrednost \textit{A[x + 1]$s_0$} je 1.\\ Slično se definiše $[skip_{ns}] $ kao aksioma koja ne menja stanje.\\ Pravilo $[comp_{ns}] $ nam govori sledeće: da bi \textit{$S_1$;$S_2$} završilo sa radom, sa početnim stanjem \textit{s}, \textit{$S_1$} mora prvo završiti sa radom sa ulaznim stanjem \textit{s}. Nakon ovoga će početi sa radom $S_2$ sa ulaznim stanjem \textit{s’}. \\
+gore navedeni izraz predstavlja instancu aksiome  $[ass_{ns}]$ jer \textit{x} instancira \textit{x}, \textit{a} instancira \textit{x + 1}, \textit{s} instancira \textit{$s_0$} i vrednost \textit{A[x + 1]$s_0$} je 1.\\ Slično se definiše $[skip_{ns}] $ kao aksioma koja ne menja stanje.\\ Pravilo $[comp_{ns}] $ nam govori sledeće: da bi \textit{$S_1$;$S_2$} završilo sa radom, sa početnim stanjem \textit{s}, \textit{$S_1$} mora prvo završiti sa radom sa ulaznim stanjem \textit{s}. Nakon ovoga će početi sa radom $S_2$ sa ulaznim stanjem \textit{s’}. \\
 Kod $[if_{ns}]$ aksiome postoje dva pravila. Prvo pravilo, $[if^{tt}_{ns}] $ kaže da bi \textit{$S_1$} počeo sa radom neophodno je da \textit{b} ima vrednost \textit{tt}. Slično, drugo pravilo $[if^{ff}_{ns}]$ kaže da bi \textit{$S_2$} krenuo sa radom neophodno je da \textit{b} ima vrednost \textit{ff}.\\  Ostala pravila se analogno definisu \cite{wiley}.
 
 
