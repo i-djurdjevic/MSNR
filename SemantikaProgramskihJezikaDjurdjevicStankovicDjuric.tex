@@ -63,7 +63,10 @@ Teško je pisati vrlo precizne definicije neformalnim jezikom, obično postane k
 
 Pri učenju novog programskog jezika, programer bi trebalo da uči i samu logiku jezika. Neki vid opisa logike programskog jezika olakšava programerima pisanje jakih i stabilnih programa.  Ovaj opis nam može pružiti, takođe, formalna semantika.
 
-Još jedan od razloga zašto se uvodi formalna semantika jeste to što ona čini osnovu formalne verifikacije programa, tj. deo je interpretera i kompilatora. Na slici \ref{fig:kompilator} dat je prikaz strukture kompilatora.
+Još jedan od razloga zašto se uvodi formalna semantika jeste to što ona čini osnovu formalne verifikacije programa, odnosno, deo je metoda za ispitivanje ispravnosti programa koji koristi matematičke dokaze kako bi pokazao da program zadovoljava zadatu specifikaciju.
+
+
+Formalna semantika čini i deo interpretera i kompilatora. Koristi se kako bi se proverilo da li je program semantički zadovoljavajuć. Obično izbacuje upozerenje, a ne grešku ako uoči neke nepravilnosti. Na slici \ref{fig:kompilator} dat je prikaz strukture kompilatora.
 
 \begin{figure}[h!]
 \begin{center}
@@ -72,6 +75,9 @@ Još jedan od razloga zašto se uvodi formalna semantika jeste to što ona čini
 \caption{Struktura kompilatora \cite{slika}}
 \label{fig:kompilator}
 \end{figure}
+
+Kako u 21. veku sve ide ka tome da bude automatizovano, tako se tražilo i rešenje za automatsko rezonovanje o semantičkim svojstvima programa. Formalna semantika se,  pre svega, koristi baš u te svrhe. Da nema formalne semantike, proces automatskog rezonovanja o semantičkim svojstvima programa bio bi nemoguć jer mašini je nemoguće zadati neformalnu semantiku kao sredstvo za opisivanje semantike.
+
 
 Kompleksnost uvođenja formalne semantike daje više načina pristupa njenom definisanju. Mi ćemo se fokusirati na tri pristupa:
 \begin{enumerate}
@@ -337,7 +343,7 @@ jer je:
 S obzirom na to da se funkcionalno programiranje zasniva na pojmu matematičkih funkcija i da se izvršavanje programa svodi na evaluaciju funkcija \cite{milena2}, denotaciona semantika je najbolja za definisanje semantike funkcionalnih programskih jezika.
 
 
- Prednost denotacione semantike je u tome što apstrahuje kako se programi izvršavaju. Analiziranje programa se svodi na analiziranje matematičkih objekata, što olakšava stvar. Denotaciona semantika ima veliku primenu u konstrukciji programa za prevođenje \cite{parezanovic}.
+ Prednost denotacione semantike je u tome što apstrahuje kako se programi izvršavaju. Analiziranje programa se svodi na analiziranje matematičkih objekata, što umnogome olakšava stvar \cite{parezanovic}.
 
 \subsection{Aksiomatska semantika}
 \label{sec:akssem}
@@ -409,7 +415,7 @@ Način funkcionisanja ove semantike možemo prikazati u primeru sa faktorijalom 
 \texttt{ \{ y=n! and  n > 0 \}  } \\
 \end{center}
 n je u primeru specijalna promenljiva koja se naziva logička promenljiva i koja, za razliku od programskih promenljivih, ne sme se pojaviti ni u jednoj naredbi koja se izvršava u programu i njena vrednost će uvek biti ista. Njena uloga je da pamte inicijalne vrednosti programskih promenljivih. \\
- Zapisali smo  preduslov da promenljiva n ima jednaku vrednost kao i x u početnom stanju (tj. nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da konačna vrednost y  će biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
+ Zapisali smo  preduslov da promenljiva n ima jednaku vrednost kao i x u početnom stanju (tj. pre nego što program sa faktorijalom krene da se izvršava). S obzirom da program neće promeniti vrednost promenljive n, postuslov y=n! će izraziti da će konačna vrednost y  biti jednaka faktorijalu početne vrednosti promenljive x, kada se izvršavanje programa završi. \\
 
 \end{primer}
 
