@@ -115,11 +115,12 @@ Apstraktne mašine se koriste za interpretaciju implementacije određenog progra
 \end{center}
 \hfill \break
 
-Iz ovakvog zapisa se vidi da će se ciklus izvršavati \textit{end} puta, sve dok je vrednost promenljive \textit{i} manja od vrednosti promenljive \textit{end} i da će u trenutku kada te dve promenljive dobiju iste vrednosti prestati izvršavanje petlje, gde u ovom konkretnom slučaju ignorišemo šta se dešava u telu ciklusa. Takođe treba primetiti da nam ovo objašnjenje daje \textit{apstraktnu} definiciju izvršavanja for petlje na mašini, jer ne posmatramo stvari kao što su vrednosti adresa i registara. Dobra strana operacione semantike jeste što je ona nezavisna od arhitekture mašine i načina implementacije \cite{parezanovic}.
+Iz ovakvog zapisa se vidi da će se ciklus izvršavati \textit{end} puta, sve dok je vrednost promenljive \textit{i} manja od vrednosti promenljive \textit{end} i da će u trenutku kada te dve promenljive dobiju iste vrednosti prestati izvršavanje petlje, gde u ovom konkretnom slučaju ignorišemo šta se dešava u telu ciklusa. Takođe treba primetiti da nam ovo objašnjenje daje \textit{apstraktnu} definiciju izvršavanja for petlje na mašini, jer ne posmatramo stvari kao što su vrednosti adresa i registara. Operaciona semantika je nezavisna od arhitekture mašine i načina implementacije \cite{parezanovic}.
 
-Uvedimo pojam konfiguracije \cite{opersem2} .
+
+Uvedimo pojam konfiguracije \cite{opersem2}.
 \begin{definicija}
-Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}. Intuitivno, konfiguracija $\langle$ \textit{c, $\omega$} $\rangle$ predstavlja neko trenutno stanje izvršavanja programa, gde \textit{$\omega$} predstavlja ulazne vrednosti za naredbu, a \text{c} predstavlja sledeću naredbu koja će se izvršiti sa datim ulaznim parametrima. 
+Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}.
 \end{definicija}
 Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
@@ -133,19 +134,19 @@ Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacio
 \qquad Prirodna semantika je apstrakcija. U njoj je bitna veza između početnog i završnog stanja izvršavanja. Tada će tranziciona relacija prikazivati vezu između početnog stanja i završnog stanja za svaku naredbu. Tranziciju ćemo obeležavati kao:
 
 \begin{center}$\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'} \end{center}
-Intuitivno ovo znači da izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da se program \textit{S} izvrši i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da se program \textit{S} uopšte ne izvrši. Pravo značenje programa \textit{S} bi tada bilo:
+Intuitivno ovo znači da izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} će se završiti i rezultujuće stanje će biti \textit{s'}. Drugi deo formule je samo delimično definisan, neophodno je naglasiti da je moguće da program \textit{S} završi sa radom i da rezultujuće stanje bude neko drugo stanje različito od \textit{s'}, kao i da je moguće da program \textit{S} uopšte ne završi sa radom. Pravo značenje programa \textit{S} bi tada bilo:
 \begin{center}\{(\textit{s, s'}) : $\langle$\textit{S, s}$\rangle$ $\rightarrow$ \textit{s'}\} \end{center} 
-pa nam semantička pravila omogućavaju da generišemo skup tačnih to jest istinitih iskaza, gde su svi ostali iskazi netačni po definiciji.\cite{wiley}
+pa nam semantička pravila omogućavaju da generišemo skup tačnih to jest istinitih iskaza, gde su svi ostali iskazi netačni po definiciji \cite{wiley}.
 Definicija za $\rightarrow$ je prikazana preko pravila datih u tabeli ~\ref{tab:b}. \textit{Pravilo} generalno ima formu
 
 {\large \begin{center}$\frac{\langle S_1, s_1 \rangle \rightarrow s'_1, ... , \langle S_n, s_n \rangle \rightarrow s'_n}{\langle S, s \rangle \rightarrow s'}$ \end{center}}
 
 gde \textit{$S_1$, ..., $S_n$} nazivamo neposrednim konstituentima (eng.~{\em immediate constituents}) od \textit{S}. Pravilo se sastoji iz određenog broja \textit{premisa} (nalaze se iznad linije) i jednog \textit{zaključka} (nalazi se ispod linije).
 
-Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksiom}. \cite{wiley}
+Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne strane linije) koji moraju biti ispunjeni kako bi se primenilo pravilo. Pravilo sa praznim skupom premisa se naziva \textit{aksioma} \cite{wiley}.
 
 \begin{table}[h]
-       \caption{Prirodna semantika za While petlju}
+       \caption{Prirodna semantika za While jezik}
     	\begin{center}
         \begin{tabular}{lrc}\hline
         \hline
@@ -155,7 +156,7 @@ Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne s
          $[comp_{ns}] $ & $ \frac{\langle S_1, s \rangle \rightarrow s', \langle S_2, s' \rangle \rightarrow s''}{\langle S_1;S_2, s \rangle \rightarrow s''}$ \\[6pt]
             $[if^{tt}_{ns}] $ & $ \frac{\langle S_1, s \rangle \rightarrow s'}{\langle if\ b\ then\ S_1\ else\ S_2,\ s \rangle \rightarrow s'}\  if\ B[[b]]s\ =\ tt $ \\ [6pt]
             $[if^{ff}_{ns}] $ & $ \frac{\langle S_2, s \rangle \rightarrow s'}{\langle if\ b\ then\ S_1\ else\ S_2,\ s \rangle \rightarrow\ s'}\  if\ B[[b]]s\ =\ ff $ \\ [6pt]
-            $[while^{tt}_{ns}] $ & $ \frac{\langle S, s \rangle \rightarrow s', \langle\ while\ b\ do\ S,\ s' \rangle \rightarrow\ s''}{\langle\ while\ b\ do\ S,\ s \rangle \rightarrow\ s''}\ if\ B[[b]]s\ =\ ff $ \\ [6pt]
+            $[while^{tt}_{ns}] $ & $ \frac{\langle S, s \rangle \rightarrow s', \langle\ while\ b\ do\ S,\ s' \rangle \rightarrow\ s''}{\langle\ while\ b\ do\ S,\ s \rangle \rightarrow\ s''}\ if\ B[[b]]s\ =\ tt $ \\ [6pt]
              $[while^{ff}_{ns}] $ & $ \langle\ while\ b\ do\ S,\ s \rangle \rightarrow\ s\ if\ B[b]s\ =\ ff$ \\ [6pt]
           \hline \hline
         \end{tabular}
@@ -187,7 +188,7 @@ Možemo razlikovati dva slučaja za $\gamma$:
 	\item $\gamma$ = $\langle$ \textit{S', s'} $\rangle$: izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} {\em nije završeno}, i ostatak izračunavanja će biti izraženo srednjom konfiguracijom $\langle$ \textit{S', s'} $\rangle$.
 	\item $\gamma$ = \textit{s'}: izvršavanje programa \textit{S} sa ulaznim stanjem \textit{s} se završilo sa završnim stanjem \textit{s'}.
 \end{enumerate}
-U slučaju da resultat izvršavanja $\langle$ \textit{S', s'} $\rangle$ nije dostupan kažemo da je $\gamma$ \textit{zaglavljena} (eng. {\em stuck}) konfiguracija i da nema sledećih tranzicija. \textit{Značenje} programa \textit{P} za ulazno stanje \textit{s} je skup \textit{završnih} stanja (kao i zaglavljenih konfiguracija) koji mogu biti izvršavani u proizvoljnom redosledu u konačnom broju koraka.
+U slučaju da rezultat izvršavanja $\langle$ \textit{S', s'} $\rangle$ nije dostupan kažemo da je $\gamma$ \textit{zaglavljena} (eng. {\em stuck}) konfiguracija i da nema sledećih tranzicija. \textit{Značenje} programa \textit{P} za ulazno stanje \textit{s} je skup \textit{završnih} stanja (kao i zaglavljenih konfiguracija) koji mogu biti izvršavani u proizvoljnom redosledu u konačnom broju koraka.
 
 \begin{primer} Posmatrajmo ponovo slučaj \textit{While-a}.\\
 Prva dva aksioma $[ass_{sos}]$ i $[skip_{sos}]$  su nepromenjena jer se oba izraza izvršavaju u potpunosti u jednom koraku.
@@ -197,7 +198,7 @@ Prva dva aksioma $[ass_{sos}]$ i $[skip_{sos}]$  su nepromenjena jer se oba izra
 \end{itemize} 
 Druga dva pravila $[comp^{1}_{sos}]$ i $[comp^{2}_{sos}]$ za programe $S_1$;$S_2$ govore da izvršavanje počinje prvim korakom iz $S_1$ i ulaznim stanjem s. Tada postoje dva moguća završna stanja u zavisnosti od dva slučaja:
 \begin{itemize}
-	\item $[comp^{1}_{sos}]$ - Izvršavanje programa $S_1$ nije završeno. Tada je neophodno izvršiti taj program pre početka izvršavanja programa $S_2$. U ovom slučaju prvi korak $\langle$ \textit{S, s} $\rangle$ je srednja konfiguracija  $\langle$ \textit{$S_1$', s'} $\rangle$ i sledeća konfiguracija je  $\langle$ \textit{$S_1$';$S_2$,s'} $\rangle$.\\
+	\item $[comp^{1}_{sos}]$ - Izvršavanje programa $S_1$ nije završeno. Tada je neophodno da taj program završi sa radom pre početka rada programa $S_2$. U ovom slučaju prvi korak $\langle$ \textit{S, s} $\rangle$ je srednja konfiguracija  $\langle$ \textit{$S_1$', s'} $\rangle$ i sledeća konfiguracija je  $\langle$ \textit{$S_1$';$S_2$,s'} $\rangle$.\\
 	$[comp^1_{sos}]$ \hspace{1cm} {\large $\frac{\langle S_1, s \rangle \Longrightarrow \langle S_1', s' \rangle}{\langle S_1;S_2,s \rangle \Longrightarrow \langle S_1';S_2,s' \rangle}$}
 	\item $[comp^2_{sos}]$ - Izvršavanje programa $S_1$  je završeno. Tada možemo početi sa izvršavanjem programa $S_2$. U slučaju da je rezultat izvršavanja programa $S_1$ sa ulaznim stanjem s stanje s' tada je sledeća konfiguracija $\langle$ $S_2$, s'$\rangle$ \\
 	$[comp^2_{sos}]$ \hspace{1cm}  {\large $\frac{\langle S_1, s \rangle \Longrightarrow s'}{\langle S_1;S_2,s \rangle \Longrightarrow \langle S_2, s'\rangle}$}
