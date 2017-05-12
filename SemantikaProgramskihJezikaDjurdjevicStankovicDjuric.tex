@@ -164,7 +164,13 @@ Pravilo takođe može imati određeni broj \textit{uslova} (nalaze se sa desne s
     \end{center}
 \end{table}
 
-Kada se koriste aksiomi i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, to jest da se dokaže iskaz, dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksioma, inače se naziva \textit{kompozitnim stablom}.\\
+Posmatrajmo tabelu ~\ref{tab:b}. Aksioma [$ass_{ns}$] govori da u stanju \textit{s}, naredba \textit{x := a} će dovesti do završnog stanja $s[x \mapsto A[[a]]s]$ što predstavlja isto stanje kao \textit{s}, samo što \textit{x} ima vrednost \textit{A[[a]]s]}. Objasnimo ovo na primeru:  \begin{center} $\langle$ \textit{x := x + 1, $s_0$} $\rangle$ $\rightarrow$ \textit{$s_0$[x $\rightarrow$ 1]}
+\end{center}
+$s_0$ je stanje koje postavlja svim promenljivima vrednost na 0, tada gore navedeni izraz predstavlja instancu aksiome  $[ass_{ns}]$ jer \textit{x} instancira \textit{x}, \textit{a} instancira \textit{x + 1}, \textit{s} instancira \textit{$s_0$} i vrednost \textit{A[x + 1]$s_0$} je 1.\\ Slično se definiše $[skip_{ns}] $ kao aksioma koja ne menja stanje.\\ Pravilo $[comp_{ns}] $ nam govori sledeće: da bi \textit{$S_1$;$S_2$} završilo sa radom, sa početnim stanjem \textit{s}, \textit{$S_1$} mora prvo završiti sa radom sa ulaznim stanjem \textit{s}. Nakon ovoga će početi sa radom $S_2$ sa ulaznim stanjem \textit{s’}. \\
+Kod $[if_{ns}]$ aksiome postoje dva pravila. Prvo pravilo, $[if^{tt}_{ns}] $ kaže da bi \textit{$S_1$} počeo sa radom neophodno je da \textit{b} ima vrednost \textit{tt}. Slično, drugo pravilo $[if^{ff}_{ns}]$ kaže da bi \textit{$S_2$} krenuo sa radom neophodno je da \textit{b} ima vrednost \textit{ff}.\\  Ostala pravila se analogno definisu \cite{wiley}.
+
+
+Kada se koriste aksiome i pravila da se izvede tranzicija $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, to jest da se dokaže iskaz, dobija se \textit{stablo izvođenja}. \textit{Koren} stabla izvođenja je upravo $\langle$ \textit{S, s} $\rangle$ $\rightarrow$ \textit{s'}, dok su listovi instance aksioma. Unutrašnji čvorovi su zaključci instanciranih pravila i njihova neposredna deca će biti odgovarajuće premise. Stablo izvođenja se naziva \textit{jednostavnim stablom} ako je instanca aksiome, inače se naziva \textit{kompozitnim stablom}.\\
 
 \begin{primer}
 (z := x, x := y); y := z \\
@@ -172,9 +178,9 @@ Neka $s_0$ bude stanje koje mapira sve promenljive osim x i y u 0 i ima $s_0$ x 
 \end{primer}
 {\Large\begin{center}$\frac{\frac{\langle z := x, s_0 \rangle \rightarrow s_1\ \ \langle x := y, s_1 \rangle \rightarrow s_2}{\langle z := x, x := y, s_0\rangle \rightarrow s_2\ \ \langle y := z, s_2 \rangle \rightarrow s_3}}{\langle (z := x; x := y); y := z, s_0 \rangle \rightarrow s_3}$ \end{center}}
 
-Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksioma ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
+Posmatrajmo problem konstruisanja stabla izvođenja za datu naredbu \textit{S} i stanje \textit{s}. Najbolji pristup ovakvom problemu jeste konstruisati stablo od korena \textit{nagore}. Dakle, počinjemo pronalaskom aksiome ili pravila sa zaključkom gde se leva strana slaže sa konfiguracijom $\langle$ \textit{S, s} $\rangle$. Imaćemo dva slučaja:
 \begin{itemize}
-	\item Ako je u pitanju aksiom i ako su uslovi aksioma ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
+	\item Ako je u pitanju aksioma i ako su uslovi aksiome ispunjeni onda možemo da zaključimo završno stanje i konstrukcija stabla izvođenja je gotova.
 	\item Ako je u pitanju pravilo, sledeći korak je pokušati konstruisati stablo izvođenja za premise datog pravila. Kad se ovaj deo odradi, neophodno je proveriti da li su uslovi pravila ispunjeni i tek onda možemo zaključiti završno stanje  $\langle$ \textit{S, s} $\rangle$.
 \end{itemize}
 Više o ovoj temi se može pronaći u \cite{wiley}.
@@ -191,7 +197,7 @@ Možemo razlikovati dva slučaja za $\gamma$:
 U slučaju da rezultat izvršavanja $\langle$ \textit{S', s'} $\rangle$ nije dostupan kažemo da je $\gamma$ \textit{zaglavljena} (eng. {\em stuck}) konfiguracija i da nema sledećih tranzicija. \textit{Značenje} programa \textit{P} za ulazno stanje \textit{s} je skup \textit{završnih} stanja (kao i zaglavljenih konfiguracija) koji mogu biti izvršavani u proizvoljnom redosledu u konačnom broju koraka.
 
 \begin{primer} Posmatrajmo ponovo slučaj \textit{While-a}.\\
-Prva dva aksioma $[ass_{sos}]$ i $[skip_{sos}]$  su nepromenjena jer se oba izraza izvršavaju u potpunosti u jednom koraku.
+Prve dve aksiome $[ass_{sos}]$ i $[skip_{sos}]$  su nepromenjene jer se oba izraza izvršavaju u potpunosti u jednom koraku.
 \begin{itemize}
 	\item $[ass_{sos}]$ \hspace{1cm} $\langle$ \textit{x := a, s} $\rangle$ $\Longrightarrow$ \textit{s}[\textit{x $\mapsto$ A}[\textit{a}]]
 	\item $[skip_{sos}]$ \hspace{1cm} $\langle$ skip, \textit{s} $\rangle$ $\Longrightarrow$ \textit{s}
