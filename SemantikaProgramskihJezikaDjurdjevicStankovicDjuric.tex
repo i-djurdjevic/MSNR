@@ -107,37 +107,19 @@ Jedna od osnovnih karakteristika imperativnih jezika je da ovi jezici imaju impl
 
 Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.
 
-Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu, na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojački programski ciklus u jeziku Pascal:\\
-
-\begin{center}\textit{for i:= početak to kraj do}
+Apstraktne mašine se koriste za interpretaciju implementacije određenog programskog jezika (bilo imperativnog, funkcionalnog ili logičkog) jer olakšavaju prenosivost, optimizaciju koda kao i prevođenje na mašinski jezik. Takođe, olakšavaju razumevanje pojedinih konstrukcija programskog jezika kao i kako se stanja programa menjaju pri njihovoj primeni. Posmatrajmo zapis for petlje u jeziku C: 
+\begin{center}\textit{for (i = 0; i \textless end; i++)}
 \\.
 \\.
 \\.
 \end{center}
 \hfill \break
-Značenje ovakvog zapisa ne može biti lako razumljivo. Stvarni mehanizam izvršavanja ciklusa je skriven za korisnika. Naravno, oni koji poznaju razne zapise programskih ciklusa mogu lako pretpostaviti značenje gore navedenog zapisa. Međutim, i za njih će biti teško da odgovore, šta će se dogoditi ako je vrednost promenljive \textit{početak} veća od vrednosti promeljive \textit{kraj}?
 
+Iz ovakvog zapisa se vidi da će se ciklus izvršavati \textit{end} puta, sve dok je vrednost promenljive \textit{i} manja od vrednosti promenljive \textit{end} i da će u trenutku kada te dve promenljive dobiju iste vrednosti prestati izvršavanje petlje, gde u ovom konkretnom slučaju ignorišemo šta se dešava u telu ciklusa. Takođe treba primetiti da nam ovo objašnjenje daje \textit{apstraktnu} definiciju izvršavanja for petlje na mašini, jer ne posmatramo stvari kao što su vrednosti adresa i registara. Dobra strana operacione semantike jeste što je ona nezavisna od arhitekture mašine i načina implementacije \cite{parezanovic}.
 
-Zamislimo sada da naša apstraktna mašina raspolaže instrukcijama dodele, uslovnog i bezuslovnog prelaska. Tada bi se gore navedeni ciklus mogao zapisati instrukcijama apstraktne mašine u obliku:\\
-
-\hspace{4cm} \textit{i:=početak}\\
-\textit{ciklus:} \hspace{3cm} \textit{if i \textgreater kraj then goto izlaz}
-\begin{center}
-.
-\\.
-\\.
-\\ \textit{i:=i+1}
-\\ \textit{goto ciklus}
-\end{center}
-\textit{izlaz:} \hspace{4cm} ...\\
-\\Sada je jasno značenje programskog ciklusa, pa i to da se telo ciklusa neće izvršiti ako je vrednost promenljive \textit{početak} veća od vrednosti promenljive \textit{kraj}.
-
-
-Ovo objašnjenje nam daje apstraktnu definiciju \textit{kako} se program izvršava na mašini. Bitno je primetiti da jeste zaista apstrakcija: ignorišemo detalje kao što je upotreba registara i adresa za promenljive. Dakle, operaciona semantika je nezavisna od arhitekture mašine i načina implementacije.\\
-
-Uvedimo pojam konfiguracije.
+Uvedimo pojam konfiguracije \cite{opersem2} .
 \begin{definicija}
-Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}. Intuitivno, konfiguracija $\langle$ \textit{c, $\omega$} $\rangle$ predstavlja neko trenutno stanje izvršavanja programa, gde \textit{$\omega$} predstavlja ulazne vrednosti za naredbu, a \text{c} predstavlja sledeću naredbu koja će se izvršiti sa datim ulaznim parametrima. \cite{opersem2} 
+Konfiguracija je par $\langle$ \textit{c, $\omega$} $\rangle$, gde \textit{c} predstavlja naredbu i pripada skupu naredbi \textit{C}, dok $\omega$ predstavlja ulazne vrednosti za naredbu \textit{c}. Intuitivno, konfiguracija $\langle$ \textit{c, $\omega$} $\rangle$ predstavlja neko trenutno stanje izvršavanja programa, gde \textit{$\omega$} predstavlja ulazne vrednosti za naredbu, a \text{c} predstavlja sledeću naredbu koja će se izvršiti sa datim ulaznim parametrima. 
 \end{definicija}
 Opišimo sada značenje koje se predstavlja na isti način za obe vrste operacione semantike, prirodne i strukturno operacione, \textit{tranzicionim sistemom} (eng.~{\em transition system}) na primeru rada \emph{While} petlje. Ona će imati dve vrste konfiguracija \cite{wiley}:
 \begin{itemize}
