@@ -96,16 +96,16 @@ U sledećim poglavljima, svaka od ovih formalnih semantika će biti opisana šir
 \subsection{Operaciona semantika}
 \label{sec:opsem}
 
-\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja naredbe programa. U okviru ove semantike postoje:
+\qquad Operaciona semantika je način davanja značenja programskim jezicima kroz matematičku reprezentaciju. Svrha operacione semantike je da opiše \textit{kako} se izvršavaju programi, ne samo koji su rezultati izvršavanja tog programa. Preciznije, ona treba da opiše kako se stanja menjaju tokom izvršavanja naredbe programa. U okviru ove semantike postoje  \cite{wiley}:
 \begin{itemize}
 	\item \textit{Prirodna semantika} (ili veliki koraci (eng.~{\em big-step semantics})): svrha joj je da opiše kako su \textit{ukupni rezultati} izvršavanja dobijeni.
 	\item \textit{Strukturna operaciona semantika} (ili mali koraci (eng.~{\em small-step semantics})): svrha joj je da opiše kako se \textit{svaki korak} izvršava.
-\end{itemize} \cite{wiley}.
+\end{itemize}
 
 Jedna od osnovnih karakteristika imperativnih jezika je da ovi jezici imaju implicitno stanje i da se izvršavanje programa svodi na postepeno menjanje tog stanja izvođenjem pojedinačnih naredbi \cite{milena2}. Takođe, redosled naredbi je bitan \cite{milena2}. S obzirom da sve ove karakteristike zadovoljava operaciona semantika, možemo reći da će ova semantika najviše odgovarati imperativnim jezicima. 
 
 
-Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.\\
+Ponašanje se formalno može definisati korišćenjem apstraktnih mašina, formalnih automata, tranzicionih sistema... U daljem tekstu ćemo prikazati primer korišćenja apstraktne mašine za definiciju, kao i upotrebu tranzicionih sistema.
 
 Za svaki programski jezik možemo definisati realnu ili apstraktnu mašinu, na kojoj ćemo pratiti promene stanja koje proizvode pojedini konstrukti programskog jezika. Ovako definisana mašina biće interpretator određenog programskog jezika. Naravno, za ovo nije dobro izabrati realnu mašinu, jer bi semantičke definicije bile vezane za jednu konkretnu mašinu, a to znači i za sve specifičnosti određene arhitekture računara. Zato je izbor apstraktne mašine pogodniji. Pokazaćemo ovo na jednom primeru. Posmatrajmo brojački programski ciklus u jeziku Pascal:\\
 
